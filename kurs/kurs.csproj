@@ -46,33 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="client_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="client_form.Designer.cs">
+      <DependentUpon>client_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="administrator_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="administrator_form.Designer.cs">
+      <DependentUpon>administrator_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Log_in.cs" />
+    <Compile Include="Log_in.Designer.cs">
+      <DependentUpon>Log_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operator_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="operator_form.Designer.cs">
+      <DependentUpon>operator_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Park_spotDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Park_spotDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Park_spotDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Log_in.resx">
+      <DependentUpon>Log_in.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +103,17 @@
     </None>
     <None Include="Park_spotDataSet.xss">
       <DependentUpon>Park_spotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Park_spotDataSet1.xsc">
+      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Park_spotDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Park_spotDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Park_spotDataSet1.xss">
+      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace kurs
 {
-    public partial class Form3 : Form
+    public partial class operator_form : Form
     {
-        public Form3()
+        public operator_form()
         {
             InitializeComponent();
         }

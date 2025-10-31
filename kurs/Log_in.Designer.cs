@@ -2,7 +2,7 @@
 
 namespace kurs
 {
-    partial class Form1
+    partial class Log_in
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -31,13 +31,17 @@ namespace kurs
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBoxPasswordUnVisible = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPasswordVisible = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordUnVisible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordVisible)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -52,28 +56,27 @@ namespace kurs
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(283, 256);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.UseWaitCursor = true;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxLogin.Location = new System.Drawing.Point(283, 256);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(158, 22);
+            this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxLogin.UseWaitCursor = true;
+            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(283, 297);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(158, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Введите пароль";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxPassword.Location = new System.Drawing.Point(283, 297);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(158, 22);
+            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -118,24 +121,44 @@ namespace kurs
             this.label3.TabIndex = 6;
             this.label3.Text = "Пароль:";
             // 
-            // Form1
+            // pictureBoxPasswordUnVisible
+            // 
+            this.pictureBoxPasswordUnVisible.Location = new System.Drawing.Point(448, 297);
+            this.pictureBoxPasswordUnVisible.Name = "pictureBoxPasswordUnVisible";
+            this.pictureBoxPasswordUnVisible.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxPasswordUnVisible.TabIndex = 7;
+            this.pictureBoxPasswordUnVisible.TabStop = false;
+            // 
+            // pictureBoxPasswordVisible
+            // 
+            this.pictureBoxPasswordVisible.Location = new System.Drawing.Point(448, 297);
+            this.pictureBoxPasswordVisible.Name = "pictureBoxPasswordVisible";
+            this.pictureBoxPasswordVisible.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxPasswordVisible.TabIndex = 8;
+            this.pictureBoxPasswordVisible.TabStop = false;
+            // 
+            // Log_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 484);
+            this.Controls.Add(this.pictureBoxPasswordVisible);
+            this.Controls.Add(this.pictureBoxPasswordUnVisible);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "Log_in";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordUnVisible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordVisible)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,11 +168,13 @@ namespace kurs
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label1;
         private Label label2;
         private Label label3;
+        private PictureBox pictureBoxPasswordUnVisible;
+        private PictureBox pictureBoxPasswordVisible;
     }
 }
 
