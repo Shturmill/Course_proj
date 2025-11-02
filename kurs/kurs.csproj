@@ -73,11 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Park_spotDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Park_spotDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Log_in.resx">
@@ -103,17 +98,6 @@
     </None>
     <None Include="Park_spotDataSet.xss">
       <DependentUpon>Park_spotDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Park_spotDataSet1.xsc">
-      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Park_spotDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Park_spotDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Park_spotDataSet1.xss">
-      <DependentUpon>Park_spotDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

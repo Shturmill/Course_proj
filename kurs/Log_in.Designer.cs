@@ -46,7 +46,7 @@ namespace kurs
             // 
             // button1
             // 
-            this.button1.Enabled = false;
+            this.button1.Enabled = true;
             this.button1.Location = new System.Drawing.Point(231, 336);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";

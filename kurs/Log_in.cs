@@ -27,7 +27,7 @@ namespace kurs
     //класс базы данных
     public class DatabaseService
     {
-        private readonly string _connectionString = "Server=MSSQLSERVER01SHTORKA;Database=Park_spot;";
+        private readonly string _connectionString = @"Server=SHTORKA\MSSQLSERVER01;Database=Park_spot;Integrated Security=True;";
 
         public async Task<СотрудникModel> LoginUserAsync(string login, string password)
         {
@@ -159,8 +159,10 @@ namespace kurs
             }
         }
 
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
