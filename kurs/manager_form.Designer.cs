@@ -1,6 +1,6 @@
 ﻿namespace kurs
 {
-    partial class administrator_form
+    partial class manager_form
     {
         /// <summary>
         /// Required designer variable.

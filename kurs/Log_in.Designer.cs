@@ -72,7 +72,6 @@ namespace kurs
             this.textBoxPassword.Location = new System.Drawing.Point(283, 297);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(158, 22);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

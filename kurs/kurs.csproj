@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="client_form.cs">
+    <Compile Include="manager_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="client_form.Designer.cs">
-      <DependentUpon>client_form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="administrator_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="administrator_form.Designer.cs">
-      <DependentUpon>administrator_form.cs</DependentUpon>
+    <Compile Include="manager_form.Designer.cs">
+      <DependentUpon>manager_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Log_in.cs" />
     <Compile Include="Log_in.Designer.cs">

@@ -19,7 +19,7 @@ namespace kurs
         public int ID { get; set; }
         public string ФИО { get; set; }
         public string Должность { get; set; }
-        public string Email { get; set; } 
+        public string Email { get; set; }
         public string Телефон { get; set; }
     }
 
@@ -37,7 +37,7 @@ namespace kurs
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@Логин", login); 
+                    command.Parameters.AddWithValue("@Логин", login);
                     command.Parameters.AddWithValue("@Пароль", password);
 
                     await connection.OpenAsync();
@@ -94,6 +94,7 @@ namespace kurs
     }
 
 
+
     public partial class Log_in : Form
     {
         // Создаем экземпляр сервиса
@@ -125,20 +126,36 @@ namespace kurs
                 return;
             }
 
-            try 
+            try
             {
                 button1.Enabled = false;
 
-                // вызов асинхронного метода входа
+                // Ваш оригинальный метод, который возвращает СотрудникModel - это ПРАВИЛЬНО
                 СотрудникModel user = await _databaseService.LoginUserAsync(login, password);
 
                 if (user != null)
                 {
                     MessageBox.Show($"Добро пожаловать, {user.ФИО}!", "Успешный вход", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // var mainForm = new MainForm(user);
-                    // mainForm.Show();
-                    // this.Hide();
+                    switch (user.Должность)
+                    {
+                        case "Оператор парковки":
+                           
+                            operator_form operatorForm = new operator_form();
+                            operatorForm.Show();
+                            break;
+
+                        case "Менеджер":
+                            manager_form manager_form = new manager_form(); 
+                            manager_form.Show();
+                            break;
+
+                        default:
+                            MessageBox.Show("Ваша должность не позволяет войти.", "Ошибка доступа", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                    }
+
+                    this.Hide();
                 }
                 else
                 {
@@ -158,7 +175,6 @@ namespace kurs
                 button1.Enabled = true;
             }
         }
-
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
