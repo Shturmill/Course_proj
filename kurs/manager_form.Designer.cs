@@ -34,6 +34,7 @@
             this.тарифBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.тарифTableAdapter = new kurs.Park_spotDataSetTableAdapters.ТарифTableAdapter();
             this.tableAdapterManager = new kurs.Park_spotDataSetTableAdapters.TableAdapterManager();
+            this.сотрудникTableAdapter = new kurs.Park_spotDataSetTableAdapters.СотрудникTableAdapter();
             this.тарифDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,13 +42,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.сотрудникTableAdapter = new kurs.Park_spotDataSetTableAdapters.СотрудникTableAdapter();
             this.сотрудникDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -55,8 +55,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // park_spotDataSet
@@ -89,6 +89,10 @@
             this.tableAdapterManager.СотрудникTableAdapter = this.сотрудникTableAdapter;
             this.tableAdapterManager.ТарифTableAdapter = this.тарифTableAdapter;
             this.tableAdapterManager.ТСTableAdapter = null;
+            // 
+            // сотрудникTableAdapter
+            // 
+            this.сотрудникTableAdapter.ClearBeforeFill = true;
             // 
             // тарифDataGridView
             // 
@@ -144,7 +148,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(909, 536);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Тарифы";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -155,17 +159,8 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(909, 536);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // сотрудникBindingSource
-            // 
-            this.сотрудникBindingSource.DataMember = "Сотрудник";
-            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
-            // 
-            // сотрудникTableAdapter
-            // 
-            this.сотрудникTableAdapter.ClearBeforeFill = true;
             // 
             // сотрудникDataGridView
             // 
@@ -177,7 +172,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
-            this.сотрудникDataGridView.Location = new System.Drawing.Point(25, 33);
+            this.сотрудникDataGridView.Location = new System.Drawing.Point(24, 55);
             this.сотрудникDataGridView.Name = "сотрудникDataGridView";
             this.сотрудникDataGridView.Size = new System.Drawing.Size(703, 220);
             this.сотрудникDataGridView.TabIndex = 0;
@@ -210,6 +205,11 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 120;
             // 
+            // сотрудникBindingSource
+            // 
+            this.сотрудникBindingSource.DataMember = "Сотрудник";
+            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
+            // 
             // manager_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,8 +226,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
