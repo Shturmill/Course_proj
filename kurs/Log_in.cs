@@ -130,7 +130,6 @@ namespace kurs
             {
                 button1.Enabled = false;
 
-                // Ваш оригинальный метод, который возвращает СотрудникModel - это ПРАВИЛЬНО
                 СотрудникModel user = await _databaseService.LoginUserAsync(login, password);
 
                 if (user != null)

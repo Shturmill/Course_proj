@@ -19,6 +19,8 @@ namespace kurs
 
         private void operator_form_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.v_ActiveSessions". При необходимости она может быть перемещена или удалена.
+            this.v_ActiveSessionsTableAdapter.Fill(this.park_spotDataSet.v_ActiveSessions);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.v_ParkingLotOverview". При необходимости она может быть перемещена или удалена.
             this.v_ParkingLotOverviewTableAdapter.Fill(this.park_spotDataSet.v_ParkingLotOverview);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.v_PaymentHistory". При необходимости она может быть перемещена или удалена.
@@ -43,6 +45,51 @@ namespace kurs
         }
 
         private void парковочная_сессияDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }
