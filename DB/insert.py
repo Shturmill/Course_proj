@@ -3,11 +3,11 @@ from faker import Faker
 from datetime import datetime, timedelta
 
 OUTPUT_FILENAME = "INSERT.sql"
-NUM_CLIENTS = 20
+NUM_CLIENTS = 15
 NUM_EMPLOYEES = 20
-NUM_CARS = 25
-NUM_TARIFFS = 20
-NUM_SPOTS = 50 
+NUM_CARS = 20
+NUM_TARIFFS = 15
+NUM_SPOTS = 40
 NUM_SESSIONS_PAYMENTS = 120
 
 LICENSE_PLATE_CHARS = 'ABCEXHKMOPT'
@@ -22,6 +22,8 @@ spot_numbers = []
 car_numbers = []
 # Словарь для тарифов: {id: (продолжительность_в_часах, стоимость)}
 tariffs_data = {}
+# Словарь для данных о сотрудниках: {id: email}
+employee_data = {}
 
 print(f"Генерация {OUTPUT_FILENAME} началась...")
 
@@ -40,11 +42,33 @@ for i in employee_ids:
     name = fake.name().replace("'", "''")
     email = fake.email()
     phone = f"+79{fake.random_number(digits=9, fix_len=True)}"
-    position = random.choice(['Оператор парковки', 'Менеджер'])
+    
+    if i <= 3:
+        position = 'Менеджер'
+    else:
+        position = 'Оператор парковки'
+    
+    # Сохраняем email для таблицы УчетныеЗаписи
+    employee_data[i] = email
+    
     sql_queries.append(
         f"INSERT INTO Сотрудник (ID_сотрудника, ФИО, Должность, Электронная_почта, Телефон) "
         f"VALUES ({i}, '{name}', '{position}', '{email}', '{phone}');"
     )
+
+sql_queries.append("\n-- 2.5. Заполнение таблицы «УчетныеЗаписи»")
+default_password = 'password123' # Единый пароль для всех
+
+for emp_id, email in employee_data.items():
+    # Получаем логин из почты (часть до @)
+    login = email.split('@')[0].replace("'", "''")
+    login = login[:32] 
+    
+    sql_queries.append(
+        f"INSERT INTO УчетныеЗаписи (ID_сотрудника, Логин, Хеш_пароля) "
+        f"VALUES ({emp_id}, '{login}', HASHBYTES('SHA2_256', '{default_password}'));"
+    )
+
 
 sql_queries.append("\n-- 3. Заполнение таблицы «Тариф»")
 base_tariffs = [
@@ -125,7 +149,7 @@ else:
         brand = random.choice(light_brands) if car_type == 'Легковая' else random.choice(heavy_brands)
         model = random.choice(car_brands_models[brand])
         
-        client_id = i # Прямое присвоение: i-я машина -> i-му клиенту
+        client_id = i 
         
         sql_queries.append(
             f"INSERT INTO ТС (Гос_номер, ID_клиента, Тип, Марка, Модель) "
@@ -174,8 +198,7 @@ for i in session_payment_ids:
     )
     # Время выезда = время заезда + длительность тарифа
     vyezd_datetime = zaezd_datetime + timedelta(hours=duration_hours)
-    
-    # Форматируем в SQL SMALLDATETIME (YYYY-MM-DD HH:MM:SS)
+
     zaezd_str = zaezd_datetime.strftime('%Y-%m-%d %H:%M:%S')
     vyezd_str = vyezd_datetime.strftime('%Y-%m-%d %H:%M:%S') # Дата платежа = время выезда
     
@@ -196,11 +219,11 @@ for i in session_payment_ids:
         f"INSERT INTO Платёж (ID_платежа, ID_сессии, ID_тарифа, Сумма, Дата_платежа) "
         f"VALUES ({payment_id}, {session_id}, {tariff_id}, {cost:.2f}, '{vyezd_str}');"
     )
-    sql_queries.append("") # Пустая строка для читаемости
+    sql_queries.append("")
 
 try:
     with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
-       
+        
         for query in sql_queries:
             f.write(query + '\n')
     
