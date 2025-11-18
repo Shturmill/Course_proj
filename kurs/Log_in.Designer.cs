@@ -50,7 +50,7 @@ namespace kurs
             this.button1.Location = new System.Drawing.Point(231, 336);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 32);
+            this.button1.Size = new System.Drawing.Size(230, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "войти";
             this.button1.UseVisualStyleBackColor = true;
@@ -58,10 +58,10 @@ namespace kurs
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(283, 256);
+            this.textBoxLogin.Location = new System.Drawing.Point(300, 255);
             this.textBoxLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(158, 22);
+            this.textBoxLogin.Size = new System.Drawing.Size(160, 25);
             this.textBoxLogin.TabIndex = 2;
             this.textBoxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxLogin.UseWaitCursor = true;
@@ -69,13 +69,14 @@ namespace kurs
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(283, 297);
+            this.textBoxPassword.Location = new System.Drawing.Point(300, 295);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(158, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(160, 25);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxPassword.PasswordChar = '*';
             // 
             // label1
             // 
@@ -150,7 +151,7 @@ namespace kurs
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Log_in";
             this.Text = "Form1";
