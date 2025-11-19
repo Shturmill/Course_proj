@@ -35,5 +35,20 @@ namespace kurs
         {
 
         }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
