@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace kurs
 {
+
     public partial class operator_form : Form
     {
-        public operator_form()
+        public operator_form(string fioString)
         {
+
             InitializeComponent();
+
+            NameEmpl.Text = "Оператор: " + fioString;
+
         }
 
         private void operator_form_Load(object sender, EventArgs e)
@@ -109,6 +114,18 @@ namespace kurs
         private void Update_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Updateclient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Log_in Log_in = new Log_in();
+            Log_in.Show();
+            this.Hide();
         }
     }
 }

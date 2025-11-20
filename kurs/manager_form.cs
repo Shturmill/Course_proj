@@ -12,9 +12,12 @@ namespace kurs
 {
     public partial class manager_form : Form
     {
-        public manager_form()
+        public manager_form(string fioString)
         {
             InitializeComponent();
+
+            NameEmpl.Text = "Менеджер: " + fioString;
+
         }
 
         private void manager_form_Load(object sender, EventArgs e)
@@ -49,6 +52,18 @@ namespace kurs
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Log_in Log_in = new Log_in();
+            Log_in.Show();
+            this.Hide();
         }
     }
 }

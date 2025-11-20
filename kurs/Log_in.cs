@@ -140,12 +140,12 @@ namespace kurs
                     {
                         case "Оператор парковки":
                            
-                            operator_form operatorForm = new operator_form();
+                            operator_form operatorForm = new operator_form(user.ФИО);
                             operatorForm.Show();
                             break;
 
                         case "Менеджер":
-                            manager_form manager_form = new manager_form(); 
+                            manager_form manager_form = new manager_form(user.ФИО); 
                             manager_form.Show();
                             break;
 

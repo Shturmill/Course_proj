@@ -41,6 +41,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Updateclient = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.сотрудникDataGridView = new System.Windows.Forms.DataGridView();
@@ -57,9 +59,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label24 = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.Label();
+            this.NameEmpl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ExitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -135,7 +137,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Продолжительность_часов";
             this.dataGridViewTextBoxColumn3.HeaderText = "Продолжительность_часов";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 170;
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -157,6 +159,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Updateclient);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
@@ -173,6 +176,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Тарифы";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Updateclient
+            // 
+            this.Updateclient.Location = new System.Drawing.Point(1723, 847);
+            this.Updateclient.Name = "Updateclient";
+            this.Updateclient.Size = new System.Drawing.Size(40, 40);
+            this.Updateclient.TabIndex = 50;
+            this.Updateclient.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -240,6 +251,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.сотрудникDataGridView);
@@ -247,10 +259,18 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1770, 950);
+            this.tabPage2.Size = new System.Drawing.Size(1770, 894);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1723, 847);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 50;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox4
             // 
@@ -305,7 +325,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Электронная_почта";
             this.dataGridViewTextBoxColumn7.HeaderText = "Электронная_почта";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 140;
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -319,24 +339,15 @@
             this.сотрудникBindingSource.DataMember = "Сотрудник";
             this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
             // 
-            // label24
+            // NameEmpl
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(136, 56);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(80, 19);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Менеджер";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
-            // 
-            // Name
-            // 
-            this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(136, 24);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(0, 19);
-            this.Name.TabIndex = 5;
-            this.Name.Click += new System.EventHandler(this.Name_Click);
+            this.NameEmpl.AutoSize = true;
+            this.NameEmpl.Location = new System.Drawing.Point(136, 24);
+            this.NameEmpl.Name = "NameEmpl";
+            this.NameEmpl.Size = new System.Drawing.Size(96, 19);
+            this.NameEmpl.TabIndex = 5;
+            this.NameEmpl.Text = "manager_form";
+            this.NameEmpl.Click += new System.EventHandler(this.Name_Click);
             // 
             // pictureBox1
             // 
@@ -347,13 +358,23 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Location = new System.Drawing.Point(140, 56);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(93, 25);
+            this.ExitButton.TabIndex = 52;
+            this.ExitButton.Text = "Выход";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // manager_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1860, 1052);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.NameEmpl);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -386,19 +407,12 @@
         private Park_spotDataSetTableAdapters.ТарифTableAdapter тарифTableAdapter;
         private Park_spotDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView тарифDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private Park_spotDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
         private System.Windows.Forms.BindingSource сотрудникBindingSource;
         private System.Windows.Forms.DataGridView сотрудникDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -408,8 +422,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label NameEmpl;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button Updateclient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }
