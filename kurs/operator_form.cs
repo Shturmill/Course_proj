@@ -13,7 +13,7 @@ namespace kurs
 
     public partial class operator_form : Form
     {
-        public operator_form(string fioString)
+        public operator_form(string fioString, int ID)
         {
 
             InitializeComponent();
@@ -22,9 +22,51 @@ namespace kurs
 
         }
 
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Log_in Log_in = new Log_in();
+            Log_in.Show();
+            this.Hide();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.тСTableAdapter.FillBy(this.park_spotDataSet.ТС);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
+
         private void operator_form_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet1.v_ActiveSessions". При необходимости она может быть перемещена или удалена.
+            this.v_ActiveSessionsTableAdapter1.Fill(this.park_spotDataSet1.v_ActiveSessions);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet1.v_StatusParkingMap". При необходимости она может быть перемещена или удалена.
+            this.v_StatusParkingMapTableAdapter.Fill(this.park_spotDataSet1.v_StatusParkingMap);
+
             this.v_ActiveSessionsTableAdapter.Fill(this.park_spotDataSet.v_ActiveSessions);
             this.v_ParkingLotOverviewTableAdapter.Fill(this.park_spotDataSet.v_ParkingLotOverview);            
             this.v_PaymentHistoryTableAdapter.Fill(this.park_spotDataSet.v_PaymentHistory);            
@@ -93,27 +135,9 @@ namespace kurs
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.тСTableAdapter.FillBy(this.park_spotDataSet.ТС);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void v_ActiveSessionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
           
-        }
-
-        private void Update_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Updateclient_Click(object sender, EventArgs e)
@@ -121,11 +145,6 @@ namespace kurs
 
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Log_in Log_in = new Log_in();
-            Log_in.Show();
-            this.Hide();
-        }
+
     }
 }

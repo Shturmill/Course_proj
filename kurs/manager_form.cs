@@ -12,7 +12,7 @@ namespace kurs
 {
     public partial class manager_form : Form
     {
-        public manager_form(string fioString)
+        public manager_form(string fioString, int ID)
         {
             InitializeComponent();
 

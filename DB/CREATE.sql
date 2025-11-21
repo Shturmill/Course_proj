@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS Платёж;
 DROP TABLE IF EXISTS Парковочная_сессия;
 DROP TABLE IF EXISTS Тариф;
+DROP TABLE IF EXISTS УчетныеЗаписи;
 DROP TABLE IF EXISTS Сотрудник;
 DROP TABLE IF EXISTS Парковочное_место;
 DROP TABLE IF EXISTS ТС;
 DROP TABLE IF EXISTS Клиент;
-DROP TABLE IF EXISTS УчетныеЗаписи;
 
 CREATE TABLE Клиент (
     ID_клиента INT IDENTITY(1,1) PRIMARY KEY,
@@ -17,7 +17,7 @@ CREATE TABLE Клиент (
 );
 
 CREATE TABLE ТС (
-    Гос_номер VARCHAR(9) PRIMARY KEY,
+    Гос_номер VARCHAR(12) PRIMARY KEY,
     ID_клиента INT NOT NULL,
     Тип VARCHAR(8) NOT NULL DEFAULT 'Легковая',
     Марка VARCHAR(31) NOT NULL,
@@ -85,5 +85,5 @@ CREATE TABLE УчетныеЗаписи (
     Логин NVARCHAR(50) NOT NULL UNIQUE,
     Хеш_пароля VARBINARY(32) NOT NULL, 
     Дата_создания SMALLDATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (ID_сотрудника) REFERENCES Сотрудник(ID_сотрудника) ON DELETE NO ACTION
+    FOREIGN KEY (ID_сотрудника) REFERENCES Сотрудник(ID_сотрудника) ON DELETE CASCADE
 );
