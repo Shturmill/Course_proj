@@ -60,8 +60,9 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NameEmpl = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -150,6 +151,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(36, 91);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -179,6 +181,7 @@
             // 
             // Updateclient
             // 
+            this.Updateclient.BackgroundImage = global::kurs.Properties.Resources.update_icon;
             this.Updateclient.Location = new System.Drawing.Point(1723, 847);
             this.Updateclient.Name = "Updateclient";
             this.Updateclient.Size = new System.Drawing.Size(40, 40);
@@ -266,6 +269,7 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
             this.button1.Location = new System.Drawing.Point(1723, 847);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
@@ -349,15 +353,6 @@
             this.NameEmpl.Text = "manager_form";
             this.NameEmpl.Click += new System.EventHandler(this.Name_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ExitButton
             // 
             this.ExitButton.Location = new System.Drawing.Point(140, 56);
@@ -367,6 +362,26 @@
             this.ExitButton.Text = "Выход";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::kurs.Properties.Resources.admin_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1770, 894);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Учётная запись";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // manager_form
             // 
@@ -434,5 +449,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }

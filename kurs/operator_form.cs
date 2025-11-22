@@ -145,6 +145,19 @@ namespace kurs
 
         }
 
+        private void v_ActiveSessionsDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

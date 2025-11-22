@@ -68,8 +68,8 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Updateclient = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ModelVeh = new System.Windows.Forms.TextBox();
+            this.MarkVeh = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.клиентDataGridView = new System.Windows.Forms.DataGridView();
@@ -82,7 +82,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.GosText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.VehicleType = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -112,28 +112,19 @@
             this.ApplySessionButton = new System.Windows.Forms.Button();
             this.INFO1 = new System.Windows.Forms.Label();
             this.INFO2 = new System.Windows.Forms.Label();
+            this.v_ActiveSessionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.клиентTableAdapter1 = new kurs.Park_spotDataSetTableAdapters.КлиентTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NameEmpl = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.v_StatusParkingMapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_StatusParkingMapTableAdapter = new kurs.Park_spotDataSet1TableAdapters.v_StatusParkingMapTableAdapter();
             this.tableAdapterManager1 = new kurs.Park_spotDataSet1TableAdapters.TableAdapterManager();
-            this.v_ActiveSessionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.v_ActiveSessionsTableAdapter1 = new kurs.Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter();
-            this.v_ActiveSessionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -150,12 +141,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.клиентDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСDataGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // парковочная_сессияBindingSource
@@ -258,6 +248,7 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
             this.button1.Location = new System.Drawing.Point(1685, 808);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
@@ -425,15 +416,16 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.Updateclient);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.ModelVeh);
+            this.tabPage2.Controls.Add(this.MarkVeh);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.клиентDataGridView);
             this.tabPage2.Controls.Add(this.тСDataGridView);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.GosText);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
@@ -448,7 +440,7 @@
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.comboBox6);
+            this.tabPage2.Controls.Add(this.VehicleType);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label21);
@@ -463,6 +455,7 @@
             // 
             // Updateclient
             // 
+            this.Updateclient.BackgroundImage = global::kurs.Properties.Resources.update_icon;
             this.Updateclient.Location = new System.Drawing.Point(1685, 807);
             this.Updateclient.Name = "Updateclient";
             this.Updateclient.Size = new System.Drawing.Size(40, 40);
@@ -470,21 +463,21 @@
             this.Updateclient.UseVisualStyleBackColor = true;
             this.Updateclient.Click += new System.EventHandler(this.Updateclient_Click);
             // 
-            // textBox6
+            // ModelVeh
             // 
-            this.textBox6.Location = new System.Drawing.Point(194, 333);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(180, 26);
-            this.textBox6.TabIndex = 48;
+            this.ModelVeh.Location = new System.Drawing.Point(194, 333);
+            this.ModelVeh.Margin = new System.Windows.Forms.Padding(4);
+            this.ModelVeh.Name = "ModelVeh";
+            this.ModelVeh.Size = new System.Drawing.Size(180, 26);
+            this.ModelVeh.TabIndex = 48;
             // 
-            // textBox5
+            // MarkVeh
             // 
-            this.textBox5.Location = new System.Drawing.Point(194, 279);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 26);
-            this.textBox5.TabIndex = 47;
+            this.MarkVeh.Location = new System.Drawing.Point(194, 279);
+            this.MarkVeh.Margin = new System.Windows.Forms.Padding(4);
+            this.MarkVeh.Name = "MarkVeh";
+            this.MarkVeh.Size = new System.Drawing.Size(180, 26);
+            this.MarkVeh.TabIndex = 47;
             // 
             // button4
             // 
@@ -505,6 +498,7 @@
             this.button3.TabIndex = 45;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // клиентDataGridView
             // 
@@ -595,14 +589,15 @@
             this.label12.TabIndex = 44;
             this.label12.Text = "Укажите Гос номер ТС";
             this.label12.Visible = false;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // textBox4
+            // GosText
             // 
-            this.textBox4.Location = new System.Drawing.Point(194, 172);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 26);
-            this.textBox4.TabIndex = 43;
+            this.GosText.Location = new System.Drawing.Point(194, 172);
+            this.GosText.Margin = new System.Windows.Forms.Padding(4);
+            this.GosText.Name = "GosText";
+            this.GosText.Size = new System.Drawing.Size(180, 26);
+            this.GosText.TabIndex = 43;
             // 
             // label11
             // 
@@ -754,17 +749,17 @@
             this.textBox2.Size = new System.Drawing.Size(320, 26);
             this.textBox2.TabIndex = 29;
             // 
-            // comboBox6
+            // VehicleType
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.VehicleType.FormattingEnabled = true;
+            this.VehicleType.Items.AddRange(new object[] {
             "Легковая",
             "Грузовая"});
-            this.comboBox6.Location = new System.Drawing.Point(194, 222);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(180, 27);
-            this.comboBox6.TabIndex = 28;
+            this.VehicleType.Location = new System.Drawing.Point(194, 222);
+            this.VehicleType.Margin = new System.Windows.Forms.Padding(4);
+            this.VehicleType.Name = "VehicleType";
+            this.VehicleType.Size = new System.Drawing.Size(180, 27);
+            this.VehicleType.TabIndex = 28;
             // 
             // label19
             // 
@@ -799,7 +794,6 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.v_ActiveSessionsDataGridView);
             this.tabPage1.Controls.Add(this.Update);
             this.tabPage1.Controls.Add(this.CorrectLabel);
             this.tabPage1.Controls.Add(this.label7);
@@ -821,6 +815,7 @@
             // 
             // Update
             // 
+            this.Update.BackgroundImage = global::kurs.Properties.Resources.update_icon;
             this.Update.Location = new System.Drawing.Point(1685, 808);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(40, 40);
@@ -931,11 +926,22 @@
             this.INFO2.Text = "Текущие сессии";
             this.INFO2.Click += new System.EventHandler(this.label1_Click);
             // 
+            // v_ActiveSessionsBindingSource1
+            // 
+            this.v_ActiveSessionsBindingSource1.DataMember = "v_ActiveSessions";
+            this.v_ActiveSessionsBindingSource1.DataSource = this.park_spotDataSet1;
+            // 
+            // park_spotDataSet1
+            // 
+            this.park_spotDataSet1.DataSetName = "Park_spotDataSet1";
+            this.park_spotDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(50, 92);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -943,12 +949,23 @@
             this.tabControl1.Size = new System.Drawing.Size(1740, 887);
             this.tabControl1.TabIndex = 0;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1732, 855);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Учётная запись";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // клиентTableAdapter1
             // 
             this.клиентTableAdapter1.ClearBeforeFill = true;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::kurs.Properties.Resources.oper_icon;
             this.pictureBox1.Location = new System.Drawing.Point(54, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 72);
@@ -974,11 +991,6 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // park_spotDataSet1
-            // 
-            this.park_spotDataSet1.DataSetName = "Park_spotDataSet1";
-            this.park_spotDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // v_StatusParkingMapBindingSource
             // 
             this.v_StatusParkingMapBindingSource.DataMember = "v_StatusParkingMap";
@@ -1002,97 +1014,19 @@
             this.tableAdapterManager1.ТСTableAdapter = null;
             this.tableAdapterManager1.УчетныеЗаписиTableAdapter = null;
             // 
-            // v_ActiveSessionsBindingSource1
-            // 
-            this.v_ActiveSessionsBindingSource1.DataMember = "v_ActiveSessions";
-            this.v_ActiveSessionsBindingSource1.DataSource = this.park_spotDataSet1;
-            // 
             // v_ActiveSessionsTableAdapter1
             // 
             this.v_ActiveSessionsTableAdapter1.ClearBeforeFill = true;
             // 
-            // v_ActiveSessionsDataGridView
+            // label1
             // 
-            this.v_ActiveSessionsDataGridView.AutoGenerateColumns = false;
-            this.v_ActiveSessionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.v_ActiveSessionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31});
-            this.v_ActiveSessionsDataGridView.DataSource = this.v_ActiveSessionsBindingSource1;
-            this.v_ActiveSessionsDataGridView.Location = new System.Drawing.Point(36, 191);
-            this.v_ActiveSessionsDataGridView.Name = "v_ActiveSessionsDataGridView";
-            this.v_ActiveSessionsDataGridView.Size = new System.Drawing.Size(1128, 220);
-            this.v_ActiveSessionsDataGridView.TabIndex = 17;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "ID_сессии";
-            this.dataGridViewTextBoxColumn18.HeaderText = "ID_сессии";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Время_заезда";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Время_заезда";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Прошло_часов";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Прошло_часов";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Номер_места";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Номер_места";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Этаж";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Этаж";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Гос_номер";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Гос_номер";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Автомобиль";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Автомобиль";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "ФИО_клиента";
-            this.dataGridViewTextBoxColumn26.HeaderText = "ФИО_клиента";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Телефон_клиента";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Телефон_клиента";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "Оператор";
-            this.dataGridViewTextBoxColumn31.HeaderText = "Оператор";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 414);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 19);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Гос номер, тип, автомобиль, id влад";
             // 
             // operator_form
             // 
@@ -1127,12 +1061,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.тСDataGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,7 +1109,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox VehicleType;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
@@ -1190,7 +1123,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox GosText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView клиентDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -1210,8 +1143,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ModelVeh;
+        private System.Windows.Forms.TextBox MarkVeh;
         private System.Windows.Forms.Button Update;
         private Park_spotDataSetTableAdapters.КлиентTableAdapter клиентTableAdapter1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1233,16 +1166,7 @@
         private Park_spotDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.BindingSource v_ActiveSessionsBindingSource1;
         private Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter v_ActiveSessionsTableAdapter1;
-        private System.Windows.Forms.DataGridView v_ActiveSessionsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label1;
     }
 }

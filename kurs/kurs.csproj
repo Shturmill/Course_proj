@@ -134,5 +134,14 @@
   <ItemGroup>
     <None Include="Resources\icon_park_spot%281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oper_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
