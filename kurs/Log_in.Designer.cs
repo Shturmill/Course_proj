@@ -66,6 +66,7 @@ namespace kurs
             this.textBoxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxLogin.UseWaitCursor = true;
             this.textBoxLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxLogin.Text = "Введите логин";
             // 
             // textBoxPassword
             // 

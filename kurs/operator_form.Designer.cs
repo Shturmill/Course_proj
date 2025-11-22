@@ -67,6 +67,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Updateclient = new System.Windows.Forms.Button();
             this.ModelVeh = new System.Windows.Forms.TextBox();
             this.MarkVeh = new System.Windows.Forms.TextBox();
@@ -102,6 +104,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.Update = new System.Windows.Forms.Button();
             this.CorrectLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -124,7 +127,17 @@
             this.v_StatusParkingMapTableAdapter = new kurs.Park_spotDataSet1TableAdapters.v_StatusParkingMapTableAdapter();
             this.tableAdapterManager1 = new kurs.Park_spotDataSet1TableAdapters.TableAdapterManager();
             this.v_ActiveSessionsTableAdapter1 = new kurs.Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
+            this.NameProfile = new System.Windows.Forms.Label();
+            this.FamProfile = new System.Windows.Forms.Label();
+            this.SurnameProfile = new System.Windows.Forms.Label();
+            this.PhoneProfile = new System.Windows.Forms.Label();
+            this.MailProfile = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxFam = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -144,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -416,6 +430,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.Updateclient);
             this.tabPage2.Controls.Add(this.ModelVeh);
@@ -452,6 +467,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Регистрация новых клиентов и ТС";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(777, 414);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 19);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "id клиента, ФИО, почта, телефон";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 414);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 19);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Гос номер, тип, автомобиль, id влад";
             // 
             // Updateclient
             // 
@@ -794,6 +829,7 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.Update);
             this.tabPage1.Controls.Add(this.CorrectLabel);
             this.tabPage1.Controls.Add(this.label7);
@@ -812,6 +848,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Учёт заезда автомобилей";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(72, 191);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(569, 19);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Гос номер, место, дата приезда,  автомобиль,  телефон владельца, ФИО владельца";
             // 
             // Update
             // 
@@ -951,12 +997,23 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.textBoxMail);
+            this.tabPage4.Controls.Add(this.textBoxPhone);
+            this.tabPage4.Controls.Add(this.textBoxSurname);
+            this.tabPage4.Controls.Add(this.textBoxFam);
+            this.tabPage4.Controls.Add(this.textBoxName);
+            this.tabPage4.Controls.Add(this.MailProfile);
+            this.tabPage4.Controls.Add(this.PhoneProfile);
+            this.tabPage4.Controls.Add(this.SurnameProfile);
+            this.tabPage4.Controls.Add(this.FamProfile);
+            this.tabPage4.Controls.Add(this.NameProfile);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1732, 855);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Учётная запись";
+            this.tabPage4.Text = "Учётная запись оператора";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // клиентTableAdapter1
@@ -1018,15 +1075,94 @@
             // 
             this.v_ActiveSessionsTableAdapter1.ClearBeforeFill = true;
             // 
-            // label1
+            // NameProfile
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 414);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 19);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Гос номер, тип, автомобиль, id влад";
+            this.NameProfile.AutoSize = true;
+            this.NameProfile.Location = new System.Drawing.Point(100, 64);
+            this.NameProfile.Name = "NameProfile";
+            this.NameProfile.Size = new System.Drawing.Size(37, 19);
+            this.NameProfile.TabIndex = 0;
+            this.NameProfile.Text = "Имя";
+            // 
+            // FamProfile
+            // 
+            this.FamProfile.AutoSize = true;
+            this.FamProfile.Location = new System.Drawing.Point(100, 99);
+            this.FamProfile.Name = "FamProfile";
+            this.FamProfile.Size = new System.Drawing.Size(72, 19);
+            this.FamProfile.TabIndex = 1;
+            this.FamProfile.Text = "Фамилия";
+            // 
+            // SurnameProfile
+            // 
+            this.SurnameProfile.AutoSize = true;
+            this.SurnameProfile.Location = new System.Drawing.Point(100, 137);
+            this.SurnameProfile.Name = "SurnameProfile";
+            this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
+            this.SurnameProfile.TabIndex = 2;
+            this.SurnameProfile.Text = "Отчество";
+            // 
+            // PhoneProfile
+            // 
+            this.PhoneProfile.AutoSize = true;
+            this.PhoneProfile.Location = new System.Drawing.Point(100, 174);
+            this.PhoneProfile.Name = "PhoneProfile";
+            this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
+            this.PhoneProfile.TabIndex = 3;
+            this.PhoneProfile.Text = "Телефон";
+            // 
+            // MailProfile
+            // 
+            this.MailProfile.AutoSize = true;
+            this.MailProfile.Location = new System.Drawing.Point(105, 216);
+            this.MailProfile.Name = "MailProfile";
+            this.MailProfile.Size = new System.Drawing.Size(48, 19);
+            this.MailProfile.TabIndex = 4;
+            this.MailProfile.Text = "E-mail";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(189, 61);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(227, 26);
+            this.textBoxName.TabIndex = 5;
+            // 
+            // textBoxFam
+            // 
+            this.textBoxFam.Location = new System.Drawing.Point(189, 97);
+            this.textBoxFam.Name = "textBoxFam";
+            this.textBoxFam.Size = new System.Drawing.Size(227, 26);
+            this.textBoxFam.TabIndex = 6;
+            // 
+            // textBoxSurname
+            // 
+            this.textBoxSurname.Location = new System.Drawing.Point(189, 137);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(227, 26);
+            this.textBoxSurname.TabIndex = 7;
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(189, 174);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPhone.TabIndex = 8;
+            // 
+            // textBoxMail
+            // 
+            this.textBoxMail.Location = new System.Drawing.Point(189, 210);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(227, 26);
+            this.textBoxMail.TabIndex = 9;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(100, 261);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(316, 28);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Редактировать";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // operator_form
             // 
@@ -1064,6 +1200,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1168,5 +1306,18 @@
         private Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter v_ActiveSessionsTableAdapter1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.TextBox textBoxFam;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label MailProfile;
+        private System.Windows.Forms.Label PhoneProfile;
+        private System.Windows.Forms.Label SurnameProfile;
+        private System.Windows.Forms.Label FamProfile;
+        private System.Windows.Forms.Label NameProfile;
+        private System.Windows.Forms.Button button2;
     }
 }
