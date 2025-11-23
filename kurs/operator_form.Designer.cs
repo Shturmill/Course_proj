@@ -119,6 +119,17 @@
             this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.textBoxFam = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.MailProfile = new System.Windows.Forms.Label();
+            this.PhoneProfile = new System.Windows.Forms.Label();
+            this.SurnameProfile = new System.Windows.Forms.Label();
+            this.FamProfile = new System.Windows.Forms.Label();
+            this.NameProfile = new System.Windows.Forms.Label();
             this.клиентTableAdapter1 = new kurs.Park_spotDataSetTableAdapters.КлиентTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NameEmpl = new System.Windows.Forms.Label();
@@ -127,17 +138,13 @@
             this.v_StatusParkingMapTableAdapter = new kurs.Park_spotDataSet1TableAdapters.v_StatusParkingMapTableAdapter();
             this.tableAdapterManager1 = new kurs.Park_spotDataSet1TableAdapters.TableAdapterManager();
             this.v_ActiveSessionsTableAdapter1 = new kurs.Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter();
-            this.NameProfile = new System.Windows.Forms.Label();
-            this.FamProfile = new System.Windows.Forms.Label();
-            this.SurnameProfile = new System.Windows.Forms.Label();
-            this.PhoneProfile = new System.Windows.Forms.Label();
-            this.MailProfile = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxFam = new System.Windows.Forms.TextBox();
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.textBoxMail = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxPassword0 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
+            this.buttonPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -997,7 +1004,14 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.buttonPassword);
+            this.tabPage4.Controls.Add(this.textBoxPassword1);
+            this.tabPage4.Controls.Add(this.label24);
+            this.tabPage4.Controls.Add(this.textBoxPassword0);
+            this.tabPage4.Controls.Add(this.textBoxLogin);
+            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.buttonProfile);
             this.tabPage4.Controls.Add(this.textBoxMail);
             this.tabPage4.Controls.Add(this.textBoxPhone);
             this.tabPage4.Controls.Add(this.textBoxSurname);
@@ -1015,6 +1029,96 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Учётная запись оператора";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(100, 261);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(316, 28);
+            this.buttonProfile.TabIndex = 10;
+            this.buttonProfile.Text = "Редактировать";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // textBoxMail
+            // 
+            this.textBoxMail.Location = new System.Drawing.Point(189, 210);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(227, 26);
+            this.textBoxMail.TabIndex = 9;
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(189, 174);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPhone.TabIndex = 8;
+            // 
+            // textBoxSurname
+            // 
+            this.textBoxSurname.Location = new System.Drawing.Point(189, 137);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(227, 26);
+            this.textBoxSurname.TabIndex = 7;
+            // 
+            // textBoxFam
+            // 
+            this.textBoxFam.Location = new System.Drawing.Point(189, 97);
+            this.textBoxFam.Name = "textBoxFam";
+            this.textBoxFam.Size = new System.Drawing.Size(227, 26);
+            this.textBoxFam.TabIndex = 6;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(189, 61);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(227, 26);
+            this.textBoxName.TabIndex = 5;
+            // 
+            // MailProfile
+            // 
+            this.MailProfile.AutoSize = true;
+            this.MailProfile.Location = new System.Drawing.Point(135, 213);
+            this.MailProfile.Name = "MailProfile";
+            this.MailProfile.Size = new System.Drawing.Size(48, 19);
+            this.MailProfile.TabIndex = 4;
+            this.MailProfile.Text = "E-mail";
+            // 
+            // PhoneProfile
+            // 
+            this.PhoneProfile.AutoSize = true;
+            this.PhoneProfile.Location = new System.Drawing.Point(118, 177);
+            this.PhoneProfile.Name = "PhoneProfile";
+            this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
+            this.PhoneProfile.TabIndex = 3;
+            this.PhoneProfile.Text = "Телефон";
+            // 
+            // SurnameProfile
+            // 
+            this.SurnameProfile.AutoSize = true;
+            this.SurnameProfile.Location = new System.Drawing.Point(110, 140);
+            this.SurnameProfile.Name = "SurnameProfile";
+            this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
+            this.SurnameProfile.TabIndex = 2;
+            this.SurnameProfile.Text = "Отчество";
+            // 
+            // FamProfile
+            // 
+            this.FamProfile.AutoSize = true;
+            this.FamProfile.Location = new System.Drawing.Point(111, 100);
+            this.FamProfile.Name = "FamProfile";
+            this.FamProfile.Size = new System.Drawing.Size(72, 19);
+            this.FamProfile.TabIndex = 1;
+            this.FamProfile.Text = "Фамилия";
+            // 
+            // NameProfile
+            // 
+            this.NameProfile.AutoSize = true;
+            this.NameProfile.Location = new System.Drawing.Point(146, 64);
+            this.NameProfile.Name = "NameProfile";
+            this.NameProfile.Size = new System.Drawing.Size(37, 19);
+            this.NameProfile.TabIndex = 0;
+            this.NameProfile.Text = "Имя";
             // 
             // клиентTableAdapter1
             // 
@@ -1075,94 +1179,64 @@
             // 
             this.v_ActiveSessionsTableAdapter1.ClearBeforeFill = true;
             // 
-            // NameProfile
+            // label8
             // 
-            this.NameProfile.AutoSize = true;
-            this.NameProfile.Location = new System.Drawing.Point(100, 64);
-            this.NameProfile.Name = "NameProfile";
-            this.NameProfile.Size = new System.Drawing.Size(37, 19);
-            this.NameProfile.TabIndex = 0;
-            this.NameProfile.Text = "Имя";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(125, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 19);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Пароль";
             // 
-            // FamProfile
+            // label23
             // 
-            this.FamProfile.AutoSize = true;
-            this.FamProfile.Location = new System.Drawing.Point(100, 99);
-            this.FamProfile.Name = "FamProfile";
-            this.FamProfile.Size = new System.Drawing.Size(72, 19);
-            this.FamProfile.TabIndex = 1;
-            this.FamProfile.Text = "Фамилия";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(131, 317);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 19);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Логин";
             // 
-            // SurnameProfile
+            // textBoxLogin
             // 
-            this.SurnameProfile.AutoSize = true;
-            this.SurnameProfile.Location = new System.Drawing.Point(100, 137);
-            this.SurnameProfile.Name = "SurnameProfile";
-            this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
-            this.SurnameProfile.TabIndex = 2;
-            this.SurnameProfile.Text = "Отчество";
+            this.textBoxLogin.Location = new System.Drawing.Point(189, 314);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(227, 26);
+            this.textBoxLogin.TabIndex = 13;
             // 
-            // PhoneProfile
+            // textBoxPassword0
             // 
-            this.PhoneProfile.AutoSize = true;
-            this.PhoneProfile.Location = new System.Drawing.Point(100, 174);
-            this.PhoneProfile.Name = "PhoneProfile";
-            this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
-            this.PhoneProfile.TabIndex = 3;
-            this.PhoneProfile.Text = "Телефон";
+            this.textBoxPassword0.Location = new System.Drawing.Point(189, 348);
+            this.textBoxPassword0.Name = "textBoxPassword0";
+            this.textBoxPassword0.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword0.TabIndex = 14;
+            this.textBoxPassword0.TextChanged += new System.EventHandler(this.textBoxPassword1_TextChanged);
             // 
-            // MailProfile
+            // label24
             // 
-            this.MailProfile.AutoSize = true;
-            this.MailProfile.Location = new System.Drawing.Point(105, 216);
-            this.MailProfile.Name = "MailProfile";
-            this.MailProfile.Size = new System.Drawing.Size(48, 19);
-            this.MailProfile.TabIndex = 4;
-            this.MailProfile.Text = "E-mail";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(50, 392);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(133, 19);
+            this.label24.TabIndex = 15;
+            this.label24.Text = "Повторите пароль";
             // 
-            // textBoxName
+            // textBoxPassword1
             // 
-            this.textBoxName.Location = new System.Drawing.Point(189, 61);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(227, 26);
-            this.textBoxName.TabIndex = 5;
+            this.textBoxPassword1.Location = new System.Drawing.Point(189, 389);
+            this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword1.TabIndex = 16;
             // 
-            // textBoxFam
+            // buttonPassword
             // 
-            this.textBoxFam.Location = new System.Drawing.Point(189, 97);
-            this.textBoxFam.Name = "textBoxFam";
-            this.textBoxFam.Size = new System.Drawing.Size(227, 26);
-            this.textBoxFam.TabIndex = 6;
-            // 
-            // textBoxSurname
-            // 
-            this.textBoxSurname.Location = new System.Drawing.Point(189, 137);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(227, 26);
-            this.textBoxSurname.TabIndex = 7;
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Location = new System.Drawing.Point(189, 174);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
-            this.textBoxPhone.TabIndex = 8;
-            // 
-            // textBoxMail
-            // 
-            this.textBoxMail.Location = new System.Drawing.Point(189, 210);
-            this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.Size = new System.Drawing.Size(227, 26);
-            this.textBoxMail.TabIndex = 9;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(100, 261);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(316, 28);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Редактировать";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPassword.Location = new System.Drawing.Point(100, 440);
+            this.buttonPassword.Name = "buttonPassword";
+            this.buttonPassword.Size = new System.Drawing.Size(316, 28);
+            this.buttonPassword.TabIndex = 17;
+            this.buttonPassword.Text = "Редактировать";
+            this.buttonPassword.UseVisualStyleBackColor = true;
+            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
             // 
             // operator_form
             // 
@@ -1318,6 +1392,13 @@
         private System.Windows.Forms.Label SurnameProfile;
         private System.Windows.Forms.Label FamProfile;
         private System.Windows.Forms.Label NameProfile;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.TextBox textBoxPassword0;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxPassword1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button buttonPassword;
     }
 }
