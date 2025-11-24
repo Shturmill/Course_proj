@@ -51,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.сотрудникDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +58,40 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.NameEmpl = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
+            this.textBoxFam = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.MailProfile = new System.Windows.Forms.Label();
+            this.PhoneProfile = new System.Windows.Forms.Label();
+            this.SurnameProfile = new System.Windows.Forms.Label();
+            this.FamProfile = new System.Windows.Forms.Label();
+            this.NameProfile = new System.Windows.Forms.Label();
+            this.buttonPassword = new System.Windows.Forms.Button();
+            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxPassword0 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.textBoxMailProfile = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneProfile = new System.Windows.Forms.TextBox();
+            this.textBoxSurProfile = new System.Windows.Forms.TextBox();
+            this.textBoxFamProfile = new System.Windows.Forms.TextBox();
+            this.textBoxNameProfile = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -72,6 +101,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +191,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.Updateclient);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
@@ -254,8 +286,17 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBoxMail);
+            this.tabPage2.Controls.Add(this.textBoxPhone);
+            this.tabPage2.Controls.Add(this.textBoxSurname);
+            this.tabPage2.Controls.Add(this.textBoxFam);
+            this.tabPage2.Controls.Add(this.textBoxName);
+            this.tabPage2.Controls.Add(this.MailProfile);
+            this.tabPage2.Controls.Add(this.PhoneProfile);
+            this.tabPage2.Controls.Add(this.SurnameProfile);
+            this.tabPage2.Controls.Add(this.FamProfile);
+            this.tabPage2.Controls.Add(this.NameProfile);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.сотрудникDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
@@ -276,18 +317,10 @@
             this.button1.TabIndex = 50;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(202, 124);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(546, 26);
-            this.textBox4.TabIndex = 2;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 57);
+            this.label5.Location = new System.Drawing.Point(56, 48);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 19);
@@ -343,6 +376,34 @@
             this.сотрудникBindingSource.DataMember = "Сотрудник";
             this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.buttonPassword);
+            this.tabPage3.Controls.Add(this.textBoxPassword1);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.textBoxPassword0);
+            this.tabPage3.Controls.Add(this.textBoxLogin);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.buttonProfile);
+            this.tabPage3.Controls.Add(this.textBoxMailProfile);
+            this.tabPage3.Controls.Add(this.textBoxPhoneProfile);
+            this.tabPage3.Controls.Add(this.textBoxSurProfile);
+            this.tabPage3.Controls.Add(this.textBoxFamProfile);
+            this.tabPage3.Controls.Add(this.textBoxNameProfile);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1770, 894);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Учётная запись";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // NameEmpl
             // 
             this.NameEmpl.AutoSize = true;
@@ -373,15 +434,251 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // tabPage3
+            // textBoxMail
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1770, 894);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Учётная запись";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.textBoxMail.Location = new System.Drawing.Point(147, 228);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(227, 26);
+            this.textBoxMail.TabIndex = 60;
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(147, 192);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPhone.TabIndex = 59;
+            // 
+            // textBoxSurname
+            // 
+            this.textBoxSurname.Location = new System.Drawing.Point(147, 155);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(227, 26);
+            this.textBoxSurname.TabIndex = 58;
+            // 
+            // textBoxFam
+            // 
+            this.textBoxFam.Location = new System.Drawing.Point(147, 115);
+            this.textBoxFam.Name = "textBoxFam";
+            this.textBoxFam.Size = new System.Drawing.Size(227, 26);
+            this.textBoxFam.TabIndex = 57;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(147, 79);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(227, 26);
+            this.textBoxName.TabIndex = 56;
+            // 
+            // MailProfile
+            // 
+            this.MailProfile.AutoSize = true;
+            this.MailProfile.Location = new System.Drawing.Point(63, 234);
+            this.MailProfile.Name = "MailProfile";
+            this.MailProfile.Size = new System.Drawing.Size(48, 19);
+            this.MailProfile.TabIndex = 55;
+            this.MailProfile.Text = "E-mail";
+            // 
+            // PhoneProfile
+            // 
+            this.PhoneProfile.AutoSize = true;
+            this.PhoneProfile.Location = new System.Drawing.Point(58, 192);
+            this.PhoneProfile.Name = "PhoneProfile";
+            this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
+            this.PhoneProfile.TabIndex = 54;
+            this.PhoneProfile.Text = "Телефон";
+            // 
+            // SurnameProfile
+            // 
+            this.SurnameProfile.AutoSize = true;
+            this.SurnameProfile.Location = new System.Drawing.Point(58, 155);
+            this.SurnameProfile.Name = "SurnameProfile";
+            this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
+            this.SurnameProfile.TabIndex = 53;
+            this.SurnameProfile.Text = "Отчество";
+            // 
+            // FamProfile
+            // 
+            this.FamProfile.AutoSize = true;
+            this.FamProfile.Location = new System.Drawing.Point(58, 117);
+            this.FamProfile.Name = "FamProfile";
+            this.FamProfile.Size = new System.Drawing.Size(72, 19);
+            this.FamProfile.TabIndex = 52;
+            this.FamProfile.Text = "Фамилия";
+            // 
+            // NameProfile
+            // 
+            this.NameProfile.AutoSize = true;
+            this.NameProfile.Location = new System.Drawing.Point(58, 82);
+            this.NameProfile.Name = "NameProfile";
+            this.NameProfile.Size = new System.Drawing.Size(37, 19);
+            this.NameProfile.TabIndex = 51;
+            this.NameProfile.Text = "Имя";
+            // 
+            // buttonPassword
+            // 
+            this.buttonPassword.Location = new System.Drawing.Point(85, 431);
+            this.buttonPassword.Name = "buttonPassword";
+            this.buttonPassword.Size = new System.Drawing.Size(316, 28);
+            this.buttonPassword.TabIndex = 35;
+            this.buttonPassword.Text = "Редактировать";
+            this.buttonPassword.UseVisualStyleBackColor = true;
+            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
+            // 
+            // textBoxPassword1
+            // 
+            this.textBoxPassword1.Location = new System.Drawing.Point(174, 380);
+            this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword1.TabIndex = 34;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(35, 383);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(133, 19);
+            this.label24.TabIndex = 33;
+            this.label24.Text = "Повторите пароль";
+            // 
+            // textBoxPassword0
+            // 
+            this.textBoxPassword0.Location = new System.Drawing.Point(174, 339);
+            this.textBoxPassword0.Name = "textBoxPassword0";
+            this.textBoxPassword0.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword0.TabIndex = 32;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Location = new System.Drawing.Point(174, 305);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(227, 26);
+            this.textBoxLogin.TabIndex = 31;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(116, 308);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 19);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "Логин";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(110, 342);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 19);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Пароль";
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(85, 252);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(316, 28);
+            this.buttonProfile.TabIndex = 28;
+            this.buttonProfile.Text = "Редактировать";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // textBoxMailProfile
+            // 
+            this.textBoxMailProfile.Location = new System.Drawing.Point(174, 201);
+            this.textBoxMailProfile.Name = "textBoxMailProfile";
+            this.textBoxMailProfile.Size = new System.Drawing.Size(227, 26);
+            this.textBoxMailProfile.TabIndex = 27;
+            // 
+            // textBoxPhoneProfile
+            // 
+            this.textBoxPhoneProfile.Location = new System.Drawing.Point(174, 165);
+            this.textBoxPhoneProfile.Name = "textBoxPhoneProfile";
+            this.textBoxPhoneProfile.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPhoneProfile.TabIndex = 26;
+            // 
+            // textBoxSurProfile
+            // 
+            this.textBoxSurProfile.Location = new System.Drawing.Point(174, 128);
+            this.textBoxSurProfile.Name = "textBoxSurProfile";
+            this.textBoxSurProfile.Size = new System.Drawing.Size(227, 26);
+            this.textBoxSurProfile.TabIndex = 25;
+            // 
+            // textBoxFamProfile
+            // 
+            this.textBoxFamProfile.Location = new System.Drawing.Point(174, 88);
+            this.textBoxFamProfile.Name = "textBoxFamProfile";
+            this.textBoxFamProfile.Size = new System.Drawing.Size(227, 26);
+            this.textBoxFamProfile.TabIndex = 24;
+            // 
+            // textBoxNameProfile
+            // 
+            this.textBoxNameProfile.Location = new System.Drawing.Point(174, 52);
+            this.textBoxNameProfile.Name = "textBoxNameProfile";
+            this.textBoxNameProfile.Size = new System.Drawing.Size(227, 26);
+            this.textBoxNameProfile.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(90, 207);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 19);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "E-mail";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(85, 165);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 19);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Телефон";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(85, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 19);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Отчество";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(85, 90);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 19);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Фамилия";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(85, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 19);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Имя";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(38, 289);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(181, 32);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(249, 289);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(181, 32);
+            this.button3.TabIndex = 52;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // manager_form
             // 
@@ -408,6 +705,8 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -436,7 +735,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label NameEmpl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -450,5 +748,35 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.TextBox textBoxFam;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label MailProfile;
+        private System.Windows.Forms.Label PhoneProfile;
+        private System.Windows.Forms.Label SurnameProfile;
+        private System.Windows.Forms.Label FamProfile;
+        private System.Windows.Forms.Label NameProfile;
+        private System.Windows.Forms.Button buttonPassword;
+        private System.Windows.Forms.TextBox textBoxPassword1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBoxPassword0;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.TextBox textBoxMailProfile;
+        private System.Windows.Forms.TextBox textBoxPhoneProfile;
+        private System.Windows.Forms.TextBox textBoxSurProfile;
+        private System.Windows.Forms.TextBox textBoxFamProfile;
+        private System.Windows.Forms.TextBox textBoxNameProfile;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -77,7 +77,6 @@ CREATE OR ALTER PROCEDURE sp_UpdateEmployeeCredentials
     @НовыйПароль VARCHAR(50)
 AS
 BEGIN
-    SET NOCOUNT ON;
 
     IF EXISTS (SELECT 1 FROM УчетныеЗаписи WHERE Логин = @НовыйЛогин AND ID_сотрудника != @ID_сотрудника)
     BEGIN

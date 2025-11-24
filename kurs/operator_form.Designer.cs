@@ -138,7 +138,6 @@
             this.v_StatusParkingMapTableAdapter = new kurs.Park_spotDataSet1TableAdapters.v_StatusParkingMapTableAdapter();
             this.tableAdapterManager1 = new kurs.Park_spotDataSet1TableAdapters.TableAdapterManager();
             this.v_ActiveSessionsTableAdapter1 = new kurs.Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter();
-<<<<<<< HEAD
             this.label8 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
@@ -146,7 +145,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.buttonPassword = new System.Windows.Forms.Button();
-=======
             this.NameProfile = new System.Windows.Forms.Label();
             this.FamProfile = new System.Windows.Forms.Label();
             this.SurnameProfile = new System.Windows.Forms.Label();
@@ -157,8 +155,6 @@
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxMail = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
->>>>>>> 8908a5f (operator profile)
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -1018,7 +1014,6 @@
             // 
             // tabPage4
             // 
-<<<<<<< HEAD
             this.tabPage4.Controls.Add(this.buttonPassword);
             this.tabPage4.Controls.Add(this.textBoxPassword1);
             this.tabPage4.Controls.Add(this.label24);
@@ -1027,9 +1022,6 @@
             this.tabPage4.Controls.Add(this.label23);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.buttonProfile);
-=======
-            this.tabPage4.Controls.Add(this.button2);
->>>>>>> 8908a5f (operator profile)
             this.tabPage4.Controls.Add(this.textBoxMail);
             this.tabPage4.Controls.Add(this.textBoxPhone);
             this.tabPage4.Controls.Add(this.textBoxSurname);
@@ -1197,7 +1189,6 @@
             // 
             this.v_ActiveSessionsTableAdapter1.ClearBeforeFill = true;
             // 
-<<<<<<< HEAD
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1256,7 +1247,6 @@
             this.buttonPassword.Text = "Редактировать";
             this.buttonPassword.UseVisualStyleBackColor = true;
             this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
-=======
             // NameProfile
             // 
             this.NameProfile.AutoSize = true;
@@ -1336,16 +1326,6 @@
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(227, 26);
             this.textBoxMail.TabIndex = 9;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(100, 261);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(316, 28);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Редактировать";
-            this.button2.UseVisualStyleBackColor = true;
->>>>>>> 8908a5f (operator profile)
             // 
             // operator_form
             // 
@@ -1501,7 +1481,6 @@
         private System.Windows.Forms.Label SurnameProfile;
         private System.Windows.Forms.Label FamProfile;
         private System.Windows.Forms.Label NameProfile;
-<<<<<<< HEAD
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.TextBox textBoxPassword0;
         private System.Windows.Forms.TextBox textBoxLogin;
@@ -1510,8 +1489,6 @@
         private System.Windows.Forms.TextBox textBoxPassword1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonPassword;
-=======
         private System.Windows.Forms.Button button2;
->>>>>>> 8908a5f (operator profile)
     }
 }
