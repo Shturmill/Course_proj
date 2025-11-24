@@ -90,3 +90,55 @@ BEGIN
     WHERE ID_сотрудника = @ID_сотрудника;
 END;
 GO
+
+CREATE   PROCEDURE sp_AddEmployee
+    @ФИО VARCHAR(100),
+    @Должность VARCHAR(18),
+    @Телефон VARCHAR(20),
+    @Электронная_почта VARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM Сотрудник WHERE Телефон = @Телефон OR Электронная_почта = @Электронная_почта)
+    BEGIN
+        RAISERROR('Сотрудник с таким телефоном или почтой уже существует.', 16, 1);
+        RETURN;
+    END
+
+    BEGIN TRY
+        BEGIN TRANSACTION; 
+
+        INSERT INTO Сотрудник (ФИО, Должность, Телефон, Электронная_почта)
+        VALUES (@ФИО, @Должность, @Телефон, @Электронная_почта);
+
+        INSERT INTO УчетныеЗаписи (Логин, Хеш_пароля)
+        VALUES (@Электронная_почта, HASHBYTES('SHA2_256', 'password123'));
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_DeleteEmployee
+    @Телефон VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM Сотрудник WHERE Телефон = @Телефон)
+    BEGIN
+        RAISERROR('Сотрудник с таким номером телефона не найден.', 16, 1);
+        RETURN;
+    END
+
+    DELETE FROM Сотрудник WHERE Телефон = @Телефон;
+END;
+GO

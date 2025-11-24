@@ -57,7 +57,7 @@ CREATE TABLE Тариф (
 
 CREATE TABLE Парковочная_сессия (
     ID_сессии INT IDENTITY(1,1) PRIMARY KEY,
-    Гос_номер VARCHAR(9) NOT NULL,
+    Гос_номер VARCHAR(12) NOT NULL,
     Номер_места INT NOT NULL,
     ID_сотрудника INT NOT NULL,
     Время_заезда SMALLDATETIME NOT NULL DEFAULT GETDATE(),
