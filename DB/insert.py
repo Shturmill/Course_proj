@@ -1,4 +1,5 @@
 import random
+import math
 from faker import Faker
 from datetime import datetime, timedelta
 
@@ -61,11 +62,11 @@ queries.append("GO\n")
 # Тарифы (с автоинкрементом)
 queries.append("-- Тарифы")
 tariffs = [
-    ('Почасовой', 1, 100.00),
-    ('Льготный 3ч', 3, 250.00),
-    ('Ночной', 12, 500.00),
-    ('Суточный', 24, 1000.00),
-    ('Недельный', 168, 5000.00)
+    ('Почасовой', 1, 100.00),      # ID 1
+    ('Льготный 3ч', 3, 250.00),    # ID 2
+    ('Ночной', 12, 500.00),        # ID 3
+    ('Суточный', 24, 1000.00),     # ID 4
+    ('Недельный', 168, 5000.00)    # ID 5
 ]
 
 for t in tariffs:
@@ -137,7 +138,7 @@ for _ in range(remaining):
 queries.append("GO\n")
 
 # Сессии - сортируем по времени заезда
-queries.append("-- Сессии (отсортированы по времени заезда)")
+queries.append("-- Сессии и Платежи (отсортированы по времени заезда)")
 
 occupied_spots = []
 start_simulation = datetime.now() - timedelta(days=60)
@@ -164,7 +165,7 @@ for sess_id in range(1, NUM_SESSIONS + 1):
         time_out = None
     else:
         spot = random.choice(spot_numbers)
-        duration_minutes = random.randint(60, 2880)
+        duration_minutes = random.randint(30, 48 * 60) # от 30 мин до 2 дней
         time_out = time_in + timedelta(minutes=duration_minutes)
         
         if time_out > datetime.now():
@@ -182,12 +183,45 @@ for sess_id in range(1, NUM_SESSIONS + 1):
 # Сортируем по времени заезда
 sessions_data.sort(key=lambda x: x['time_in'])
 
-# Вставляем отсортированные сессии
-for session in sessions_data:
-    time_in_str = session['time_in'].strftime('%Y-%m-%d %H:%M:%S')
-    time_out_sql = "NULL" if session['time_out'] is None else f"'{session['time_out'].strftime('%Y-%m-%d %H:%M:%S')}'"
+for i, session in enumerate(sessions_data, 1):
+    time_in_str = session['time_in'].strftime('%Y-%d-%m %H:%M:%S')
     
-    queries.append(f"INSERT INTO Парковочная_сессия (Гос_номер, Номер_места, ID_сотрудника, Время_заезда, Время_выезда) VALUES ('{session['car']}', {session['spot']}, {session['emp']}, '{time_in_str}', {time_out_sql});")
+    time_out_sql = (
+        "NULL" 
+        if session['time_out'] is None 
+        else f"'{session['time_out'].strftime('%Y-%d-%m %H:%M:%S')}'"
+    )
+    
+    queries.append(
+        f"INSERT INTO Парковочная_сессия "
+        f"(Гос_номер, Номер_места, ID_сотрудника, Время_заезда, Время_выезда) "
+        f"VALUES ('{session['car']}', {session['spot']}, {session['emp']}, '{time_in_str}', {time_out_sql});"
+    )
+
+    if not session['is_active'] and session['time_out'] is not None:
+        duration = session['time_out'] - session['time_in']
+        hours = duration.total_seconds() / 3600.0
+        hours_ceil = math.ceil(hours)
+        if hours_ceil == 0: hours_ceil = 1
+
+        if hours_ceil < 3:
+            tariff_id = 1
+            amount = 100.00 * hours_ceil
+        elif hours_ceil < 24:
+            tariff_id = 2 
+            units = math.ceil(hours_ceil / 3)
+            amount = 250.00 * units
+        else:
+            tariff_id = 4
+            days = math.ceil(hours_ceil / 24)
+            amount = 1000.00 * days
+        
+        payment_date_str = session['time_out'].strftime('%Y-%d-%m %H:%M:%S')
+
+        queries.append(
+            f"INSERT INTO Платёж (ID_сессии, ID_тарифа, Сумма, Дата_платежа) "
+            f"VALUES ({i}, {tariff_id}, {amount}, '{payment_date_str}');"
+        )
 
 queries.append("GO")
 
