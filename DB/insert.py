@@ -88,25 +88,52 @@ car_brands = {
     'Легковая': ['Toyota Camry', 'BMW X5', 'Kia Rio', 'Lada Vesta', 'Ford Focus'],
     'Грузовая': ['Volvo FH', 'MAN TGS', 'KAMAZ 5490']
 }
-plate_chars = 'ABCEHKMOPTXY' 
+plate_chars = 'ABCEHKMOPTXY'
 cars_list = []
 
-for _ in range(NUM_CARS):
-    c_id = random.choice(client_ids)
-    
-    # Генерация номера
+assigned_cars = 0
+
+for c_id in client_ids:
     p1 = random.choice(plate_chars)
     p3 = "".join(random.choices(plate_chars, k=2))
     nums = f"{random.randint(1, 999):03d}"
     reg = f"{random.randint(77, 199)}"
     plate = f"{p1}{nums}{p3}{reg}"
-    
+
     c_type = 'Легковая' if random.random() > 0.15 else 'Грузовая'
     full_brand = random.choice(car_brands[c_type]).split()
     brand, model = full_brand[0], full_brand[1]
-    
+
     cars_list.append(plate)
-    queries.append(f"INSERT INTO ТС (Гос_номер, ID_клиента, Тип, Марка, Модель) VALUES ('{plate}', {c_id}, '{c_type}', '{brand}', '{model}');")
+    queries.append(
+        f"INSERT INTO ТС (Гос_номер, ID_клиента, Тип, Марка, Модель) "
+        f"VALUES ('{plate}', {c_id}, '{c_type}', '{brand}', '{model}');"
+    )
+
+    assigned_cars += 1
+    if assigned_cars >= NUM_CARS: 
+        break
+
+remaining = NUM_CARS - assigned_cars
+
+for _ in range(remaining):
+    c_id = random.choice(client_ids)     
+    p1 = random.choice(plate_chars)
+    p3 = "".join(random.choices(plate_chars, k=2))
+    nums = f"{random.randint(1, 999):03d}"
+    reg = f"{random.randint(77, 199)}"
+    plate = f"{p1}{nums}{p3}{reg}"
+
+    c_type = 'Легковая' if random.random() > 0.15 else 'Грузовая'
+    full_brand = random.choice(car_brands[c_type]).split()
+    brand, model = full_brand[0], full_brand[1]
+
+    cars_list.append(plate)
+    queries.append(
+        f"INSERT INTO ТС (Гос_номер, ID_клиента, Тип, Марка, Модель) "
+        f"VALUES ('{plate}', {c_id}, '{c_type}', '{brand}', '{model}');"
+    )
+
 queries.append("GO\n")
 
 # Сессии - сортируем по времени заезда
