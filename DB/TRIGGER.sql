@@ -1,48 +1,69 @@
-CREATE TRIGGER trg_ManageParkingStatus
+CREATE OR ALTER TRIGGER trg_CreatePaymentOnSessionEnd
+ON Парковочная_сессия
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Проверяем, что обновлено поле Время_выезда (завершена сессия)
+    IF UPDATE(Время_выезда)
+    BEGIN
+        INSERT INTO Платёж (ID_сессии, ID_тарифа, Сумма, Дата_платежа)
+        SELECT 
+            i.ID_сессии,
+            -- Определяем подходящий тариф по длительности
+            (SELECT TOP 1 ID_тарифа 
+             FROM Тариф 
+             WHERE Продолжительность_часов <= DATEDIFF(HOUR, i.Время_заезда, i.Время_выезда)
+             ORDER BY Продолжительность_часов DESC),
+            -- Рассчитываем сумму на основе выбранного тарифа
+            (SELECT TOP 1 
+                CEILING(DATEDIFF(MINUTE, i.Время_заезда, i.Время_выезда) / 60.0 / t.Продолжительность_часов) * t.Стоимость
+             FROM Тариф t
+             WHERE t.Продолжительность_часов <= DATEDIFF(HOUR, i.Время_заезда, i.Время_выезда)
+             ORDER BY t.Продолжительность_часов DESC),
+            i.Время_выезда
+        FROM inserted i
+        INNER JOIN deleted d ON i.ID_сессии = d.ID_сессии
+        WHERE 
+            -- Была активная сессия (Время_выезда было NULL)
+            d.Время_выезда IS NULL 
+            -- Стала завершенной (Время_выезда заполнено)
+            AND i.Время_выезда IS NOT NULL
+            -- Еще нет платежа для этой сессии
+            AND NOT EXISTS (
+                SELECT 1 FROM Платёж WHERE ID_сессии = i.ID_сессии
+            );
+    END
+END;
+GO
+
+CREATE OR ALTER TRIGGER trg_UpdateParkingSpotStatus
 ON Парковочная_сессия
 AFTER INSERT, UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
-
-    IF EXISTS (SELECT * FROM inserted) AND NOT EXISTS (SELECT * FROM deleted)
-    BEGIN
-        DECLARE @InsertedSpot INT, @InsertedCar VARCHAR(9);
-        SELECT @InsertedSpot = Номер_места, @InsertedCar = Гос_номер FROM inserted;
-
-        IF (SELECT Статус FROM Парковочное_место WHERE Номер_места = @InsertedSpot) = 'Занято'
-        BEGIN
-            RAISERROR('Ошибка: Парковочное место %d уже занято.', 16, 1, @InsertedSpot);
-            ROLLBACK TRANSACTION;
-            RETURN;
-        END;
-
-        IF (SELECT COUNT(*) FROM Парковочная_сессия WHERE Гос_номер = @InsertedCar AND Время_выезда IS NULL) > 1
-        BEGIN
-            RAISERROR('Ошибка: Транспортное средство %s уже находится на парковке.', 16, 1, @InsertedCar);
-            ROLLBACK TRANSACTION;
-            RETURN;
-        END;
-
-        UPDATE Парковочное_место
-        SET Статус = 'Занято'
-        WHERE Номер_места = @InsertedSpot;
-        
-    END;
-
-    IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
-    BEGIN
-        IF (SELECT Время_выезда FROM inserted) IS NOT NULL AND (SELECT Время_выезда FROM deleted) IS NULL
-        BEGIN
-            DECLARE @FreedSpot INT;
-            SELECT @FreedSpot = Номер_места FROM inserted;
-
-            UPDATE Парковочное_место
-            SET Статус = 'Свободно'
-            WHERE Номер_места = @FreedSpot;
-        END;
-    END;
     
+    UPDATE Парковочное_место
+    SET Статус = 'Занято'
+    WHERE Номер_места IN (
+        SELECT i.Номер_места
+        FROM inserted i
+        WHERE i.Время_выезда IS NULL
+    );
+    
+    IF UPDATE(Время_выезда)
+    BEGIN
+        UPDATE Парковочное_место
+        SET Статус = 'Свободно'
+        WHERE Номер_места IN (
+            SELECT i.Номер_места
+            FROM inserted i
+            INNER JOIN deleted d ON i.ID_сессии = d.ID_сессии
+            WHERE d.Время_выезда IS NULL 
+                AND i.Время_выезда IS NOT NULL
+        );
+    END
 END;
-
-
+GO

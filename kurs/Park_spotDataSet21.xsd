@@ -1,206 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Park_spotDataSet" targetNamespace="http://tempuri.org/Park_spotDataSet.xsd" xmlns:mstns="http://tempuri.org/Park_spotDataSet.xsd" xmlns="http://tempuri.org/Park_spotDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Park_spotDataSet2" targetNamespace="http://tempuri.org/Park_spotDataSet21.xsd" xmlns:mstns="http://tempuri.org/Park_spotDataSet21.xsd" xmlns="http://tempuri.org/Park_spotDataSet21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Park_spotConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Park_spotConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.kurs.Properties.Settings.GlobalReference.Default.Park_spotConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsPropertyName="Park_spotConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Park_spotConnectionString ()" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ActiveSessionsTableAdapter" GeneratorDataComponentClassName="v_ActiveSessionsTableAdapter" Name="v_ActiveSessions" UserDataComponentName="v_ActiveSessionsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.v_ActiveSessions" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_сессии, Время_заезда, Прошло_часов, Номер_места, Этаж, Гос_номер, Автомобиль, ФИО_клиента, Телефон_клиента, Оператор FROM dbo.v_ActiveSessions</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID_сессии" DataSetColumn="ID_сессии" />
-              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
-              <Mapping SourceColumn="Прошло_часов" DataSetColumn="Прошло_часов" />
-              <Mapping SourceColumn="Номер_места" DataSetColumn="Номер_места" />
-              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
-              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-              <Mapping SourceColumn="ФИО_клиента" DataSetColumn="ФИО_клиента" />
-              <Mapping SourceColumn="Телефон_клиента" DataSetColumn="Телефон_клиента" />
-              <Mapping SourceColumn="Оператор" DataSetColumn="Оператор" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ParkingLotOverviewTableAdapter" GeneratorDataComponentClassName="v_ParkingLotOverviewTableAdapter" Name="v_ParkingLotOverview" UserDataComponentName="v_ParkingLotOverviewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.v_ParkingLotOverview" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Этаж, Мест_свободно, Мест_занято, Всего_мест FROM dbo.v_ParkingLotOverview</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
-              <Mapping SourceColumn="Мест_свободно" DataSetColumn="Мест_свободно" />
-              <Mapping SourceColumn="Мест_занято" DataSetColumn="Мест_занято" />
-              <Mapping SourceColumn="Всего_мест" DataSetColumn="Всего_мест" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_PaymentHistoryTableAdapter" GeneratorDataComponentClassName="v_PaymentHistoryTableAdapter" Name="v_PaymentHistory" UserDataComponentName="v_PaymentHistoryTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.v_PaymentHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_платежа, Дата_платежа, Сумма, Тариф, Время_заезда, Время_выезда, Длительность_минут, ФИО_клиента, Гос_номер, Автомобиль FROM dbo.v_PaymentHistory</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID_платежа" DataSetColumn="ID_платежа" />
-              <Mapping SourceColumn="Дата_платежа" DataSetColumn="Дата_платежа" />
-              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
-              <Mapping SourceColumn="Тариф" DataSetColumn="Тариф" />
-              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
-              <Mapping SourceColumn="Время_выезда" DataSetColumn="Время_выезда" />
-              <Mapping SourceColumn="Длительность_минут" DataSetColumn="Длительность_минут" />
-              <Mapping SourceColumn="ФИО_клиента" DataSetColumn="ФИО_клиента" />
-              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_EndSessionAndCreatePaymentTableAdapter" GeneratorDataComponentClassName="sp_EndSessionAndCreatePaymentTableAdapter" Name="sp_EndSessionAndCreatePayment" UserDataComponentName="sp_EndSessionAndCreatePaymentTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_EndSessionAndCreatePayment" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.sp_EndSessionAndCreatePayment</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сессии" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Рассчитанная_сумма" DataSetColumn="Рассчитанная_сумма" />
-              <Mapping SourceColumn="ID_тарифа" DataSetColumn="ID_тарифа" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_DailyFinancialReportTableAdapter" GeneratorDataComponentClassName="v_DailyFinancialReportTableAdapter" Name="v_DailyFinancialReport" UserDataComponentName="v_DailyFinancialReportTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.v_DailyFinancialReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Дата, Количество_машин, Общая_выручка, Сотрудник_смены FROM dbo.v_DailyFinancialReport</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
-              <Mapping SourceColumn="Количество_машин" DataSetColumn="Количество_машин" />
-              <Mapping SourceColumn="Общая_выручка" DataSetColumn="Общая_выручка" />
-              <Mapping SourceColumn="Сотрудник_смены" DataSetColumn="Сотрудник_смены" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_StatusParkingMapTableAdapter" GeneratorDataComponentClassName="v_StatusParkingMapTableAdapter" Name="v_StatusParkingMap" UserDataComponentName="v_StatusParkingMapTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.v_StatusParkingMap" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Номер места], Этаж, Статус, [Гос номер], [Время Заезда], Владелец, Телефон, Автомобиль FROM dbo.v_StatusParkingMap</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Номер места" DataSetColumn="Номер места" />
-              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
-              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
-              <Mapping SourceColumn="Гос номер" DataSetColumn="Гос номер" />
-              <Mapping SourceColumn="Время Заезда" DataSetColumn="Время Заезда" />
-              <Mapping SourceColumn="Владелец" DataSetColumn="Владелец" />
-              <Mapping SourceColumn="Телефон" DataSetColumn="Телефон" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_PaymentReportTableAdapter" GeneratorDataComponentClassName="vw_PaymentReportTableAdapter" Name="vw_PaymentReport" UserDataComponentName="vw_PaymentReportTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.vw_PaymentReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Дата_платежа, Длительность_мин, Тип, Автомобиль, Владелец, [Дата платежа], [Длительность мин] FROM vw_PaymentReport</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Дата_платежа" DataSetColumn="Дата_платежа" />
-              <Mapping SourceColumn="Длительность_мин" DataSetColumn="Длительность_мин" />
-              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-              <Mapping SourceColumn="Владелец" DataSetColumn="Владелец" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_SessionDetailsTableAdapter" GeneratorDataComponentClassName="vw_SessionDetailsTableAdapter" Name="vw_SessionDetails" UserDataComponentName="vw_SessionDetailsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.vw_SessionDetails" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Гос_номер, Номер_места, Время_заезда, Автомобиль, Телефон_владельца, ФИО_владельца, [Время заезда], [Гос номер], [Номер места], [Телефон владельца], [ФИО владельца], Телефон, ФИО FROM vw_SessionDetails</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
-              <Mapping SourceColumn="Номер_места" DataSetColumn="Номер_места" />
-              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-              <Mapping SourceColumn="Телефон_владельца" DataSetColumn="Телефон_владельца" />
-              <Mapping SourceColumn="ФИО_владельца" DataSetColumn="ФИО_владельца" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_VehicleRegistryTableAdapter" GeneratorDataComponentClassName="vw_VehicleRegistryTableAdapter" Name="vw_VehicleRegistry" UserDataComponentName="vw_VehicleRegistryTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.vw_VehicleRegistry" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Гос_номер, Тип, Автомобиль, Телефон_владельца, [Телефон владельца], Телефон FROM vw_VehicleRegistry</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
-              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
-              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
-              <Mapping SourceColumn="Телефон_владельца" DataSetColumn="Телефон_владельца" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="КлиентTableAdapter" GeneratorDataComponentClassName="КлиентTableAdapter" Name="Клиент" UserDataComponentName="КлиентTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Клиент" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Клиент" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Клиент] WHERE (([ID_клиента] = @Original_ID_клиента) AND ([ФИО] = @Original_ФИО) AND ((@IsNull_Электронная_почта = 1 AND [Электронная_почта] IS NULL) OR ([Электронная_почта] = @Original_Электронная_почта)) AND ([Телефон] = @Original_Телефон))</CommandText>
@@ -259,7 +68,7 @@ SELECT ID_клиента, ФИО, Электронная_почта, Телеф�
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Парковочная_сессияTableAdapter" GeneratorDataComponentClassName="Парковочная_сессияTableAdapter" Name="Парковочная_сессия" UserDataComponentName="Парковочная_сессияTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Парковочная_сессия" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Парковочная_сессия" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Парковочная_сессия] WHERE (([ID_сессии] = @Original_ID_сессии) AND ([Гос_номер] = @Original_Гос_номер) AND ([Номер_места] = @Original_Номер_места) AND ([ID_сотрудника] = @Original_ID_сотрудника) AND ([Время_заезда] = @Original_Время_заезда) AND ((@IsNull_Время_выезда = 1 AND [Время_выезда] IS NULL) OR ([Время_выезда] = @Original_Время_выезда)))</CommandText>
@@ -328,7 +137,7 @@ SELECT ID_сессии, Гос_номер, Номер_места, ID_сотру�
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Парковочное_местоTableAdapter" GeneratorDataComponentClassName="Парковочное_местоTableAdapter" Name="Парковочное_место" UserDataComponentName="Парковочное_местоTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Парковочное_место" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Парковочное_место" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Парковочное_место] WHERE (([Номер_места] = @Original_Номер_места) AND ([Этаж] = @Original_Этаж) AND ([Статус] = @Original_Статус))</CommandText>
@@ -381,7 +190,7 @@ SELECT Номер_места, Этаж, Статус FROM Парковочное
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ПлатёжTableAdapter" GeneratorDataComponentClassName="ПлатёжTableAdapter" Name="Платёж" UserDataComponentName="ПлатёжTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Платёж" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Платёж" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Платёж] WHERE (([ID_платежа] = @Original_ID_платежа) AND ([ID_сессии] = @Original_ID_сессии) AND ([ID_тарифа] = @Original_ID_тарифа) AND ([Сумма] = @Original_Сумма) AND ([Дата_платежа] = @Original_Дата_платежа))</CommandText>
@@ -443,7 +252,7 @@ SELECT ID_платежа, ID_сессии, ID_тарифа, Сумма, Дата
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="СотрудникTableAdapter" GeneratorDataComponentClassName="СотрудникTableAdapter" Name="Сотрудник" UserDataComponentName="СотрудникTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Сотрудник" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Сотрудник" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Сотрудник] WHERE (([ID_сотрудника] = @Original_ID_сотрудника) AND ([ФИО] = @Original_ФИО) AND ([Должность] = @Original_Должность) AND ((@IsNull_Электронная_почта = 1 AND [Электронная_почта] IS NULL) OR ([Электронная_почта] = @Original_Электронная_почта)) AND ([Телефон] = @Original_Телефон))</CommandText>
@@ -507,7 +316,7 @@ SELECT ID_сотрудника, ФИО, Должность, Электронна
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ТарифTableAdapter" GeneratorDataComponentClassName="ТарифTableAdapter" Name="Тариф" UserDataComponentName="ТарифTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.Тариф" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.Тариф" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Тариф] WHERE (([ID_тарифа] = @Original_ID_тарифа) AND ([Наименование] = @Original_Наименование) AND ([Продолжительность_часов] = @Original_Продолжительность_часов) AND ([Стоимость] = @Original_Стоимость))</CommandText>
@@ -564,7 +373,7 @@ SELECT ID_тарифа, Наименование, Продолжительнос
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ТСTableAdapter" GeneratorDataComponentClassName="ТСTableAdapter" Name="ТС" UserDataComponentName="ТСTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.ТС" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.ТС" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ТС] WHERE (([Гос_номер] = @Original_Гос_номер) AND ([ID_клиента] = @Original_ID_клиента) AND ([Тип] = @Original_Тип) AND ([Марка] = @Original_Марка) AND ([Модель] = @Original_Модель))</CommandText>
@@ -627,7 +436,7 @@ SELECT Гос_номер, ID_клиента, Тип, Марка, Модель FR
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="УчетныеЗаписиTableAdapter" GeneratorDataComponentClassName="УчетныеЗаписиTableAdapter" Name="УчетныеЗаписи" UserDataComponentName="УчетныеЗаписиTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.УчетныеЗаписи" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.УчетныеЗаписи" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[УчетныеЗаписи] WHERE (([ID_учетной_записи] = @Original_ID_учетной_записи) AND ([ID_сотрудника] = @Original_ID_сотрудника) AND ([Логин] = @Original_Логин) AND ([Хеш_пароля] = @Original_Хеш_пароля) AND ((@IsNull_Дата_создания = 1 AND [Дата_создания] IS NULL) OR ([Дата_создания] = @Original_Дата_создания)))</CommandText>
@@ -689,47 +498,225 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ActiveSessionsTableAdapter" GeneratorDataComponentClassName="v_ActiveSessionsTableAdapter" Name="v_ActiveSessions" UserDataComponentName="v_ActiveSessionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.v_ActiveSessions" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_сессии, Время_заезда, Прошло_часов, Номер_места, Этаж, Гос_номер, Автомобиль, ФИО_клиента, Телефон_клиента, Оператор FROM dbo.v_ActiveSessions</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_сессии" DataSetColumn="ID_сессии" />
+              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
+              <Mapping SourceColumn="Прошло_часов" DataSetColumn="Прошло_часов" />
+              <Mapping SourceColumn="Номер_места" DataSetColumn="Номер_места" />
+              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
+              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+              <Mapping SourceColumn="ФИО_клиента" DataSetColumn="ФИО_клиента" />
+              <Mapping SourceColumn="Телефон_клиента" DataSetColumn="Телефон_клиента" />
+              <Mapping SourceColumn="Оператор" DataSetColumn="Оператор" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_DailyFinancialReportTableAdapter" GeneratorDataComponentClassName="v_DailyFinancialReportTableAdapter" Name="v_DailyFinancialReport" UserDataComponentName="v_DailyFinancialReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.v_DailyFinancialReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Дата, Количество_машин, Общая_выручка, Сотрудник_смены FROM dbo.v_DailyFinancialReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
+              <Mapping SourceColumn="Количество_машин" DataSetColumn="Количество_машин" />
+              <Mapping SourceColumn="Общая_выручка" DataSetColumn="Общая_выручка" />
+              <Mapping SourceColumn="Сотрудник_смены" DataSetColumn="Сотрудник_смены" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ParkingLotOverviewTableAdapter" GeneratorDataComponentClassName="v_ParkingLotOverviewTableAdapter" Name="v_ParkingLotOverview" UserDataComponentName="v_ParkingLotOverviewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.v_ParkingLotOverview" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Этаж, Мест_свободно, Мест_занято, Всего_мест FROM dbo.v_ParkingLotOverview</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
+              <Mapping SourceColumn="Мест_свободно" DataSetColumn="Мест_свободно" />
+              <Mapping SourceColumn="Мест_занято" DataSetColumn="Мест_занято" />
+              <Mapping SourceColumn="Всего_мест" DataSetColumn="Всего_мест" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_PaymentHistoryTableAdapter" GeneratorDataComponentClassName="v_PaymentHistoryTableAdapter" Name="v_PaymentHistory" UserDataComponentName="v_PaymentHistoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.v_PaymentHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_платежа, Дата_платежа, Сумма, Тариф, Время_заезда, Время_выезда, Длительность_минут, ФИО_клиента, Гос_номер, Автомобиль FROM dbo.v_PaymentHistory</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_платежа" DataSetColumn="ID_платежа" />
+              <Mapping SourceColumn="Дата_платежа" DataSetColumn="Дата_платежа" />
+              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
+              <Mapping SourceColumn="Тариф" DataSetColumn="Тариф" />
+              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
+              <Mapping SourceColumn="Время_выезда" DataSetColumn="Время_выезда" />
+              <Mapping SourceColumn="Длительность_минут" DataSetColumn="Длительность_минут" />
+              <Mapping SourceColumn="ФИО_клиента" DataSetColumn="ФИО_клиента" />
+              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_StatusParkingMapTableAdapter" GeneratorDataComponentClassName="v_StatusParkingMapTableAdapter" Name="v_StatusParkingMap" UserDataComponentName="v_StatusParkingMapTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.v_StatusParkingMap" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Номер места], Этаж, Статус, [Гос номер], [Время Заезда], Владелец, Телефон, Автомобиль FROM dbo.v_StatusParkingMap</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер места" DataSetColumn="Номер места" />
+              <Mapping SourceColumn="Этаж" DataSetColumn="Этаж" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
+              <Mapping SourceColumn="Гос номер" DataSetColumn="Гос номер" />
+              <Mapping SourceColumn="Время Заезда" DataSetColumn="Время Заезда" />
+              <Mapping SourceColumn="Владелец" DataSetColumn="Владелец" />
+              <Mapping SourceColumn="Телефон" DataSetColumn="Телефон" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_PaymentReportTableAdapter" GeneratorDataComponentClassName="vw_PaymentReportTableAdapter" Name="vw_PaymentReport" UserDataComponentName="vw_PaymentReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.vw_PaymentReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Дата_платежа, Длительность_мин, [Сумма платежа], Тип, Автомобиль, Владелец FROM dbo.vw_PaymentReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Дата_платежа" DataSetColumn="Дата_платежа" />
+              <Mapping SourceColumn="Длительность_мин" DataSetColumn="Длительность_мин" />
+              <Mapping SourceColumn="Сумма платежа" DataSetColumn="Сумма платежа" />
+              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+              <Mapping SourceColumn="Владелец" DataSetColumn="Владелец" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_SessionDetailsTableAdapter" GeneratorDataComponentClassName="vw_SessionDetailsTableAdapter" Name="vw_SessionDetails" UserDataComponentName="vw_SessionDetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.vw_SessionDetails" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Гос_номер, Номер_места, Время_заезда, Автомобиль, Телефон_владельца, ФИО_владельца FROM dbo.vw_SessionDetails</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
+              <Mapping SourceColumn="Номер_места" DataSetColumn="Номер_места" />
+              <Mapping SourceColumn="Время_заезда" DataSetColumn="Время_заезда" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+              <Mapping SourceColumn="Телефон_владельца" DataSetColumn="Телефон_владельца" />
+              <Mapping SourceColumn="ФИО_владельца" DataSetColumn="ФИО_владельца" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_VehicleRegistryTableAdapter" GeneratorDataComponentClassName="vw_VehicleRegistryTableAdapter" Name="vw_VehicleRegistry" UserDataComponentName="vw_VehicleRegistryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.vw_VehicleRegistry" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Гос_номер, Тип, Автомобиль, Телефон_владельца FROM dbo.vw_VehicleRegistry</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
+              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
+              <Mapping SourceColumn="Автомобиль" DataSetColumn="Автомобиль" />
+              <Mapping SourceColumn="Телефон_владельца" DataSetColumn="Телефон_владельца" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_EndSessionAndCreatePaymentTableAdapter" GeneratorDataComponentClassName="sp_EndSessionAndCreatePaymentTableAdapter" Name="sp_EndSessionAndCreatePayment" UserDataComponentName="sp_EndSessionAndCreatePaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_EndSessionAndCreatePayment" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_EndSessionAndCreatePayment</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сессии" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Рассчитанная_сумма" DataSetColumn="Рассчитанная_сумма" />
+              <Mapping SourceColumn="ID_тарифа" DataSetColumn="ID_тарифа" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_LoginUserTableAdapter" GeneratorDataComponentClassName="sp_LoginUserTableAdapter" Name="sp_LoginUser" UserDataComponentName="sp_LoginUserTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_LoginUser" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_LoginUser</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="32" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Пароль" Precision="0" ProviderType="VarChar" Scale="0" Size="32" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_сотрудника" DataSetColumn="ID_сотрудника" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Должность" DataSetColumn="Должность" />
+              <Mapping SourceColumn="Электронная_почта" DataSetColumn="Электронная_почта" />
+              <Mapping SourceColumn="Телефон" DataSetColumn="Телефон" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_LoginUser" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_LoginUser" MethodsParameterType="CLR" Modifier="Public" Name="sp_LoginUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_LoginUser">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.sp_LoginUser</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Пароль" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_RegisterUser" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_RegisterUser" MethodsParameterType="CLR" Modifier="Public" Name="sp_RegisterUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_RegisterUser">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.sp_RegisterUser</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сотрудника" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Пароль" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_StartSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_StartSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_StartSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_StartSession">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.sp_StartSession</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Гос_номер" Precision="0" ProviderType="VarChar" Scale="0" Size="9" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Номер_места" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сотрудника" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_AddEmployee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddEmployee" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddEmployee" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_AddEmployee">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_AddEmployee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_AddEmployee" MethodsParameterType="CLR" Modifier="Public" Name="sp_AddEmployee" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_AddEmployee">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_AddEmployee</CommandText>
@@ -743,7 +730,7 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_CloseParkingSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_CloseParkingSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_CloseParkingSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="sp_CloseParkingSession">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_CloseParkingSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_CloseParkingSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_CloseParkingSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="sp_CloseParkingSession">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_CloseParkingSession</CommandText>
@@ -755,7 +742,7 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_CreateParkingSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_CreateParkingSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_CreateParkingSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="sp_CreateParkingSession">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_CreateParkingSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_CreateParkingSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_CreateParkingSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="sp_CreateParkingSession">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_CreateParkingSession</CommandText>
@@ -769,7 +756,7 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_DeleteEmployee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_DeleteEmployee" MethodsParameterType="CLR" Modifier="Public" Name="sp_DeleteEmployee" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="sp_DeleteEmployee">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_DeleteEmployee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_DeleteEmployee" MethodsParameterType="CLR" Modifier="Public" Name="sp_DeleteEmployee" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="sp_DeleteEmployee">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_DeleteEmployee</CommandText>
@@ -780,7 +767,33 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_UpdateEmployeeCredentials" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateEmployeeCredentials" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateEmployeeCredentials" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="sp_UpdateEmployeeCredentials">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_RegisterUser" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_RegisterUser" MethodsParameterType="CLR" Modifier="Public" Name="sp_RegisterUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="sp_RegisterUser">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.sp_RegisterUser</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сотрудника" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="32" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Пароль" Precision="0" ProviderType="NVarChar" Scale="0" Size="32" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_StartSession" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_StartSession" MethodsParameterType="CLR" Modifier="Public" Name="sp_StartSession" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="sp_StartSession">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.sp_StartSession</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Гос_номер" Precision="0" ProviderType="VarChar" Scale="0" Size="9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Номер_места" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_сотрудника" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_UpdateEmployeeCredentials" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateEmployeeCredentials" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateEmployeeCredentials" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="sp_UpdateEmployeeCredentials">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_UpdateEmployeeCredentials</CommandText>
@@ -793,7 +806,7 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="Park_spotConnectionString (Settings)" DbObjectName="Park_spot.dbo.sp_UpdateEmployeeProfile" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateEmployeeProfile" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateEmployeeProfile" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="sp_UpdateEmployeeProfile">
+          <DbSource ConnectionRef="Park_spotConnectionString ()" DbObjectName="Park_spot.dbo.sp_UpdateEmployeeProfile" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_UpdateEmployeeProfile" MethodsParameterType="CLR" Modifier="Public" Name="sp_UpdateEmployeeProfile" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="sp_UpdateEmployeeProfile">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.sp_UpdateEmployeeProfile</CommandText>
@@ -811,324 +824,61 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Park_spotDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Park_spotDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Park_spotDataSet">
+  <xs:element name="Park_spotDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Park_spotDataSet2" msprop:Generator_DataSetName="Park_spotDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_ActiveSessions" msprop:Generator_RowEvHandlerName="v_ActiveSessionsRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ActiveSessionsRowDeleted" msprop:Generator_RowDeletingName="v_ActiveSessionsRowDeleting" msprop:Generator_RowEvArgName="v_ActiveSessionsRowChangeEvent" msprop:Generator_TablePropName="v_ActiveSessions" msprop:Generator_RowChangedName="v_ActiveSessionsRowChanged" msprop:Generator_UserTableName="v_ActiveSessions" msprop:Generator_RowChangingName="v_ActiveSessionsRowChanging" msprop:Generator_RowClassName="v_ActiveSessionsRow" msprop:Generator_TableClassName="v_ActiveSessionsDataTable" msprop:Generator_TableVarName="tablev_ActiveSessions">
+        <xs:element name="Клиент" msprop:Generator_RowEvHandlerName="КлиентRowChangeEventHandler" msprop:Generator_RowDeletedName="КлиентRowDeleted" msprop:Generator_RowDeletingName="КлиентRowDeleting" msprop:Generator_RowEvArgName="КлиентRowChangeEvent" msprop:Generator_TablePropName="Клиент" msprop:Generator_RowChangedName="КлиентRowChanged" msprop:Generator_RowChangingName="КлиентRowChanging" msprop:Generator_TableClassName="КлиентDataTable" msprop:Generator_RowClassName="КлиентRow" msprop:Generator_TableVarName="tableКлиент" msprop:Generator_UserTableName="Клиент">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_сессии" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_UserColumnName="ID_сессии" msprop:Generator_ColumnVarNameInTable="columnID_сессии" type="xs:int" />
-              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_UserColumnName="Время_заезда" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" type="xs:dateTime" />
-              <xs:element name="Прошло_часов" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Прошло_часовColumn" msprop:Generator_ColumnPropNameInRow="Прошло_часов" msprop:Generator_UserColumnName="Прошло_часов" msprop:Generator_ColumnVarNameInTable="columnПрошло_часов" type="xs:int" minOccurs="0" />
-              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_UserColumnName="Номер_места" msprop:Generator_ColumnVarNameInTable="columnНомер_места" type="xs:int" />
-              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_UserColumnName="Этаж" msprop:Generator_ColumnVarNameInTable="columnЭтаж" type="xs:int" />
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="9" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ФИО_клиента" msprop:Generator_ColumnPropNameInTable="ФИО_клиентаColumn" msprop:Generator_ColumnPropNameInRow="ФИО_клиента" msprop:Generator_UserColumnName="ФИО_клиента" msprop:Generator_ColumnVarNameInTable="columnФИО_клиента">
+              <xs:element name="ID_клиента" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_клиента" msprop:Generator_ColumnPropNameInTable="ID_клиентаColumn" msprop:Generator_ColumnVarNameInTable="columnID_клиента" msprop:Generator_UserColumnName="ID_клиента" type="xs:int" />
+              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_UserColumnName="ФИО">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Телефон_клиента" msprop:Generator_ColumnPropNameInTable="Телефон_клиентаColumn" msprop:Generator_ColumnPropNameInRow="Телефон_клиента" msprop:Generator_UserColumnName="Телефон_клиента" msprop:Generator_ColumnVarNameInTable="columnТелефон_клиента">
+              <xs:element name="Электронная_почта" msprop:Generator_ColumnPropNameInRow="Электронная_почта" msprop:Generator_ColumnPropNameInTable="Электронная_почтаColumn" msprop:Generator_ColumnVarNameInTable="columnЭлектронная_почта" msprop:Generator_UserColumnName="Электронная_почта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон" msprop:Generator_UserColumnName="Телефон">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Оператор" msprop:Generator_ColumnPropNameInTable="ОператорColumn" msprop:Generator_ColumnPropNameInRow="Оператор" msprop:Generator_UserColumnName="Оператор" msprop:Generator_ColumnVarNameInTable="columnОператор">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="v_ParkingLotOverview" msprop:Generator_RowEvHandlerName="v_ParkingLotOverviewRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ParkingLotOverviewRowDeleted" msprop:Generator_RowDeletingName="v_ParkingLotOverviewRowDeleting" msprop:Generator_RowEvArgName="v_ParkingLotOverviewRowChangeEvent" msprop:Generator_TablePropName="v_ParkingLotOverview" msprop:Generator_RowChangedName="v_ParkingLotOverviewRowChanged" msprop:Generator_UserTableName="v_ParkingLotOverview" msprop:Generator_RowChangingName="v_ParkingLotOverviewRowChanging" msprop:Generator_RowClassName="v_ParkingLotOverviewRow" msprop:Generator_TableClassName="v_ParkingLotOverviewDataTable" msprop:Generator_TableVarName="tablev_ParkingLotOverview">
+        <xs:element name="Парковочная_сессия" msprop:Generator_RowEvHandlerName="Парковочная_сессияRowChangeEventHandler" msprop:Generator_RowDeletedName="Парковочная_сессияRowDeleted" msprop:Generator_RowDeletingName="Парковочная_сессияRowDeleting" msprop:Generator_RowEvArgName="Парковочная_сессияRowChangeEvent" msprop:Generator_TablePropName="Парковочная_сессия" msprop:Generator_RowChangedName="Парковочная_сессияRowChanged" msprop:Generator_RowChangingName="Парковочная_сессияRowChanging" msprop:Generator_TableClassName="Парковочная_сессияDataTable" msprop:Generator_RowClassName="Парковочная_сессияRow" msprop:Generator_TableVarName="tableПарковочная_сессия" msprop:Generator_UserTableName="Парковочная_сессия">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_UserColumnName="Этаж" msprop:Generator_ColumnVarNameInTable="columnЭтаж" type="xs:int" />
-              <xs:element name="Мест_свободно" msprop:Generator_ColumnPropNameInTable="Мест_свободноColumn" msprop:Generator_ColumnPropNameInRow="Мест_свободно" msprop:Generator_UserColumnName="Мест_свободно" msprop:Generator_ColumnVarNameInTable="columnМест_свободно" type="xs:int" minOccurs="0" />
-              <xs:element name="Мест_занято" msprop:Generator_ColumnPropNameInTable="Мест_занятоColumn" msprop:Generator_ColumnPropNameInRow="Мест_занято" msprop:Generator_UserColumnName="Мест_занято" msprop:Generator_ColumnVarNameInTable="columnМест_занято" type="xs:int" minOccurs="0" />
-              <xs:element name="Всего_мест" msprop:Generator_ColumnPropNameInTable="Всего_местColumn" msprop:Generator_ColumnPropNameInRow="Всего_мест" msprop:Generator_UserColumnName="Всего_мест" msprop:Generator_ColumnVarNameInTable="columnВсего_мест" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="v_PaymentHistory" msprop:Generator_RowEvHandlerName="v_PaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="v_PaymentHistoryRowDeleted" msprop:Generator_RowDeletingName="v_PaymentHistoryRowDeleting" msprop:Generator_RowEvArgName="v_PaymentHistoryRowChangeEvent" msprop:Generator_TablePropName="v_PaymentHistory" msprop:Generator_RowChangedName="v_PaymentHistoryRowChanged" msprop:Generator_UserTableName="v_PaymentHistory" msprop:Generator_RowChangingName="v_PaymentHistoryRowChanging" msprop:Generator_RowClassName="v_PaymentHistoryRow" msprop:Generator_TableClassName="v_PaymentHistoryDataTable" msprop:Generator_TableVarName="tablev_PaymentHistory">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID_платежа" msprop:Generator_ColumnPropNameInTable="ID_платежаColumn" msprop:Generator_ColumnPropNameInRow="ID_платежа" msprop:Generator_UserColumnName="ID_платежа" msprop:Generator_ColumnVarNameInTable="columnID_платежа" type="xs:int" />
-              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_UserColumnName="Дата_платежа" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" type="xs:dateTime" />
-              <xs:element name="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_UserColumnName="Сумма" msprop:Generator_ColumnVarNameInTable="columnСумма" type="xs:decimal" />
-              <xs:element name="Тариф" msprop:Generator_ColumnPropNameInTable="ТарифColumn" msprop:Generator_ColumnPropNameInRow="Тариф" msprop:Generator_UserColumnName="Тариф" msprop:Generator_ColumnVarNameInTable="columnТариф">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_UserColumnName="Время_заезда" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" type="xs:dateTime" />
-              <xs:element name="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_UserColumnName="Время_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Длительность_минут" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Длительность_минутColumn" msprop:Generator_ColumnPropNameInRow="Длительность_минут" msprop:Generator_UserColumnName="Длительность_минут" msprop:Generator_ColumnVarNameInTable="columnДлительность_минут" type="xs:int" minOccurs="0" />
-              <xs:element name="ФИО_клиента" msprop:Generator_ColumnPropNameInTable="ФИО_клиентаColumn" msprop:Generator_ColumnPropNameInRow="ФИО_клиента" msprop:Generator_UserColumnName="ФИО_клиента" msprop:Generator_ColumnVarNameInTable="columnФИО_клиента">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="9" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="sp_EndSessionAndCreatePayment" msprop:Generator_RowEvHandlerName="sp_EndSessionAndCreatePaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_EndSessionAndCreatePaymentRowDeleted" msprop:Generator_RowDeletingName="sp_EndSessionAndCreatePaymentRowDeleting" msprop:Generator_RowEvArgName="sp_EndSessionAndCreatePaymentRowChangeEvent" msprop:Generator_TablePropName="sp_EndSessionAndCreatePayment" msprop:Generator_RowChangedName="sp_EndSessionAndCreatePaymentRowChanged" msprop:Generator_UserTableName="sp_EndSessionAndCreatePayment" msprop:Generator_RowChangingName="sp_EndSessionAndCreatePaymentRowChanging" msprop:Generator_RowClassName="sp_EndSessionAndCreatePaymentRow" msprop:Generator_TableClassName="sp_EndSessionAndCreatePaymentDataTable" msprop:Generator_TableVarName="tablesp_EndSessionAndCreatePayment">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Рассчитанная_сумма" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Рассчитанная_суммаColumn" msprop:Generator_ColumnPropNameInRow="Рассчитанная_сумма" msprop:Generator_UserColumnName="Рассчитанная_сумма" msprop:Generator_ColumnVarNameInTable="columnРассчитанная_сумма" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ID_тарифа" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="v_DailyFinancialReport" msprop:Generator_RowEvHandlerName="v_DailyFinancialReportRowChangeEventHandler" msprop:Generator_RowDeletedName="v_DailyFinancialReportRowDeleted" msprop:Generator_RowDeletingName="v_DailyFinancialReportRowDeleting" msprop:Generator_RowEvArgName="v_DailyFinancialReportRowChangeEvent" msprop:Generator_TablePropName="v_DailyFinancialReport" msprop:Generator_RowChangedName="v_DailyFinancialReportRowChanged" msprop:Generator_UserTableName="v_DailyFinancialReport" msprop:Generator_RowChangingName="v_DailyFinancialReportRowChanging" msprop:Generator_RowClassName="v_DailyFinancialReportRow" msprop:Generator_TableClassName="v_DailyFinancialReportDataTable" msprop:Generator_TableVarName="tablev_DailyFinancialReport">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_UserColumnName="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Количество_машин" msprop:Generator_ColumnPropNameInTable="Количество_машинColumn" msprop:Generator_ColumnPropNameInRow="Количество_машин" msprop:Generator_UserColumnName="Количество_машин" msprop:Generator_ColumnVarNameInTable="columnКоличество_машин" type="xs:int" minOccurs="0" />
-              <xs:element name="Общая_выручка" msprop:Generator_ColumnPropNameInTable="Общая_выручкаColumn" msprop:Generator_ColumnPropNameInRow="Общая_выручка" msprop:Generator_UserColumnName="Общая_выручка" msprop:Generator_ColumnVarNameInTable="columnОбщая_выручка" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Сотрудник_смены" msprop:Generator_ColumnPropNameInTable="Сотрудник_сменыColumn" msprop:Generator_ColumnPropNameInRow="Сотрудник_смены" msprop:Generator_UserColumnName="Сотрудник_смены" msprop:Generator_ColumnVarNameInTable="columnСотрудник_смены">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="v_StatusParkingMap" msprop:Generator_RowEvHandlerName="v_StatusParkingMapRowChangeEventHandler" msprop:Generator_RowDeletedName="v_StatusParkingMapRowDeleted" msprop:Generator_RowDeletingName="v_StatusParkingMapRowDeleting" msprop:Generator_RowEvArgName="v_StatusParkingMapRowChangeEvent" msprop:Generator_TablePropName="v_StatusParkingMap" msprop:Generator_RowChangedName="v_StatusParkingMapRowChanged" msprop:Generator_UserTableName="v_StatusParkingMap" msprop:Generator_RowChangingName="v_StatusParkingMapRowChanging" msprop:Generator_RowClassName="v_StatusParkingMapRow" msprop:Generator_TableClassName="v_StatusParkingMapDataTable" msprop:Generator_TableVarName="tablev_StatusParkingMap">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Номер_x0020_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_UserColumnName="Номер места" msprop:Generator_ColumnVarNameInTable="columnНомер_места" type="xs:int" />
-              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_UserColumnName="Этаж" msprop:Generator_ColumnVarNameInTable="columnЭтаж" type="xs:int" />
-              <xs:element name="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Гос_x0020_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер" minOccurs="0">
+              <xs:element name="ID_сессии" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnVarNameInTable="columnID_сессии" msprop:Generator_UserColumnName="ID_сессии" type="xs:int" />
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Время_x0020_Заезда" msprop:Generator_ColumnPropNameInTable="Время_ЗаездаColumn" msprop:Generator_ColumnPropNameInRow="Время_Заезда" msprop:Generator_UserColumnName="Время Заезда" msprop:Generator_ColumnVarNameInTable="columnВремя_Заезда" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Владелец" msprop:Generator_ColumnPropNameInTable="ВладелецColumn" msprop:Generator_ColumnPropNameInRow="Владелец" msprop:Generator_UserColumnName="Владелец" msprop:Generator_ColumnVarNameInTable="columnВладелец" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnVarNameInTable="columnНомер_места" msprop:Generator_UserColumnName="Номер_места" type="xs:int" />
+              <xs:element name="ID_сотрудника" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" type="xs:int" />
+              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" msprop:Generator_UserColumnName="Время_заезда" type="xs:dateTime" />
+              <xs:element name="Время_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_UserColumnName="Время_выезда" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_PaymentReport" msprop:Generator_RowEvHandlerName="vw_PaymentReportRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_PaymentReportRowDeleted" msprop:Generator_RowDeletingName="vw_PaymentReportRowDeleting" msprop:Generator_RowEvArgName="vw_PaymentReportRowChangeEvent" msprop:Generator_TablePropName="vw_PaymentReport" msprop:Generator_RowChangedName="vw_PaymentReportRowChanged" msprop:Generator_UserTableName="vw_PaymentReport" msprop:Generator_RowChangingName="vw_PaymentReportRowChanging" msprop:Generator_RowClassName="vw_PaymentReportRow" msprop:Generator_TableClassName="vw_PaymentReportDataTable" msprop:Generator_TableVarName="tablevw_PaymentReport">
+        <xs:element name="Парковочное_место" msprop:Generator_RowEvHandlerName="Парковочное_местоRowChangeEventHandler" msprop:Generator_RowDeletedName="Парковочное_местоRowDeleted" msprop:Generator_RowDeletingName="Парковочное_местоRowDeleting" msprop:Generator_RowEvArgName="Парковочное_местоRowChangeEvent" msprop:Generator_TablePropName="Парковочное_место" msprop:Generator_RowChangedName="Парковочное_местоRowChanged" msprop:Generator_RowChangingName="Парковочное_местоRowChanging" msprop:Generator_TableClassName="Парковочное_местоDataTable" msprop:Generator_RowClassName="Парковочное_местоRow" msprop:Generator_TableVarName="tableПарковочное_место" msprop:Generator_UserTableName="Парковочное_место">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_UserColumnName="Дата_платежа" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" type="xs:dateTime" />
-              <xs:element name="Длительность_мин" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Длительность_минColumn" msprop:Generator_ColumnPropNameInRow="Длительность_мин" msprop:Generator_UserColumnName="Длительность_мин" msprop:Generator_ColumnVarNameInTable="columnДлительность_мин" type="xs:int" minOccurs="0" />
-              <xs:element name="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_UserColumnName="Тип" msprop:Generator_ColumnVarNameInTable="columnТип">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Владелец" msprop:Generator_ColumnPropNameInTable="ВладелецColumn" msprop:Generator_ColumnPropNameInRow="Владелец" msprop:Generator_UserColumnName="Владелец" msprop:Generator_ColumnVarNameInTable="columnВладелец">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="vw_SessionDetails" msprop:Generator_RowEvHandlerName="vw_SessionDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_SessionDetailsRowDeleted" msprop:Generator_RowDeletingName="vw_SessionDetailsRowDeleting" msprop:Generator_RowEvArgName="vw_SessionDetailsRowChangeEvent" msprop:Generator_TablePropName="vw_SessionDetails" msprop:Generator_RowChangedName="vw_SessionDetailsRowChanged" msprop:Generator_UserTableName="vw_SessionDetails" msprop:Generator_RowChangingName="vw_SessionDetailsRowChanging" msprop:Generator_RowClassName="vw_SessionDetailsRow" msprop:Generator_TableClassName="vw_SessionDetailsDataTable" msprop:Generator_TableVarName="tablevw_SessionDetails">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_UserColumnName="Номер_места" msprop:Generator_ColumnVarNameInTable="columnНомер_места" type="xs:int" />
-              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_UserColumnName="Время_заезда" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" type="xs:dateTime" />
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Телефон_владельца" msprop:Generator_ColumnPropNameInTable="Телефон_владельцаColumn" msprop:Generator_ColumnPropNameInRow="Телефон_владельца" msprop:Generator_UserColumnName="Телефон_владельца" msprop:Generator_ColumnVarNameInTable="columnТелефон_владельца">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ФИО_владельца" msprop:Generator_ColumnPropNameInTable="ФИО_владельцаColumn" msprop:Generator_ColumnPropNameInRow="ФИО_владельца" msprop:Generator_UserColumnName="ФИО_владельца" msprop:Generator_ColumnVarNameInTable="columnФИО_владельца">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="vw_VehicleRegistry" msprop:Generator_RowEvHandlerName="vw_VehicleRegistryRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_VehicleRegistryRowDeleted" msprop:Generator_RowDeletingName="vw_VehicleRegistryRowDeleting" msprop:Generator_RowEvArgName="vw_VehicleRegistryRowChangeEvent" msprop:Generator_TablePropName="vw_VehicleRegistry" msprop:Generator_RowChangedName="vw_VehicleRegistryRowChanged" msprop:Generator_UserTableName="vw_VehicleRegistry" msprop:Generator_RowChangingName="vw_VehicleRegistryRowChanging" msprop:Generator_RowClassName="vw_VehicleRegistryRow" msprop:Generator_TableClassName="vw_VehicleRegistryDataTable" msprop:Generator_TableVarName="tablevw_VehicleRegistry">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_UserColumnName="Тип" msprop:Generator_ColumnVarNameInTable="columnТип">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_UserColumnName="Автомобиль" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Телефон_владельца" msprop:Generator_ColumnPropNameInTable="Телефон_владельцаColumn" msprop:Generator_ColumnPropNameInRow="Телефон_владельца" msprop:Generator_UserColumnName="Телефон_владельца" msprop:Generator_ColumnVarNameInTable="columnТелефон_владельца">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Клиент" msprop:Generator_RowEvHandlerName="КлиентRowChangeEventHandler" msprop:Generator_RowDeletedName="КлиентRowDeleted" msprop:Generator_RowDeletingName="КлиентRowDeleting" msprop:Generator_RowEvArgName="КлиентRowChangeEvent" msprop:Generator_TablePropName="Клиент" msprop:Generator_RowChangedName="КлиентRowChanged" msprop:Generator_UserTableName="Клиент" msprop:Generator_RowChangingName="КлиентRowChanging" msprop:Generator_RowClassName="КлиентRow" msprop:Generator_TableClassName="КлиентDataTable" msprop:Generator_TableVarName="tableКлиент">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID_клиента" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_клиентаColumn" msprop:Generator_ColumnPropNameInRow="ID_клиента" msprop:Generator_UserColumnName="ID_клиента" msprop:Generator_ColumnVarNameInTable="columnID_клиента" type="xs:int" />
-              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_UserColumnName="ФИО" msprop:Generator_ColumnVarNameInTable="columnФИО">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Электронная_почта" msprop:Generator_ColumnPropNameInTable="Электронная_почтаColumn" msprop:Generator_ColumnPropNameInRow="Электронная_почта" msprop:Generator_UserColumnName="Электронная_почта" msprop:Generator_ColumnVarNameInTable="columnЭлектронная_почта" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Парковочная_сессия" msprop:Generator_RowEvHandlerName="Парковочная_сессияRowChangeEventHandler" msprop:Generator_RowDeletedName="Парковочная_сессияRowDeleted" msprop:Generator_RowDeletingName="Парковочная_сессияRowDeleting" msprop:Generator_RowEvArgName="Парковочная_сессияRowChangeEvent" msprop:Generator_TablePropName="Парковочная_сессия" msprop:Generator_RowChangedName="Парковочная_сессияRowChanged" msprop:Generator_UserTableName="Парковочная_сессия" msprop:Generator_RowChangingName="Парковочная_сессияRowChanging" msprop:Generator_RowClassName="Парковочная_сессияRow" msprop:Generator_TableClassName="Парковочная_сессияDataTable" msprop:Generator_TableVarName="tableПарковочная_сессия">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID_сессии" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_UserColumnName="ID_сессии" msprop:Generator_ColumnVarNameInTable="columnID_сессии" type="xs:int" />
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_UserColumnName="Номер_места" msprop:Generator_ColumnVarNameInTable="columnНомер_места" type="xs:int" />
-              <xs:element name="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" type="xs:int" />
-              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_UserColumnName="Время_заезда" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" type="xs:dateTime" />
-              <xs:element name="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_UserColumnName="Время_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Парковочное_место" msprop:Generator_RowEvHandlerName="Парковочное_местоRowChangeEventHandler" msprop:Generator_RowDeletedName="Парковочное_местоRowDeleted" msprop:Generator_RowDeletingName="Парковочное_местоRowDeleting" msprop:Generator_RowEvArgName="Парковочное_местоRowChangeEvent" msprop:Generator_TablePropName="Парковочное_место" msprop:Generator_RowChangedName="Парковочное_местоRowChanged" msprop:Generator_UserTableName="Парковочное_место" msprop:Generator_RowChangingName="Парковочное_местоRowChanging" msprop:Generator_RowClassName="Парковочное_местоRow" msprop:Generator_TableClassName="Парковочное_местоDataTable" msprop:Generator_TableVarName="tableПарковочное_место">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_UserColumnName="Номер_места" msprop:Generator_ColumnVarNameInTable="columnНомер_места" type="xs:int" />
-              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_UserColumnName="Этаж" msprop:Generator_ColumnVarNameInTable="columnЭтаж" type="xs:int" />
-              <xs:element name="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус">
+              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnVarNameInTable="columnНомер_места" msprop:Generator_UserColumnName="Номер_места" type="xs:int" />
+              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnVarNameInTable="columnЭтаж" msprop:Generator_UserColumnName="Этаж" type="xs:int" />
+              <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
@@ -1138,43 +888,43 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Платёж" msprop:Generator_RowEvHandlerName="ПлатёжRowChangeEventHandler" msprop:Generator_RowDeletedName="ПлатёжRowDeleted" msprop:Generator_RowDeletingName="ПлатёжRowDeleting" msprop:Generator_RowEvArgName="ПлатёжRowChangeEvent" msprop:Generator_TablePropName="Платёж" msprop:Generator_RowChangedName="ПлатёжRowChanged" msprop:Generator_UserTableName="Платёж" msprop:Generator_RowChangingName="ПлатёжRowChanging" msprop:Generator_RowClassName="ПлатёжRow" msprop:Generator_TableClassName="ПлатёжDataTable" msprop:Generator_TableVarName="tableПлатёж">
+        <xs:element name="Платёж" msprop:Generator_RowEvHandlerName="ПлатёжRowChangeEventHandler" msprop:Generator_RowDeletedName="ПлатёжRowDeleted" msprop:Generator_RowDeletingName="ПлатёжRowDeleting" msprop:Generator_RowEvArgName="ПлатёжRowChangeEvent" msprop:Generator_TablePropName="Платёж" msprop:Generator_RowChangedName="ПлатёжRowChanged" msprop:Generator_RowChangingName="ПлатёжRowChanging" msprop:Generator_TableClassName="ПлатёжDataTable" msprop:Generator_RowClassName="ПлатёжRow" msprop:Generator_TableVarName="tableПлатёж" msprop:Generator_UserTableName="Платёж">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_платежа" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_платежаColumn" msprop:Generator_ColumnPropNameInRow="ID_платежа" msprop:Generator_UserColumnName="ID_платежа" msprop:Generator_ColumnVarNameInTable="columnID_платежа" type="xs:int" />
-              <xs:element name="ID_сессии" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_UserColumnName="ID_сессии" msprop:Generator_ColumnVarNameInTable="columnID_сессии" type="xs:int" />
-              <xs:element name="ID_тарифа" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" type="xs:int" />
-              <xs:element name="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_UserColumnName="Сумма" msprop:Generator_ColumnVarNameInTable="columnСумма" type="xs:decimal" />
-              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_UserColumnName="Дата_платежа" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" type="xs:dateTime" />
+              <xs:element name="ID_платежа" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_платежа" msprop:Generator_ColumnPropNameInTable="ID_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnID_платежа" msprop:Generator_UserColumnName="ID_платежа" type="xs:int" />
+              <xs:element name="ID_сессии" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnVarNameInTable="columnID_сессии" msprop:Generator_UserColumnName="ID_сессии" type="xs:int" />
+              <xs:element name="ID_тарифа" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" type="xs:int" />
+              <xs:element name="Сумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" />
+              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" msprop:Generator_UserColumnName="Дата_платежа" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Сотрудник" msprop:Generator_RowEvHandlerName="СотрудникRowChangeEventHandler" msprop:Generator_RowDeletedName="СотрудникRowDeleted" msprop:Generator_RowDeletingName="СотрудникRowDeleting" msprop:Generator_RowEvArgName="СотрудникRowChangeEvent" msprop:Generator_TablePropName="Сотрудник" msprop:Generator_RowChangedName="СотрудникRowChanged" msprop:Generator_UserTableName="Сотрудник" msprop:Generator_RowChangingName="СотрудникRowChanging" msprop:Generator_RowClassName="СотрудникRow" msprop:Generator_TableClassName="СотрудникDataTable" msprop:Generator_TableVarName="tableСотрудник">
+        <xs:element name="Сотрудник" msprop:Generator_RowEvHandlerName="СотрудникRowChangeEventHandler" msprop:Generator_RowDeletedName="СотрудникRowDeleted" msprop:Generator_RowDeletingName="СотрудникRowDeleting" msprop:Generator_RowEvArgName="СотрудникRowChangeEvent" msprop:Generator_TablePropName="Сотрудник" msprop:Generator_RowChangedName="СотрудникRowChanged" msprop:Generator_RowChangingName="СотрудникRowChanging" msprop:Generator_TableClassName="СотрудникDataTable" msprop:Generator_RowClassName="СотрудникRow" msprop:Generator_TableVarName="tableСотрудник" msprop:Generator_UserTableName="Сотрудник">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_сотрудника" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" type="xs:int" />
-              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_UserColumnName="ФИО" msprop:Generator_ColumnVarNameInTable="columnФИО">
+              <xs:element name="ID_сотрудника" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" type="xs:int" />
+              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_UserColumnName="ФИО">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_UserColumnName="Должность" msprop:Generator_ColumnVarNameInTable="columnДолжность">
+              <xs:element name="Должность" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnVarNameInTable="columnДолжность" msprop:Generator_UserColumnName="Должность">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="18" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Электронная_почта" msprop:Generator_ColumnPropNameInTable="Электронная_почтаColumn" msprop:Generator_ColumnPropNameInRow="Электронная_почта" msprop:Generator_UserColumnName="Электронная_почта" msprop:Generator_ColumnVarNameInTable="columnЭлектронная_почта" minOccurs="0">
+              <xs:element name="Электронная_почта" msprop:Generator_ColumnPropNameInRow="Электронная_почта" msprop:Generator_ColumnPropNameInTable="Электронная_почтаColumn" msprop:Generator_ColumnVarNameInTable="columnЭлектронная_почта" msprop:Generator_UserColumnName="Электронная_почта" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон">
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон" msprop:Generator_UserColumnName="Телефон">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -1184,48 +934,48 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Тариф" msprop:Generator_RowEvHandlerName="ТарифRowChangeEventHandler" msprop:Generator_RowDeletedName="ТарифRowDeleted" msprop:Generator_RowDeletingName="ТарифRowDeleting" msprop:Generator_RowEvArgName="ТарифRowChangeEvent" msprop:Generator_TablePropName="Тариф" msprop:Generator_RowChangedName="ТарифRowChanged" msprop:Generator_UserTableName="Тариф" msprop:Generator_RowChangingName="ТарифRowChanging" msprop:Generator_RowClassName="ТарифRow" msprop:Generator_TableClassName="ТарифDataTable" msprop:Generator_TableVarName="tableТариф">
+        <xs:element name="Тариф" msprop:Generator_RowEvHandlerName="ТарифRowChangeEventHandler" msprop:Generator_RowDeletedName="ТарифRowDeleted" msprop:Generator_RowDeletingName="ТарифRowDeleting" msprop:Generator_RowEvArgName="ТарифRowChangeEvent" msprop:Generator_TablePropName="Тариф" msprop:Generator_RowChangedName="ТарифRowChanged" msprop:Generator_RowChangingName="ТарифRowChanging" msprop:Generator_TableClassName="ТарифDataTable" msprop:Generator_RowClassName="ТарифRow" msprop:Generator_TableVarName="tableТариф" msprop:Generator_UserTableName="Тариф">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_тарифа" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" type="xs:int" />
-              <xs:element name="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_UserColumnName="Наименование" msprop:Generator_ColumnVarNameInTable="columnНаименование">
+              <xs:element name="ID_тарифа" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" type="xs:int" />
+              <xs:element name="Наименование" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnVarNameInTable="columnНаименование" msprop:Generator_UserColumnName="Наименование">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Продолжительность_часов" msprop:Generator_ColumnPropNameInTable="Продолжительность_часовColumn" msprop:Generator_ColumnPropNameInRow="Продолжительность_часов" msprop:Generator_UserColumnName="Продолжительность_часов" msprop:Generator_ColumnVarNameInTable="columnПродолжительность_часов" type="xs:int" />
-              <xs:element name="Стоимость" msprop:Generator_ColumnPropNameInTable="СтоимостьColumn" msprop:Generator_ColumnPropNameInRow="Стоимость" msprop:Generator_UserColumnName="Стоимость" msprop:Generator_ColumnVarNameInTable="columnСтоимость" type="xs:decimal" />
+              <xs:element name="Продолжительность_часов" msprop:Generator_ColumnPropNameInRow="Продолжительность_часов" msprop:Generator_ColumnPropNameInTable="Продолжительность_часовColumn" msprop:Generator_ColumnVarNameInTable="columnПродолжительность_часов" msprop:Generator_UserColumnName="Продолжительность_часов" type="xs:int" />
+              <xs:element name="Стоимость" msprop:Generator_ColumnPropNameInRow="Стоимость" msprop:Generator_ColumnPropNameInTable="СтоимостьColumn" msprop:Generator_ColumnVarNameInTable="columnСтоимость" msprop:Generator_UserColumnName="Стоимость" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ТС" msprop:Generator_RowEvHandlerName="ТСRowChangeEventHandler" msprop:Generator_RowDeletedName="ТСRowDeleted" msprop:Generator_RowDeletingName="ТСRowDeleting" msprop:Generator_RowEvArgName="ТСRowChangeEvent" msprop:Generator_TablePropName="ТС" msprop:Generator_RowChangedName="ТСRowChanged" msprop:Generator_UserTableName="ТС" msprop:Generator_RowChangingName="ТСRowChanging" msprop:Generator_RowClassName="ТСRow" msprop:Generator_TableClassName="ТСDataTable" msprop:Generator_TableVarName="tableТС">
+        <xs:element name="ТС" msprop:Generator_RowEvHandlerName="ТСRowChangeEventHandler" msprop:Generator_RowDeletedName="ТСRowDeleted" msprop:Generator_RowDeletingName="ТСRowDeleting" msprop:Generator_RowEvArgName="ТСRowChangeEvent" msprop:Generator_TablePropName="ТС" msprop:Generator_RowChangedName="ТСRowChanged" msprop:Generator_RowChangingName="ТСRowChanging" msprop:Generator_TableClassName="ТСDataTable" msprop:Generator_RowClassName="ТСRow" msprop:Generator_TableVarName="tableТС" msprop:Generator_UserTableName="ТС">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_UserColumnName="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер">
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_клиента" msprop:Generator_ColumnPropNameInTable="ID_клиентаColumn" msprop:Generator_ColumnPropNameInRow="ID_клиента" msprop:Generator_UserColumnName="ID_клиента" msprop:Generator_ColumnVarNameInTable="columnID_клиента" type="xs:int" />
-              <xs:element name="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_UserColumnName="Тип" msprop:Generator_ColumnVarNameInTable="columnТип">
+              <xs:element name="ID_клиента" msprop:Generator_ColumnPropNameInRow="ID_клиента" msprop:Generator_ColumnPropNameInTable="ID_клиентаColumn" msprop:Generator_ColumnVarNameInTable="columnID_клиента" msprop:Generator_UserColumnName="ID_клиента" type="xs:int" />
+              <xs:element name="Тип" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnVarNameInTable="columnТип" msprop:Generator_UserColumnName="Тип">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Марка" msprop:Generator_ColumnPropNameInTable="МаркаColumn" msprop:Generator_ColumnPropNameInRow="Марка" msprop:Generator_UserColumnName="Марка" msprop:Generator_ColumnVarNameInTable="columnМарка">
+              <xs:element name="Марка" msprop:Generator_ColumnPropNameInRow="Марка" msprop:Generator_ColumnPropNameInTable="МаркаColumn" msprop:Generator_ColumnVarNameInTable="columnМарка" msprop:Generator_UserColumnName="Марка">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="31" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Модель" msprop:Generator_ColumnPropNameInTable="МодельColumn" msprop:Generator_ColumnPropNameInRow="Модель" msprop:Generator_UserColumnName="Модель" msprop:Generator_ColumnVarNameInTable="columnМодель">
+              <xs:element name="Модель" msprop:Generator_ColumnPropNameInRow="Модель" msprop:Generator_ColumnPropNameInTable="МодельColumn" msprop:Generator_ColumnVarNameInTable="columnМодель" msprop:Generator_UserColumnName="Модель">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="31" />
@@ -1235,34 +985,325 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="УчетныеЗаписи" msprop:Generator_RowEvHandlerName="УчетныеЗаписиRowChangeEventHandler" msprop:Generator_RowDeletedName="УчетныеЗаписиRowDeleted" msprop:Generator_RowDeletingName="УчетныеЗаписиRowDeleting" msprop:Generator_RowEvArgName="УчетныеЗаписиRowChangeEvent" msprop:Generator_TablePropName="УчетныеЗаписи" msprop:Generator_RowChangedName="УчетныеЗаписиRowChanged" msprop:Generator_UserTableName="УчетныеЗаписи" msprop:Generator_RowChangingName="УчетныеЗаписиRowChanging" msprop:Generator_RowClassName="УчетныеЗаписиRow" msprop:Generator_TableClassName="УчетныеЗаписиDataTable" msprop:Generator_TableVarName="tableУчетныеЗаписи">
+        <xs:element name="УчетныеЗаписи" msprop:Generator_RowEvHandlerName="УчетныеЗаписиRowChangeEventHandler" msprop:Generator_RowDeletedName="УчетныеЗаписиRowDeleted" msprop:Generator_RowDeletingName="УчетныеЗаписиRowDeleting" msprop:Generator_RowEvArgName="УчетныеЗаписиRowChangeEvent" msprop:Generator_TablePropName="УчетныеЗаписи" msprop:Generator_RowChangedName="УчетныеЗаписиRowChanged" msprop:Generator_RowChangingName="УчетныеЗаписиRowChanging" msprop:Generator_TableClassName="УчетныеЗаписиDataTable" msprop:Generator_RowClassName="УчетныеЗаписиRow" msprop:Generator_TableVarName="tableУчетныеЗаписи" msprop:Generator_UserTableName="УчетныеЗаписи">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_учетной_записи" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_учетной_записиColumn" msprop:Generator_ColumnPropNameInRow="ID_учетной_записи" msprop:Generator_UserColumnName="ID_учетной_записи" msprop:Generator_ColumnVarNameInTable="columnID_учетной_записи" type="xs:int" />
-              <xs:element name="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" type="xs:int" />
-              <xs:element name="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_UserColumnName="Логин" msprop:Generator_ColumnVarNameInTable="columnЛогин">
+              <xs:element name="ID_учетной_записи" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_учетной_записи" msprop:Generator_ColumnPropNameInTable="ID_учетной_записиColumn" msprop:Generator_ColumnVarNameInTable="columnID_учетной_записи" msprop:Generator_UserColumnName="ID_учетной_записи" type="xs:int" />
+              <xs:element name="ID_сотрудника" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" type="xs:int" />
+              <xs:element name="Логин" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_ColumnVarNameInTable="columnЛогин" msprop:Generator_UserColumnName="Логин">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Хеш_пароля" msprop:Generator_ColumnPropNameInTable="Хеш_пароляColumn" msprop:Generator_ColumnPropNameInRow="Хеш_пароля" msprop:Generator_UserColumnName="Хеш_пароля" msprop:Generator_ColumnVarNameInTable="columnХеш_пароля" type="xs:base64Binary" />
-              <xs:element name="Дата_создания" msprop:Generator_ColumnPropNameInTable="Дата_созданияColumn" msprop:Generator_ColumnPropNameInRow="Дата_создания" msprop:Generator_UserColumnName="Дата_создания" msprop:Generator_ColumnVarNameInTable="columnДата_создания" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Хеш_пароля" msprop:Generator_ColumnPropNameInRow="Хеш_пароля" msprop:Generator_ColumnPropNameInTable="Хеш_пароляColumn" msprop:Generator_ColumnVarNameInTable="columnХеш_пароля" msprop:Generator_UserColumnName="Хеш_пароля" type="xs:base64Binary" />
+              <xs:element name="Дата_создания" msprop:Generator_ColumnPropNameInRow="Дата_создания" msprop:Generator_ColumnPropNameInTable="Дата_созданияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_создания" msprop:Generator_UserColumnName="Дата_создания" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_ActiveSessions" msprop:Generator_RowEvHandlerName="v_ActiveSessionsRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ActiveSessionsRowDeleted" msprop:Generator_RowDeletingName="v_ActiveSessionsRowDeleting" msprop:Generator_RowEvArgName="v_ActiveSessionsRowChangeEvent" msprop:Generator_TablePropName="v_ActiveSessions" msprop:Generator_RowChangedName="v_ActiveSessionsRowChanged" msprop:Generator_RowChangingName="v_ActiveSessionsRowChanging" msprop:Generator_TableClassName="v_ActiveSessionsDataTable" msprop:Generator_RowClassName="v_ActiveSessionsRow" msprop:Generator_TableVarName="tablev_ActiveSessions" msprop:Generator_UserTableName="v_ActiveSessions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_сессии" msprop:Generator_ColumnPropNameInRow="ID_сессии" msprop:Generator_ColumnPropNameInTable="ID_сессииColumn" msprop:Generator_ColumnVarNameInTable="columnID_сессии" msprop:Generator_UserColumnName="ID_сессии" type="xs:int" />
+              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" msprop:Generator_UserColumnName="Время_заезда" type="xs:dateTime" />
+              <xs:element name="Прошло_часов" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Прошло_часов" msprop:Generator_ColumnPropNameInTable="Прошло_часовColumn" msprop:Generator_ColumnVarNameInTable="columnПрошло_часов" msprop:Generator_UserColumnName="Прошло_часов" type="xs:int" minOccurs="0" />
+              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnVarNameInTable="columnНомер_места" msprop:Generator_UserColumnName="Номер_места" type="xs:int" />
+              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnVarNameInTable="columnЭтаж" msprop:Generator_UserColumnName="Этаж" type="xs:int" />
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО_клиента" msprop:Generator_ColumnPropNameInRow="ФИО_клиента" msprop:Generator_ColumnPropNameInTable="ФИО_клиентаColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_клиента" msprop:Generator_UserColumnName="ФИО_клиента">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон_клиента" msprop:Generator_ColumnPropNameInRow="Телефон_клиента" msprop:Generator_ColumnPropNameInTable="Телефон_клиентаColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон_клиента" msprop:Generator_UserColumnName="Телефон_клиента">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Оператор" msprop:Generator_ColumnPropNameInRow="Оператор" msprop:Generator_ColumnPropNameInTable="ОператорColumn" msprop:Generator_ColumnVarNameInTable="columnОператор" msprop:Generator_UserColumnName="Оператор">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_DailyFinancialReport" msprop:Generator_RowEvHandlerName="v_DailyFinancialReportRowChangeEventHandler" msprop:Generator_RowDeletedName="v_DailyFinancialReportRowDeleted" msprop:Generator_RowDeletingName="v_DailyFinancialReportRowDeleting" msprop:Generator_RowEvArgName="v_DailyFinancialReportRowChangeEvent" msprop:Generator_TablePropName="v_DailyFinancialReport" msprop:Generator_RowChangedName="v_DailyFinancialReportRowChanged" msprop:Generator_RowChangingName="v_DailyFinancialReportRowChanging" msprop:Generator_TableClassName="v_DailyFinancialReportDataTable" msprop:Generator_RowClassName="v_DailyFinancialReportRow" msprop:Generator_TableVarName="tablev_DailyFinancialReport" msprop:Generator_UserTableName="v_DailyFinancialReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Дата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Количество_машин" msprop:Generator_ColumnPropNameInRow="Количество_машин" msprop:Generator_ColumnPropNameInTable="Количество_машинColumn" msprop:Generator_ColumnVarNameInTable="columnКоличество_машин" msprop:Generator_UserColumnName="Количество_машин" type="xs:int" minOccurs="0" />
+              <xs:element name="Общая_выручка" msprop:Generator_ColumnPropNameInRow="Общая_выручка" msprop:Generator_ColumnPropNameInTable="Общая_выручкаColumn" msprop:Generator_ColumnVarNameInTable="columnОбщая_выручка" msprop:Generator_UserColumnName="Общая_выручка" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Сотрудник_смены" msprop:Generator_ColumnPropNameInRow="Сотрудник_смены" msprop:Generator_ColumnPropNameInTable="Сотрудник_сменыColumn" msprop:Generator_ColumnVarNameInTable="columnСотрудник_смены" msprop:Generator_UserColumnName="Сотрудник_смены">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_ParkingLotOverview" msprop:Generator_RowEvHandlerName="v_ParkingLotOverviewRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ParkingLotOverviewRowDeleted" msprop:Generator_RowDeletingName="v_ParkingLotOverviewRowDeleting" msprop:Generator_RowEvArgName="v_ParkingLotOverviewRowChangeEvent" msprop:Generator_TablePropName="v_ParkingLotOverview" msprop:Generator_RowChangedName="v_ParkingLotOverviewRowChanged" msprop:Generator_RowChangingName="v_ParkingLotOverviewRowChanging" msprop:Generator_TableClassName="v_ParkingLotOverviewDataTable" msprop:Generator_RowClassName="v_ParkingLotOverviewRow" msprop:Generator_TableVarName="tablev_ParkingLotOverview" msprop:Generator_UserTableName="v_ParkingLotOverview">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnVarNameInTable="columnЭтаж" msprop:Generator_UserColumnName="Этаж" type="xs:int" />
+              <xs:element name="Мест_свободно" msprop:Generator_ColumnPropNameInRow="Мест_свободно" msprop:Generator_ColumnPropNameInTable="Мест_свободноColumn" msprop:Generator_ColumnVarNameInTable="columnМест_свободно" msprop:Generator_UserColumnName="Мест_свободно" type="xs:int" minOccurs="0" />
+              <xs:element name="Мест_занято" msprop:Generator_ColumnPropNameInRow="Мест_занято" msprop:Generator_ColumnPropNameInTable="Мест_занятоColumn" msprop:Generator_ColumnVarNameInTable="columnМест_занято" msprop:Generator_UserColumnName="Мест_занято" type="xs:int" minOccurs="0" />
+              <xs:element name="Всего_мест" msprop:Generator_ColumnPropNameInRow="Всего_мест" msprop:Generator_ColumnPropNameInTable="Всего_местColumn" msprop:Generator_ColumnVarNameInTable="columnВсего_мест" msprop:Generator_UserColumnName="Всего_мест" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_PaymentHistory" msprop:Generator_RowEvHandlerName="v_PaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="v_PaymentHistoryRowDeleted" msprop:Generator_RowDeletingName="v_PaymentHistoryRowDeleting" msprop:Generator_RowEvArgName="v_PaymentHistoryRowChangeEvent" msprop:Generator_TablePropName="v_PaymentHistory" msprop:Generator_RowChangedName="v_PaymentHistoryRowChanged" msprop:Generator_RowChangingName="v_PaymentHistoryRowChanging" msprop:Generator_TableClassName="v_PaymentHistoryDataTable" msprop:Generator_RowClassName="v_PaymentHistoryRow" msprop:Generator_TableVarName="tablev_PaymentHistory" msprop:Generator_UserTableName="v_PaymentHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_платежа" msprop:Generator_ColumnPropNameInRow="ID_платежа" msprop:Generator_ColumnPropNameInTable="ID_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnID_платежа" msprop:Generator_UserColumnName="ID_платежа" type="xs:int" />
+              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" msprop:Generator_UserColumnName="Дата_платежа" type="xs:dateTime" />
+              <xs:element name="Сумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" />
+              <xs:element name="Тариф" msprop:Generator_ColumnPropNameInRow="Тариф" msprop:Generator_ColumnPropNameInTable="ТарифColumn" msprop:Generator_ColumnVarNameInTable="columnТариф" msprop:Generator_UserColumnName="Тариф">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" msprop:Generator_UserColumnName="Время_заезда" type="xs:dateTime" />
+              <xs:element name="Время_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_UserColumnName="Время_выезда" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Длительность_минут" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Длительность_минут" msprop:Generator_ColumnPropNameInTable="Длительность_минутColumn" msprop:Generator_ColumnVarNameInTable="columnДлительность_минут" msprop:Generator_UserColumnName="Длительность_минут" type="xs:int" minOccurs="0" />
+              <xs:element name="ФИО_клиента" msprop:Generator_ColumnPropNameInRow="ФИО_клиента" msprop:Generator_ColumnPropNameInTable="ФИО_клиентаColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_клиента" msprop:Generator_UserColumnName="ФИО_клиента">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_StatusParkingMap" msprop:Generator_RowEvHandlerName="v_StatusParkingMapRowChangeEventHandler" msprop:Generator_RowDeletedName="v_StatusParkingMapRowDeleted" msprop:Generator_RowDeletingName="v_StatusParkingMapRowDeleting" msprop:Generator_RowEvArgName="v_StatusParkingMapRowChangeEvent" msprop:Generator_TablePropName="v_StatusParkingMap" msprop:Generator_RowChangedName="v_StatusParkingMapRowChanged" msprop:Generator_RowChangingName="v_StatusParkingMapRowChanging" msprop:Generator_TableClassName="v_StatusParkingMapDataTable" msprop:Generator_RowClassName="v_StatusParkingMapRow" msprop:Generator_TableVarName="tablev_StatusParkingMap" msprop:Generator_UserTableName="v_StatusParkingMap">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_x0020_места" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnVarNameInTable="columnНомер_места" msprop:Generator_UserColumnName="Номер места" type="xs:int" />
+              <xs:element name="Этаж" msprop:Generator_ColumnPropNameInRow="Этаж" msprop:Generator_ColumnPropNameInTable="ЭтажColumn" msprop:Generator_ColumnVarNameInTable="columnЭтаж" msprop:Generator_UserColumnName="Этаж" type="xs:int" />
+              <xs:element name="Статус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_UserColumnName="Статус">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Гос_x0020_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос номер" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Время_x0020_Заезда" msprop:Generator_ColumnPropNameInRow="Время_Заезда" msprop:Generator_ColumnPropNameInTable="Время_ЗаездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_Заезда" msprop:Generator_UserColumnName="Время Заезда" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Владелец" msprop:Generator_ColumnPropNameInRow="Владелец" msprop:Generator_ColumnPropNameInTable="ВладелецColumn" msprop:Generator_ColumnVarNameInTable="columnВладелец" msprop:Generator_UserColumnName="Владелец" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон" msprop:Generator_UserColumnName="Телефон" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_PaymentReport" msprop:Generator_RowEvHandlerName="vw_PaymentReportRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_PaymentReportRowDeleted" msprop:Generator_RowDeletingName="vw_PaymentReportRowDeleting" msprop:Generator_RowEvArgName="vw_PaymentReportRowChangeEvent" msprop:Generator_TablePropName="vw_PaymentReport" msprop:Generator_RowChangedName="vw_PaymentReportRowChanged" msprop:Generator_RowChangingName="vw_PaymentReportRowChanging" msprop:Generator_TableClassName="vw_PaymentReportDataTable" msprop:Generator_RowClassName="vw_PaymentReportRow" msprop:Generator_TableVarName="tablevw_PaymentReport" msprop:Generator_UserTableName="vw_PaymentReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Дата_платежа" msprop:Generator_ColumnPropNameInRow="Дата_платежа" msprop:Generator_ColumnPropNameInTable="Дата_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnДата_платежа" msprop:Generator_UserColumnName="Дата_платежа" type="xs:dateTime" />
+              <xs:element name="Длительность_мин" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Длительность_мин" msprop:Generator_ColumnPropNameInTable="Длительность_минColumn" msprop:Generator_ColumnVarNameInTable="columnДлительность_мин" msprop:Generator_UserColumnName="Длительность_мин" type="xs:int" minOccurs="0" />
+              <xs:element name="Сумма_x0020_платежа" msprop:Generator_ColumnPropNameInRow="Сумма_платежа" msprop:Generator_ColumnPropNameInTable="Сумма_платежаColumn" msprop:Generator_ColumnVarNameInTable="columnСумма_платежа" msprop:Generator_UserColumnName="Сумма платежа" type="xs:decimal" />
+              <xs:element name="Тип" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnVarNameInTable="columnТип" msprop:Generator_UserColumnName="Тип">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Владелец" msprop:Generator_ColumnPropNameInRow="Владелец" msprop:Generator_ColumnPropNameInTable="ВладелецColumn" msprop:Generator_ColumnVarNameInTable="columnВладелец" msprop:Generator_UserColumnName="Владелец">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_SessionDetails" msprop:Generator_RowEvHandlerName="vw_SessionDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_SessionDetailsRowDeleted" msprop:Generator_RowDeletingName="vw_SessionDetailsRowDeleting" msprop:Generator_RowEvArgName="vw_SessionDetailsRowChangeEvent" msprop:Generator_TablePropName="vw_SessionDetails" msprop:Generator_RowChangedName="vw_SessionDetailsRowChanged" msprop:Generator_RowChangingName="vw_SessionDetailsRowChanging" msprop:Generator_TableClassName="vw_SessionDetailsDataTable" msprop:Generator_RowClassName="vw_SessionDetailsRow" msprop:Generator_TableVarName="tablevw_SessionDetails" msprop:Generator_UserTableName="vw_SessionDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номер_места" msprop:Generator_ColumnPropNameInRow="Номер_места" msprop:Generator_ColumnPropNameInTable="Номер_местаColumn" msprop:Generator_ColumnVarNameInTable="columnНомер_места" msprop:Generator_UserColumnName="Номер_места" type="xs:int" />
+              <xs:element name="Время_заезда" msprop:Generator_ColumnPropNameInRow="Время_заезда" msprop:Generator_ColumnPropNameInTable="Время_заездаColumn" msprop:Generator_ColumnVarNameInTable="columnВремя_заезда" msprop:Generator_UserColumnName="Время_заезда" type="xs:dateTime" />
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон_владельца" msprop:Generator_ColumnPropNameInRow="Телефон_владельца" msprop:Generator_ColumnPropNameInTable="Телефон_владельцаColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон_владельца" msprop:Generator_UserColumnName="Телефон_владельца">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО_владельца" msprop:Generator_ColumnPropNameInRow="ФИО_владельца" msprop:Generator_ColumnPropNameInTable="ФИО_владельцаColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_владельца" msprop:Generator_UserColumnName="ФИО_владельца">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_VehicleRegistry" msprop:Generator_RowEvHandlerName="vw_VehicleRegistryRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_VehicleRegistryRowDeleted" msprop:Generator_RowDeletingName="vw_VehicleRegistryRowDeleting" msprop:Generator_RowEvArgName="vw_VehicleRegistryRowChangeEvent" msprop:Generator_TablePropName="vw_VehicleRegistry" msprop:Generator_RowChangedName="vw_VehicleRegistryRowChanged" msprop:Generator_RowChangingName="vw_VehicleRegistryRowChanging" msprop:Generator_TableClassName="vw_VehicleRegistryDataTable" msprop:Generator_RowClassName="vw_VehicleRegistryRow" msprop:Generator_TableVarName="tablevw_VehicleRegistry" msprop:Generator_UserTableName="vw_VehicleRegistry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Гос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_UserColumnName="Гос_номер">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnVarNameInTable="columnТип" msprop:Generator_UserColumnName="Тип">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Автомобиль" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Автомобиль" msprop:Generator_ColumnPropNameInTable="АвтомобильColumn" msprop:Generator_ColumnVarNameInTable="columnАвтомобиль" msprop:Generator_UserColumnName="Автомобиль" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон_владельца" msprop:Generator_ColumnPropNameInRow="Телефон_владельца" msprop:Generator_ColumnPropNameInTable="Телефон_владельцаColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон_владельца" msprop:Generator_UserColumnName="Телефон_владельца">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_EndSessionAndCreatePayment" msprop:Generator_RowEvHandlerName="sp_EndSessionAndCreatePaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_EndSessionAndCreatePaymentRowDeleted" msprop:Generator_RowDeletingName="sp_EndSessionAndCreatePaymentRowDeleting" msprop:Generator_RowEvArgName="sp_EndSessionAndCreatePaymentRowChangeEvent" msprop:Generator_TablePropName="sp_EndSessionAndCreatePayment" msprop:Generator_RowChangedName="sp_EndSessionAndCreatePaymentRowChanged" msprop:Generator_RowChangingName="sp_EndSessionAndCreatePaymentRowChanging" msprop:Generator_TableClassName="sp_EndSessionAndCreatePaymentDataTable" msprop:Generator_RowClassName="sp_EndSessionAndCreatePaymentRow" msprop:Generator_TableVarName="tablesp_EndSessionAndCreatePayment" msprop:Generator_UserTableName="sp_EndSessionAndCreatePayment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Рассчитанная_сумма" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Рассчитанная_сумма" msprop:Generator_ColumnPropNameInTable="Рассчитанная_суммаColumn" msprop:Generator_ColumnVarNameInTable="columnРассчитанная_сумма" msprop:Generator_UserColumnName="Рассчитанная_сумма" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_тарифа" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ID_тарифа" msprop:Generator_ColumnPropNameInTable="ID_тарифаColumn" msprop:Generator_ColumnVarNameInTable="columnID_тарифа" msprop:Generator_UserColumnName="ID_тарифа" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_LoginUser" msprop:Generator_RowEvHandlerName="sp_LoginUserRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_LoginUserRowDeleted" msprop:Generator_RowDeletingName="sp_LoginUserRowDeleting" msprop:Generator_RowEvArgName="sp_LoginUserRowChangeEvent" msprop:Generator_TablePropName="sp_LoginUser" msprop:Generator_RowChangedName="sp_LoginUserRowChanged" msprop:Generator_RowChangingName="sp_LoginUserRowChanging" msprop:Generator_TableClassName="sp_LoginUserDataTable" msprop:Generator_RowClassName="sp_LoginUserRow" msprop:Generator_TableVarName="tablesp_LoginUser" msprop:Generator_UserTableName="sp_LoginUser">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_сотрудника" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="ID_сотрудника" msprop:Generator_ColumnPropNameInTable="ID_сотрудникаColumn" msprop:Generator_ColumnVarNameInTable="columnID_сотрудника" msprop:Generator_UserColumnName="ID_сотрудника" type="xs:int" />
+              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_UserColumnName="ФИО">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Должность" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_ColumnVarNameInTable="columnДолжность" msprop:Generator_UserColumnName="Должность">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Электронная_почта" msprop:Generator_ColumnPropNameInRow="Электронная_почта" msprop:Generator_ColumnPropNameInTable="Электронная_почтаColumn" msprop:Generator_ColumnVarNameInTable="columnЭлектронная_почта" msprop:Generator_UserColumnName="Электронная_почта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnVarNameInTable="columnТелефон" msprop:Generator_UserColumnName="Телефон">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:v_StatusParkingMap" />
-      <xs:field xpath="mstns:Номер_x0020_места" />
-    </xs:unique>
-    <xs:unique name="vw_VehicleRegistry_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:vw_VehicleRegistry" />
-      <xs:field xpath="mstns:Гос_номер" />
-    </xs:unique>
-    <xs:unique name="Клиент_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Клиент" />
       <xs:field xpath="mstns:ID_клиента" />
     </xs:unique>
@@ -1294,14 +1335,26 @@ SELECT ID_учетной_записи, ID_сотрудника, Логин, Хе
       <xs:selector xpath=".//mstns:УчетныеЗаписи" />
       <xs:field xpath="mstns:ID_учетной_записи" />
     </xs:unique>
+    <xs:unique name="v_StatusParkingMap_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_StatusParkingMap" />
+      <xs:field xpath="mstns:Номер_x0020_места" />
+    </xs:unique>
+    <xs:unique name="vw_VehicleRegistry_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_VehicleRegistry" />
+      <xs:field xpath="mstns:Гос_номер" />
+    </xs:unique>
+    <xs:unique name="sp_LoginUser_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sp_LoginUser" />
+      <xs:field xpath="mstns:ID_сотрудника" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Парковочн__ID_со__4376EBDB" msdata:parent="Сотрудник" msdata:child="Парковочная_сессия" msdata:parentkey="ID_сотрудника" msdata:childkey="ID_сотрудника" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__ID_со__4376EBDB" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_UserRelationName="FK__Парковочн__ID_со__4376EBDB" msprop:Generator_ParentPropName="СотрудникRow" />
-      <msdata:Relationship name="FK__Парковочн__Гос_н__418EA369" msdata:parent="ТС" msdata:child="Парковочная_сессия" msdata:parentkey="Гос_номер" msdata:childkey="Гос_номер" msprop:Generator_UserParentTable="ТС" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__Гос_н__418EA369" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_UserRelationName="FK__Парковочн__Гос_н__418EA369" msprop:Generator_ParentPropName="ТСRow" />
-      <msdata:Relationship name="FK__Парковочн__Номер__4282C7A2" msdata:parent="Парковочное_место" msdata:child="Парковочная_сессия" msdata:parentkey="Номер_места" msdata:childkey="Номер_места" msprop:Generator_UserParentTable="Парковочное_место" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__Номер__4282C7A2" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_UserRelationName="FK__Парковочн__Номер__4282C7A2" msprop:Generator_ParentPropName="Парковочное_местоRow" />
+      <msdata:Relationship name="FK__Парковочн__ID_со__4376EBDB" msdata:parent="Сотрудник" msdata:child="Парковочная_сессия" msdata:parentkey="ID_сотрудника" msdata:childkey="ID_сотрудника" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__ID_со__4376EBDB" msprop:Generator_UserRelationName="FK__Парковочн__ID_со__4376EBDB" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_ParentPropName="СотрудникRow" />
+      <msdata:Relationship name="FK__Парковочн__Гос_н__418EA369" msdata:parent="ТС" msdata:child="Парковочная_сессия" msdata:parentkey="Гос_номер" msdata:childkey="Гос_номер" msprop:Generator_UserParentTable="ТС" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__Гос_н__418EA369" msprop:Generator_UserRelationName="FK__Парковочн__Гос_н__418EA369" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_ParentPropName="ТСRow" />
+      <msdata:Relationship name="FK__Парковочн__Номер__4282C7A2" msdata:parent="Парковочное_место" msdata:child="Парковочная_сессия" msdata:parentkey="Номер_места" msdata:childkey="Номер_места" msprop:Generator_UserParentTable="Парковочное_место" msprop:Generator_UserChildTable="Парковочная_сессия" msprop:Generator_RelationVarName="relationFK__Парковочн__Номер__4282C7A2" msprop:Generator_UserRelationName="FK__Парковочн__Номер__4282C7A2" msprop:Generator_ChildPropName="GetПарковочная_сессияRows" msprop:Generator_ParentPropName="Парковочное_местоRow" />
       <msdata:Relationship name="FK__Платёж__ID_сесси__492FC531" msdata:parent="Парковочная_сессия" msdata:child="Платёж" msdata:parentkey="ID_сессии" msdata:childkey="ID_сессии" msprop:Generator_UserParentTable="Парковочная_сессия" msprop:Generator_UserChildTable="Платёж" msprop:Generator_RelationVarName="relationFK__Платёж__ID_сесси__492FC531" msprop:Generator_ChildPropName="GetПлатёжRows" msprop:Generator_ParentPropName="Парковочная_сессияRow" msprop:Generator_UserRelationName="FK__Платёж__ID_сесси__492FC531" />
-      <msdata:Relationship name="FK__Платёж__ID_тариф__4A23E96A" msdata:parent="Тариф" msdata:child="Платёж" msdata:parentkey="ID_тарифа" msdata:childkey="ID_тарифа" msprop:Generator_UserParentTable="Тариф" msprop:Generator_UserChildTable="Платёж" msprop:Generator_RelationVarName="relationFK__Платёж__ID_тариф__4A23E96A" msprop:Generator_ChildPropName="GetПлатёжRows" msprop:Generator_UserRelationName="FK__Платёж__ID_тариф__4A23E96A" msprop:Generator_ParentPropName="ТарифRow" />
+      <msdata:Relationship name="FK__Платёж__ID_тариф__4A23E96A" msdata:parent="Тариф" msdata:child="Платёж" msdata:parentkey="ID_тарифа" msdata:childkey="ID_тарифа" msprop:Generator_UserParentTable="Тариф" msprop:Generator_UserChildTable="Платёж" msprop:Generator_RelationVarName="relationFK__Платёж__ID_тариф__4A23E96A" msprop:Generator_UserRelationName="FK__Платёж__ID_тариф__4A23E96A" msprop:Generator_ChildPropName="GetПлатёжRows" msprop:Generator_ParentPropName="ТарифRow" />
       <msdata:Relationship name="FK__ТС__ID_клиента__2AAB3E11" msdata:parent="Клиент" msdata:child="ТС" msdata:parentkey="ID_клиента" msdata:childkey="ID_клиента" msprop:Generator_UserParentTable="Клиент" msprop:Generator_UserChildTable="ТС" msprop:Generator_RelationVarName="relationFK__ТС__ID_клиента__2AAB3E11" msprop:Generator_ChildPropName="GetТСRows" msprop:Generator_ParentPropName="КлиентRow" msprop:Generator_UserRelationName="FK__ТС__ID_клиента__2AAB3E11" />
       <msdata:Relationship name="FK__УчетныеЗа__ID_со__50D0E6F9" msdata:parent="Сотрудник" msdata:child="УчетныеЗаписи" msdata:parentkey="ID_сотрудника" msdata:childkey="ID_сотрудника" msprop:Generator_UserParentTable="Сотрудник" msprop:Generator_UserChildTable="УчетныеЗаписи" msprop:Generator_RelationVarName="relationFK__УчетныеЗа__ID_со__50D0E6F9" msprop:Generator_ChildPropName="GetУчетныеЗаписиRows" msprop:Generator_ParentPropName="СотрудникRow" msprop:Generator_UserRelationName="FK__УчетныеЗа__ID_со__50D0E6F9" />
     </xs:appinfo>

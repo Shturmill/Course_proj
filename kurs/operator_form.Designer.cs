@@ -1,4 +1,7 @@
-﻿namespace kurs
+﻿using System.Configuration;
+
+
+namespace kurs
 {
     partial class operator_form
     {
@@ -41,84 +44,61 @@
             this.клиентTableAdapter = new kurs.Park_spotDataSetTableAdapters.КлиентTableAdapter();
             this.парковочное_местоTableAdapter = new kurs.Park_spotDataSetTableAdapters.Парковочное_местоTableAdapter();
             this.тСTableAdapter = new kurs.Park_spotDataSetTableAdapters.ТСTableAdapter();
-            this.v_PaymentHistoryTableAdapter = new kurs.Park_spotDataSetTableAdapters.v_PaymentHistoryTableAdapter();
-            this.v_ParkingLotOverviewTableAdapter = new kurs.Park_spotDataSetTableAdapters.v_ParkingLotOverviewTableAdapter();
-            this.v_ActiveSessionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.v_ActiveSessionsTableAdapter = new kurs.Park_spotDataSetTableAdapters.v_ActiveSessionsTableAdapter();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.v_ParkingLotOverviewDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.парковочное_местоDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.клиентDataGridView = new System.Windows.Forms.DataGridView();
             this.Updateclient = new System.Windows.Forms.Button();
             this.ModelVeh = new System.Windows.Forms.TextBox();
             this.MarkVeh = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.клиентDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.тСDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
             this.GosText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.VehicleType = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
+            this.v_ActiveSessionsDataGridView = new System.Windows.Forms.DataGridView();
+            this.v_ActiveSessionsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.Update = new System.Windows.Forms.Button();
-            this.CorrectLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.ForAdd = new System.Windows.Forms.ComboBox();
+            this.тСBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddSessionButton = new System.Windows.Forms.Button();
             this.INFO3 = new System.Windows.Forms.Label();
             this.EndForSession = new System.Windows.Forms.ComboBox();
+            this.vActiveSessionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ApplySessionButton = new System.Windows.Forms.Button();
             this.INFO1 = new System.Windows.Forms.Label();
             this.INFO2 = new System.Windows.Forms.Label();
+            this.парковочнаясессияBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.park_spotDataSet4 = new kurs.Park_spotDataSet();
+            this.vw_SessionDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vwSessionDetailsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.park_spotDataSet3 = new kurs.Park_spotDataSet();
+            this.vw_SessionDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.park_spotDataSet2 = new kurs.Park_spotDataSet2();
             this.v_ActiveSessionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buttonPassword = new System.Windows.Forms.Button();
+            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxPassword0 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -138,23 +118,61 @@
             this.v_StatusParkingMapTableAdapter = new kurs.Park_spotDataSet1TableAdapters.v_StatusParkingMapTableAdapter();
             this.tableAdapterManager1 = new kurs.Park_spotDataSet1TableAdapters.TableAdapterManager();
             this.v_ActiveSessionsTableAdapter1 = new kurs.Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword0 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
-            this.buttonPassword = new System.Windows.Forms.Button();
-            this.NameProfile = new System.Windows.Forms.Label();
-            this.FamProfile = new System.Windows.Forms.Label();
-            this.SurnameProfile = new System.Windows.Forms.Label();
-            this.PhoneProfile = new System.Windows.Forms.Label();
-            this.MailProfile = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxFam = new System.Windows.Forms.TextBox();
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.vw_SessionDetailsTableAdapter = new kurs.Park_spotDataSet2TableAdapters.vw_SessionDetailsTableAdapter();
+            this.tableAdapterManager2 = new kurs.Park_spotDataSet2TableAdapters.TableAdapterManager();
+            this.vwSessionDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_SessionDetailsTableAdapter1 = new kurs.Park_spotDataSetTableAdapters.vw_SessionDetailsTableAdapter();
+            this.vw_VehicleRegistryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_VehicleRegistryTableAdapter = new kurs.Park_spotDataSetTableAdapters.vw_VehicleRegistryTableAdapter();
+            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.сотрудникTableAdapter = new kurs.Park_spotDataSetTableAdapters.СотрудникTableAdapter();
+            this.vwSessionDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vwSessionDetailsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.v_ActiveSessionsTableAdapter = new kurs.Park_spotDataSetTableAdapters.v_ActiveSessionsTableAdapter();
+            this.vwVehicleRegistryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_VehicleRegistryTableAdapter1 = new kurs.Park_spotDataSet2TableAdapters.vw_VehicleRegistryTableAdapter();
+            this.vwSessionDetailsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.parkspotDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vwSessionDetailsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.park_spotDataSet31 = new kurs.Park_spotDataSet3();
+            this.vw_VehicleRegistryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_VehicleRegistryTableAdapter2 = new kurs.Park_spotDataSet3TableAdapters.vw_VehicleRegistryTableAdapter();
+            this.tableAdapterManager3 = new kurs.Park_spotDataSet3TableAdapters.TableAdapterManager();
+            this.vw_VehicleRegistryDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vw_PaymentReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_PaymentReportTableAdapter = new kurs.Park_spotDataSet3TableAdapters.vw_PaymentReportTableAdapter();
+            this.v_PaymentHistoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.v_PaymentHistoryTableAdapter = new kurs.Park_spotDataSet3TableAdapters.v_PaymentHistoryTableAdapter();
+            this.v_PaymentHistoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.v_ParkingLotOverviewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.v_ParkingLotOverviewTableAdapter = new kurs.Park_spotDataSet3TableAdapters.v_ParkingLotOverviewTableAdapter();
+            this.v_ParkingLotOverviewDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -162,21 +180,44 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.парковочное_местоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.парковочное_местоDataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.клиентDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.тСDataGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vActiveSessionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.парковочнаясессияBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwVehicleRegistryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_PaymentReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // парковочная_сессияBindingSource
@@ -229,6 +270,7 @@
             this.tableAdapterManager.СотрудникTableAdapter = null;
             this.tableAdapterManager.ТарифTableAdapter = null;
             this.tableAdapterManager.ТСTableAdapter = this.тСTableAdapter;
+            this.tableAdapterManager.УчетныеЗаписиTableAdapter = null;
             // 
             // клиентTableAdapter
             // 
@@ -242,37 +284,19 @@
             // 
             this.тСTableAdapter.ClearBeforeFill = true;
             // 
-            // v_PaymentHistoryTableAdapter
-            // 
-            this.v_PaymentHistoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // v_ParkingLotOverviewTableAdapter
-            // 
-            this.v_ParkingLotOverviewTableAdapter.ClearBeforeFill = true;
-            // 
-            // v_ActiveSessionsBindingSource
-            // 
-            this.v_ActiveSessionsBindingSource.DataMember = "v_ActiveSessions";
-            this.v_ActiveSessionsBindingSource.DataSource = this.park_spotDataSet;
-            // 
-            // v_ActiveSessionsTableAdapter
-            // 
-            this.v_ActiveSessionsTableAdapter.ClearBeforeFill = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.v_ParkingLotOverviewDataGridView);
+            this.tabPage3.Controls.Add(this.v_PaymentHistoryDataGridView);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label22);
             this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.v_ParkingLotOverviewDataGridView);
-            this.tabPage3.Controls.Add(this.парковочное_местоDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1732, 855);
+            this.tabPage3.Size = new System.Drawing.Size(1732, 489);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Мониторинг оплаты и занятости мест";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -280,7 +304,7 @@
             // button1
             // 
             this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.button1.Location = new System.Drawing.Point(1685, 808);
+            this.button1.Location = new System.Drawing.Point(1685, 446);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 50;
@@ -289,7 +313,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(40, 430);
+            this.label22.Location = new System.Drawing.Point(40, 182);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(200, 19);
@@ -299,178 +323,31 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(40, 31);
+            this.label13.Location = new System.Drawing.Point(40, 15);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(281, 19);
             this.label13.TabIndex = 36;
             this.label13.Text = "Состояние занятости парковочных мест";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn29});
-            this.dataGridView1.DataSource = this.v_PaymentHistoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 468);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1163, 386);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Дата_платежа";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Дата_платежа";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Сумма";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Тариф";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Тариф";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Время_заезда";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Время_заезда";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Время_выезда";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Время_выезда";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Длительность_минут";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Длительность_минут";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Гос_номер";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Гос_номер";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Автомобиль";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Автомобиль";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            // 
-            // v_ParkingLotOverviewDataGridView
-            // 
-            this.v_ParkingLotOverviewDataGridView.AutoGenerateColumns = false;
-            this.v_ParkingLotOverviewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.v_ParkingLotOverviewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28});
-            this.v_ParkingLotOverviewDataGridView.DataSource = this.v_ParkingLotOverviewBindingSource;
-            this.v_ParkingLotOverviewDataGridView.Location = new System.Drawing.Point(45, 259);
-            this.v_ParkingLotOverviewDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.v_ParkingLotOverviewDataGridView.Name = "v_ParkingLotOverviewDataGridView";
-            this.v_ParkingLotOverviewDataGridView.Size = new System.Drawing.Size(664, 123);
-            this.v_ParkingLotOverviewDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Этаж";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Этаж";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Мест_свободно";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Мест_свободно";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Мест_занято";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Мест_занято";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Всего_мест";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Всего_мест";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // парковочное_местоDataGridView
-            // 
-            this.парковочное_местоDataGridView.AutoGenerateColumns = false;
-            this.парковочное_местоDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.парковочное_местоDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn15});
-            this.парковочное_местоDataGridView.DataSource = this.парковочное_местоBindingSource;
-            this.парковочное_местоDataGridView.Location = new System.Drawing.Point(1373, 468);
-            this.парковочное_местоDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.парковочное_местоDataGridView.Name = "парковочное_местоDataGridView";
-            this.парковочное_местоDataGridView.Size = new System.Drawing.Size(244, 322);
-            this.парковочное_местоDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Номер_места";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Номер_места";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Этаж";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Этаж";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.vw_VehicleRegistryDataGridView);
+            this.tabPage2.Controls.Add(this.клиентDataGridView);
             this.tabPage2.Controls.Add(this.Updateclient);
             this.tabPage2.Controls.Add(this.ModelVeh);
             this.tabPage2.Controls.Add(this.MarkVeh);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.клиентDataGridView);
-            this.tabPage2.Controls.Add(this.тСDataGridView);
-            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.GosText);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.VehicleType);
             this.tabPage2.Controls.Add(this.label19);
@@ -480,35 +357,29 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1732, 855);
+            this.tabPage2.Size = new System.Drawing.Size(1732, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Регистрация новых клиентов и ТС";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // клиентDataGridView
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(777, 414);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 19);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "id клиента, ФИО, почта, телефон";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 414);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 19);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Гос номер, тип, автомобиль, id влад";
+            this.клиентDataGridView.AutoGenerateColumns = false;
+            this.клиентDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.клиентDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.клиентDataGridView.DataSource = this.клиентBindingSource;
+            this.клиентDataGridView.Location = new System.Drawing.Point(706, 276);
+            this.клиентDataGridView.Name = "клиентDataGridView";
+            this.клиентDataGridView.Size = new System.Drawing.Size(775, 206);
+            this.клиентDataGridView.TabIndex = 51;
             // 
             // Updateclient
             // 
             this.Updateclient.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.Updateclient.Location = new System.Drawing.Point(1685, 807);
+            this.Updateclient.Location = new System.Drawing.Point(1498, 442);
             this.Updateclient.Name = "Updateclient";
             this.Updateclient.Size = new System.Drawing.Size(40, 40);
             this.Updateclient.TabIndex = 49;
@@ -517,7 +388,7 @@
             // 
             // ModelVeh
             // 
-            this.ModelVeh.Location = new System.Drawing.Point(194, 333);
+            this.ModelVeh.Location = new System.Drawing.Point(177, 212);
             this.ModelVeh.Margin = new System.Windows.Forms.Padding(4);
             this.ModelVeh.Name = "ModelVeh";
             this.ModelVeh.Size = new System.Drawing.Size(180, 26);
@@ -525,7 +396,7 @@
             // 
             // MarkVeh
             // 
-            this.MarkVeh.Location = new System.Drawing.Point(194, 279);
+            this.MarkVeh.Location = new System.Drawing.Point(177, 158);
             this.MarkVeh.Margin = new System.Windows.Forms.Padding(4);
             this.MarkVeh.Name = "MarkVeh";
             this.MarkVeh.Size = new System.Drawing.Size(180, 26);
@@ -533,7 +404,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(984, 357);
+            this.button4.Location = new System.Drawing.Point(967, 230);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(212, 39);
@@ -543,7 +414,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(723, 357);
+            this.button3.Location = new System.Drawing.Point(706, 230);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(212, 39);
@@ -552,100 +423,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // клиентDataGridView
-            // 
-            this.клиентDataGridView.AutoGenerateColumns = false;
-            this.клиентDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.клиентDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.клиентDataGridView.DataSource = this.клиентBindingSource;
-            this.клиентDataGridView.Location = new System.Drawing.Point(765, 450);
-            this.клиентDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.клиентDataGridView.Name = "клиентDataGridView";
-            this.клиентDataGridView.Size = new System.Drawing.Size(856, 397);
-            this.клиентDataGridView.TabIndex = 44;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ФИО";
-            this.dataGridViewTextBoxColumn8.HeaderText = "ФИО";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 230;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Электронная_почта";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Электронная_почта";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Телефон";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 150;
-            // 
-            // тСDataGridView
-            // 
-            this.тСDataGridView.AutoGenerateColumns = false;
-            this.тСDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.тСDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.тСDataGridView.DataSource = this.тСBindingSource;
-            this.тСDataGridView.Location = new System.Drawing.Point(9, 450);
-            this.тСDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.тСDataGridView.Name = "тСDataGridView";
-            this.тСDataGridView.Size = new System.Drawing.Size(728, 397);
-            this.тСDataGridView.TabIndex = 44;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Гос_номер";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Гос_номер";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Тип";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Тип";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Марка";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Марка";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Модель";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Модель";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 160;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label12.Location = new System.Drawing.Point(384, 177);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 19);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "Укажите Гос номер ТС";
-            this.label12.Visible = false;
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
             // GosText
             // 
-            this.GosText.Location = new System.Drawing.Point(194, 172);
+            this.GosText.Location = new System.Drawing.Point(177, 51);
             this.GosText.Margin = new System.Windows.Forms.Padding(4);
             this.GosText.Name = "GosText";
             this.GosText.Size = new System.Drawing.Size(180, 26);
@@ -654,7 +434,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(72, 177);
+            this.label11.Location = new System.Drawing.Point(55, 56);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 19);
@@ -664,7 +444,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(718, 304);
+            this.label9.Location = new System.Drawing.Point(701, 183);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 19);
@@ -672,22 +452,9 @@
             this.label9.Text = "Электронная почта";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label10.Location = new System.Drawing.Point(1226, 304);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(207, 19);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Укажите почту владельца ТС";
-            this.label10.Visible = false;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(894, 300);
+            this.textBox3.Location = new System.Drawing.Point(877, 179);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(320, 26);
@@ -697,28 +464,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(718, 244);
+            this.label5.Location = new System.Drawing.Point(701, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 19);
             this.label5.TabIndex = 38;
             this.label5.Text = "Номер телефона";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(1226, 244);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(210, 19);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Укажите номер владельца ТС";
-            this.label6.Visible = false;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(894, 240);
+            this.textBox1.Location = new System.Drawing.Point(877, 119);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(320, 26);
@@ -727,7 +482,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 64);
+            this.label4.Location = new System.Drawing.Point(55, 21);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(337, 19);
@@ -735,67 +490,19 @@
             this.label4.Text = "Заполнение данных для регистрации нового ТС";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label14.Location = new System.Drawing.Point(384, 227);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 19);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Укажите тип ТС";
-            this.label14.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label15.Location = new System.Drawing.Point(384, 284);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 19);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Укажите марку ТС";
-            this.label15.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label16.Location = new System.Drawing.Point(384, 338);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(143, 19);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "Укажите модель ТС";
-            this.label16.Visible = false;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(718, 183);
+            this.label17.Location = new System.Drawing.Point(701, 62);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(118, 19);
             this.label17.TabIndex = 31;
             this.label17.Text = "ФИО владельца";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label18.Location = new System.Drawing.Point(1226, 183);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(204, 19);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Укажите ФИО владельца ТС";
-            this.label18.Visible = false;
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(894, 178);
+            this.textBox2.Location = new System.Drawing.Point(877, 57);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(320, 26);
@@ -807,7 +514,7 @@
             this.VehicleType.Items.AddRange(new object[] {
             "Легковая",
             "Грузовая"});
-            this.VehicleType.Location = new System.Drawing.Point(194, 222);
+            this.VehicleType.Location = new System.Drawing.Point(177, 101);
             this.VehicleType.Margin = new System.Windows.Forms.Padding(4);
             this.VehicleType.Name = "VehicleType";
             this.VehicleType.Size = new System.Drawing.Size(180, 27);
@@ -816,7 +523,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(72, 227);
+            this.label19.Location = new System.Drawing.Point(55, 106);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 19);
@@ -826,7 +533,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(72, 338);
+            this.label20.Location = new System.Drawing.Point(55, 217);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(61, 19);
@@ -836,7 +543,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(72, 284);
+            this.label21.Location = new System.Drawing.Point(55, 163);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 19);
@@ -846,10 +553,8 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.v_ActiveSessionsDataGridView);
             this.tabPage1.Controls.Add(this.Update);
-            this.tabPage1.Controls.Add(this.CorrectLabel);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.ForAdd);
             this.tabPage1.Controls.Add(this.AddSessionButton);
             this.tabPage1.Controls.Add(this.INFO3);
@@ -861,58 +566,46 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1732, 855);
+            this.tabPage1.Size = new System.Drawing.Size(1732, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Учёт заезда автомобилей";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // v_ActiveSessionsDataGridView
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 191);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(569, 19);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Гос номер, место, дата приезда,  автомобиль,  телефон владельца, ФИО владельца";
+            this.v_ActiveSessionsDataGridView.AutoGenerateColumns = false;
+            this.v_ActiveSessionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.v_ActiveSessionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.v_ActiveSessionsDataGridView.DataSource = this.v_ActiveSessionsBindingSource2;
+            this.v_ActiveSessionsDataGridView.Location = new System.Drawing.Point(76, 175);
+            this.v_ActiveSessionsDataGridView.Name = "v_ActiveSessionsDataGridView";
+            this.v_ActiveSessionsDataGridView.Size = new System.Drawing.Size(1023, 285);
+            this.v_ActiveSessionsDataGridView.TabIndex = 18;
+            // 
+            // v_ActiveSessionsBindingSource2
+            // 
+            this.v_ActiveSessionsBindingSource2.DataMember = "v_ActiveSessions";
+            this.v_ActiveSessionsBindingSource2.DataSource = this.park_spotDataSet;
             // 
             // Update
             // 
             this.Update.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.Update.Location = new System.Drawing.Point(1685, 808);
+            this.Update.Location = new System.Drawing.Point(1660, 440);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(40, 40);
             this.Update.TabIndex = 17;
             this.Update.UseVisualStyleBackColor = true;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // CorrectLabel
-            // 
-            this.CorrectLabel.AutoSize = true;
-            this.CorrectLabel.ForeColor = System.Drawing.Color.Green;
-            this.CorrectLabel.Location = new System.Drawing.Point(468, 104);
-            this.CorrectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.CorrectLabel.Name = "CorrectLabel";
-            this.CorrectLabel.Size = new System.Drawing.Size(325, 19);
-            this.CorrectLabel.TabIndex = 16;
-            this.CorrectLabel.Text = "Данное ТС было успешно добавлено в сессию";
-            this.CorrectLabel.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(468, 104);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 19);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Данное ТС ";
-            this.label7.Visible = false;
-            // 
             // ForAdd
             // 
-            this.ForAdd.DataSource = this.v_ActiveSessionsBindingSource;
+            this.ForAdd.DataSource = this.тСBindingSource1;
             this.ForAdd.DisplayMember = "Гос_номер";
             this.ForAdd.FormattingEnabled = true;
             this.ForAdd.Location = new System.Drawing.Point(76, 98);
@@ -921,6 +614,12 @@
             this.ForAdd.Size = new System.Drawing.Size(180, 27);
             this.ForAdd.TabIndex = 8;
             this.ForAdd.ValueMember = "Гос_номер";
+            this.ForAdd.SelectedIndexChanged += new System.EventHandler(this.ForAdd_SelectedIndexChanged);
+            // 
+            // тСBindingSource1
+            // 
+            this.тСBindingSource1.DataMember = "ТС";
+            this.тСBindingSource1.DataSource = this.park_spotDataSet;
             // 
             // AddSessionButton
             // 
@@ -936,7 +635,7 @@
             // INFO3
             // 
             this.INFO3.AutoSize = true;
-            this.INFO3.Location = new System.Drawing.Point(1202, 191);
+            this.INFO3.Location = new System.Drawing.Point(1130, 177);
             this.INFO3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INFO3.Name = "INFO3";
             this.INFO3.Size = new System.Drawing.Size(164, 19);
@@ -946,20 +645,25 @@
             // 
             // EndForSession
             // 
-            this.EndForSession.DataSource = this.v_ActiveSessionsBindingSource;
+            this.EndForSession.DataSource = this.vActiveSessionsBindingSource;
             this.EndForSession.DisplayMember = "Гос_номер";
             this.EndForSession.FormattingEnabled = true;
-            this.EndForSession.Location = new System.Drawing.Point(1206, 229);
+            this.EndForSession.Location = new System.Drawing.Point(1134, 215);
             this.EndForSession.Margin = new System.Windows.Forms.Padding(4);
             this.EndForSession.Name = "EndForSession";
-            this.EndForSession.Size = new System.Drawing.Size(180, 27);
+            this.EndForSession.Size = new System.Drawing.Size(141, 27);
             this.EndForSession.TabIndex = 5;
             this.EndForSession.ValueMember = "Гос_номер";
             this.EndForSession.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // vActiveSessionsBindingSource
+            // 
+            this.vActiveSessionsBindingSource.DataMember = "v_ActiveSessions";
+            this.vActiveSessionsBindingSource.DataSource = this.park_spotDataSet;
+            // 
             // ApplySessionButton
             // 
-            this.ApplySessionButton.Location = new System.Drawing.Point(1434, 224);
+            this.ApplySessionButton.Location = new System.Drawing.Point(1301, 210);
             this.ApplySessionButton.Margin = new System.Windows.Forms.Padding(4);
             this.ApplySessionButton.Name = "ApplySessionButton";
             this.ApplySessionButton.Size = new System.Drawing.Size(112, 34);
@@ -974,9 +678,9 @@
             this.INFO1.Location = new System.Drawing.Point(72, 57);
             this.INFO1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INFO1.Name = "INFO1";
-            this.INFO1.Size = new System.Drawing.Size(226, 19);
+            this.INFO1.Size = new System.Drawing.Size(138, 19);
             this.INFO1.TabIndex = 3;
-            this.INFO1.Text = "Заполнение данных для сессии ";
+            this.INFO1.Text = "Начать сессию для:";
             // 
             // INFO2
             // 
@@ -988,6 +692,41 @@
             this.INFO2.TabIndex = 2;
             this.INFO2.Text = "Текущие сессии";
             this.INFO2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // парковочнаясессияBindingSource
+            // 
+            this.парковочнаясессияBindingSource.DataMember = "Парковочная_сессия";
+            this.парковочнаясессияBindingSource.DataSource = this.park_spotDataSet4;
+            // 
+            // park_spotDataSet4
+            // 
+            this.park_spotDataSet4.DataSetName = "Park_spotDataSet";
+            this.park_spotDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_SessionDetailsBindingSource1
+            // 
+            this.vw_SessionDetailsBindingSource1.DataMember = "vw_SessionDetails";
+            this.vw_SessionDetailsBindingSource1.DataSource = this.park_spotDataSet;
+            // 
+            // vwSessionDetailsBindingSource2
+            // 
+            this.vwSessionDetailsBindingSource2.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource2.DataSource = this.park_spotDataSet3;
+            // 
+            // park_spotDataSet3
+            // 
+            this.park_spotDataSet3.DataSetName = "Park_spotDataSet";
+            this.park_spotDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_SessionDetailsBindingSource
+            // 
+            this.vw_SessionDetailsBindingSource.DataMember = "vw_SessionDetails";
+            this.vw_SessionDetailsBindingSource.DataSource = this.park_spotDataSet2;
+            // 
+            // park_spotDataSet2
+            // 
+            this.park_spotDataSet2.DataSetName = "Park_spotDataSet2";
+            this.park_spotDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_ActiveSessionsBindingSource1
             // 
@@ -1009,7 +748,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1740, 887);
+            this.tabControl1.Size = new System.Drawing.Size(1740, 521);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage4
@@ -1035,10 +774,69 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1732, 855);
+            this.tabPage4.Size = new System.Drawing.Size(1732, 489);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Учётная запись оператора";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buttonPassword
+            // 
+            this.buttonPassword.Location = new System.Drawing.Point(100, 440);
+            this.buttonPassword.Name = "buttonPassword";
+            this.buttonPassword.Size = new System.Drawing.Size(316, 28);
+            this.buttonPassword.TabIndex = 17;
+            this.buttonPassword.Text = "Редактировать";
+            this.buttonPassword.UseVisualStyleBackColor = true;
+            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
+            // 
+            // textBoxPassword1
+            // 
+            this.textBoxPassword1.Location = new System.Drawing.Point(189, 389);
+            this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword1.TabIndex = 16;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(50, 392);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(133, 19);
+            this.label24.TabIndex = 15;
+            this.label24.Text = "Повторите пароль";
+            // 
+            // textBoxPassword0
+            // 
+            this.textBoxPassword0.Location = new System.Drawing.Point(189, 348);
+            this.textBoxPassword0.Name = "textBoxPassword0";
+            this.textBoxPassword0.Size = new System.Drawing.Size(227, 26);
+            this.textBoxPassword0.TabIndex = 14;
+            this.textBoxPassword0.TextChanged += new System.EventHandler(this.textBoxPassword1_TextChanged);
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Location = new System.Drawing.Point(189, 314);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(227, 26);
+            this.textBoxLogin.TabIndex = 13;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(131, 317);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 19);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Логин";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(125, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 19);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Пароль";
             // 
             // buttonProfile
             // 
@@ -1088,7 +886,7 @@
             // MailProfile
             // 
             this.MailProfile.AutoSize = true;
-            this.MailProfile.Location = new System.Drawing.Point(135, 213);
+            this.MailProfile.Location = new System.Drawing.Point(105, 216);
             this.MailProfile.Name = "MailProfile";
             this.MailProfile.Size = new System.Drawing.Size(48, 19);
             this.MailProfile.TabIndex = 4;
@@ -1097,7 +895,7 @@
             // PhoneProfile
             // 
             this.PhoneProfile.AutoSize = true;
-            this.PhoneProfile.Location = new System.Drawing.Point(118, 177);
+            this.PhoneProfile.Location = new System.Drawing.Point(100, 174);
             this.PhoneProfile.Name = "PhoneProfile";
             this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
             this.PhoneProfile.TabIndex = 3;
@@ -1106,7 +904,7 @@
             // SurnameProfile
             // 
             this.SurnameProfile.AutoSize = true;
-            this.SurnameProfile.Location = new System.Drawing.Point(110, 140);
+            this.SurnameProfile.Location = new System.Drawing.Point(100, 137);
             this.SurnameProfile.Name = "SurnameProfile";
             this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
             this.SurnameProfile.TabIndex = 2;
@@ -1115,7 +913,7 @@
             // FamProfile
             // 
             this.FamProfile.AutoSize = true;
-            this.FamProfile.Location = new System.Drawing.Point(111, 100);
+            this.FamProfile.Location = new System.Drawing.Point(100, 99);
             this.FamProfile.Name = "FamProfile";
             this.FamProfile.Size = new System.Drawing.Size(72, 19);
             this.FamProfile.TabIndex = 1;
@@ -1124,7 +922,7 @@
             // NameProfile
             // 
             this.NameProfile.AutoSize = true;
-            this.NameProfile.Location = new System.Drawing.Point(146, 64);
+            this.NameProfile.Location = new System.Drawing.Point(100, 64);
             this.NameProfile.Name = "NameProfile";
             this.NameProfile.Size = new System.Drawing.Size(37, 19);
             this.NameProfile.TabIndex = 0;
@@ -1139,7 +937,7 @@
             this.pictureBox1.Image = global::kurs.Properties.Resources.oper_icon;
             this.pictureBox1.Location = new System.Drawing.Point(54, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(74, 72);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -1189,149 +987,379 @@
             // 
             this.v_ActiveSessionsTableAdapter1.ClearBeforeFill = true;
             // 
-            // label8
+            // vw_SessionDetailsTableAdapter
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(125, 351);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 19);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Пароль";
+            this.vw_SessionDetailsTableAdapter.ClearBeforeFill = true;
             // 
-            // label23
+            // tableAdapterManager2
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(131, 317);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(52, 19);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "Логин";
+            this.tableAdapterManager2.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager2.Connection = null;
+            this.tableAdapterManager2.UpdateOrder = kurs.Park_spotDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager2.КлиентTableAdapter = null;
+            this.tableAdapterManager2.Парковочная_сессияTableAdapter = null;
+            this.tableAdapterManager2.Парковочное_местоTableAdapter = null;
+            this.tableAdapterManager2.ПлатёжTableAdapter = null;
+            this.tableAdapterManager2.СотрудникTableAdapter = null;
+            this.tableAdapterManager2.ТарифTableAdapter = null;
+            this.tableAdapterManager2.ТСTableAdapter = null;
+            this.tableAdapterManager2.УчетныеЗаписиTableAdapter = null;
             // 
-            // textBoxLogin
+            // vwSessionDetailsBindingSource
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(189, 314);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(227, 26);
-            this.textBoxLogin.TabIndex = 13;
+            this.vwSessionDetailsBindingSource.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource.DataSource = this.park_spotDataSet2;
             // 
-            // textBoxPassword0
+            // vw_SessionDetailsTableAdapter1
             // 
-            this.textBoxPassword0.Location = new System.Drawing.Point(189, 348);
-            this.textBoxPassword0.Name = "textBoxPassword0";
-            this.textBoxPassword0.Size = new System.Drawing.Size(227, 26);
-            this.textBoxPassword0.TabIndex = 14;
-            this.textBoxPassword0.TextChanged += new System.EventHandler(this.textBoxPassword1_TextChanged);
+            this.vw_SessionDetailsTableAdapter1.ClearBeforeFill = true;
             // 
-            // label24
+            // vw_VehicleRegistryBindingSource
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(50, 392);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(133, 19);
-            this.label24.TabIndex = 15;
-            this.label24.Text = "Повторите пароль";
+            this.vw_VehicleRegistryBindingSource.DataMember = "vw_VehicleRegistry";
+            this.vw_VehicleRegistryBindingSource.DataSource = this.park_spotDataSet;
             // 
-            // textBoxPassword1
+            // vw_VehicleRegistryTableAdapter
             // 
-            this.textBoxPassword1.Location = new System.Drawing.Point(189, 389);
-            this.textBoxPassword1.Name = "textBoxPassword1";
-            this.textBoxPassword1.Size = new System.Drawing.Size(227, 26);
-            this.textBoxPassword1.TabIndex = 16;
+            this.vw_VehicleRegistryTableAdapter.ClearBeforeFill = true;
             // 
-            // buttonPassword
+            // сотрудникBindingSource
             // 
-            this.buttonPassword.Location = new System.Drawing.Point(100, 440);
-            this.buttonPassword.Name = "buttonPassword";
-            this.buttonPassword.Size = new System.Drawing.Size(316, 28);
-            this.buttonPassword.TabIndex = 17;
-            this.buttonPassword.Text = "Редактировать";
-            this.buttonPassword.UseVisualStyleBackColor = true;
-            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
-            // NameProfile
+            this.сотрудникBindingSource.DataMember = "Сотрудник";
+            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
             // 
-            this.NameProfile.AutoSize = true;
-            this.NameProfile.Location = new System.Drawing.Point(100, 64);
-            this.NameProfile.Name = "NameProfile";
-            this.NameProfile.Size = new System.Drawing.Size(37, 19);
-            this.NameProfile.TabIndex = 0;
-            this.NameProfile.Text = "Имя";
+            // сотрудникTableAdapter
             // 
-            // FamProfile
+            this.сотрудникTableAdapter.ClearBeforeFill = true;
             // 
-            this.FamProfile.AutoSize = true;
-            this.FamProfile.Location = new System.Drawing.Point(100, 99);
-            this.FamProfile.Name = "FamProfile";
-            this.FamProfile.Size = new System.Drawing.Size(72, 19);
-            this.FamProfile.TabIndex = 1;
-            this.FamProfile.Text = "Фамилия";
+            // vwSessionDetailsBindingSource1
             // 
-            // SurnameProfile
+            this.vwSessionDetailsBindingSource1.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource1.DataSource = this.park_spotDataSet;
             // 
-            this.SurnameProfile.AutoSize = true;
-            this.SurnameProfile.Location = new System.Drawing.Point(100, 137);
-            this.SurnameProfile.Name = "SurnameProfile";
-            this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
-            this.SurnameProfile.TabIndex = 2;
-            this.SurnameProfile.Text = "Отчество";
+            // vwSessionDetailsBindingSource3
             // 
-            // PhoneProfile
+            this.vwSessionDetailsBindingSource3.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource3.DataSource = this.park_spotDataSet4;
             // 
-            this.PhoneProfile.AutoSize = true;
-            this.PhoneProfile.Location = new System.Drawing.Point(100, 174);
-            this.PhoneProfile.Name = "PhoneProfile";
-            this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
-            this.PhoneProfile.TabIndex = 3;
-            this.PhoneProfile.Text = "Телефон";
+            // v_ActiveSessionsTableAdapter
             // 
-            // MailProfile
+            this.v_ActiveSessionsTableAdapter.ClearBeforeFill = true;
             // 
-            this.MailProfile.AutoSize = true;
-            this.MailProfile.Location = new System.Drawing.Point(105, 216);
-            this.MailProfile.Name = "MailProfile";
-            this.MailProfile.Size = new System.Drawing.Size(48, 19);
-            this.MailProfile.TabIndex = 4;
-            this.MailProfile.Text = "E-mail";
+            // vwVehicleRegistryBindingSource
             // 
-            // textBoxName
+            this.vwVehicleRegistryBindingSource.DataMember = "vw_VehicleRegistry";
+            this.vwVehicleRegistryBindingSource.DataSource = this.park_spotDataSet2;
             // 
-            this.textBoxName.Location = new System.Drawing.Point(189, 61);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(227, 26);
-            this.textBoxName.TabIndex = 5;
+            // vw_VehicleRegistryTableAdapter1
             // 
-            // textBoxFam
+            this.vw_VehicleRegistryTableAdapter1.ClearBeforeFill = true;
             // 
-            this.textBoxFam.Location = new System.Drawing.Point(189, 97);
-            this.textBoxFam.Name = "textBoxFam";
-            this.textBoxFam.Size = new System.Drawing.Size(227, 26);
-            this.textBoxFam.TabIndex = 6;
+            // vwSessionDetailsBindingSource4
             // 
-            // textBoxSurname
+            this.vwSessionDetailsBindingSource4.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource4.DataSource = this.park_spotDataSet2;
             // 
-            this.textBoxSurname.Location = new System.Drawing.Point(189, 137);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(227, 26);
-            this.textBoxSurname.TabIndex = 7;
+            // parkspotDataSetBindingSource
             // 
-            // textBoxPhone
+            this.parkspotDataSetBindingSource.DataSource = this.park_spotDataSet;
+            this.parkspotDataSetBindingSource.Position = 0;
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(189, 174);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
-            this.textBoxPhone.TabIndex = 8;
+            // vwSessionDetailsBindingSource5
             // 
-            // textBoxMail
+            this.vwSessionDetailsBindingSource5.DataMember = "vw_SessionDetails";
+            this.vwSessionDetailsBindingSource5.DataSource = this.park_spotDataSet;
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(189, 210);
-            this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.Size = new System.Drawing.Size(227, 26);
-            this.textBoxMail.TabIndex = 9;
+            // park_spotDataSet31
+            // 
+            this.park_spotDataSet31.DataSetName = "Park_spotDataSet3";
+            this.park_spotDataSet31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_VehicleRegistryBindingSource1
+            // 
+            this.vw_VehicleRegistryBindingSource1.DataMember = "vw_VehicleRegistry";
+            this.vw_VehicleRegistryBindingSource1.DataSource = this.park_spotDataSet31;
+            // 
+            // vw_VehicleRegistryTableAdapter2
+            // 
+            this.vw_VehicleRegistryTableAdapter2.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager3
+            // 
+            this.tableAdapterManager3.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager3.Connection = null;
+            this.tableAdapterManager3.UpdateOrder = kurs.Park_spotDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager3.КлиентTableAdapter = null;
+            this.tableAdapterManager3.Парковочная_сессияTableAdapter = null;
+            this.tableAdapterManager3.Парковочное_местоTableAdapter = null;
+            this.tableAdapterManager3.ПлатёжTableAdapter = null;
+            this.tableAdapterManager3.СотрудникTableAdapter = null;
+            this.tableAdapterManager3.ТарифTableAdapter = null;
+            this.tableAdapterManager3.ТСTableAdapter = null;
+            this.tableAdapterManager3.УчетныеЗаписиTableAdapter = null;
+            // 
+            // vw_VehicleRegistryDataGridView
+            // 
+            this.vw_VehicleRegistryDataGridView.AutoGenerateColumns = false;
+            this.vw_VehicleRegistryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vw_VehicleRegistryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn10});
+            this.vw_VehicleRegistryDataGridView.DataSource = this.vw_VehicleRegistryBindingSource1;
+            this.vw_VehicleRegistryDataGridView.Location = new System.Drawing.Point(57, 276);
+            this.vw_VehicleRegistryDataGridView.Name = "vw_VehicleRegistryDataGridView";
+            this.vw_VehicleRegistryDataGridView.Size = new System.Drawing.Size(578, 206);
+            this.vw_VehicleRegistryDataGridView.TabIndex = 51;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ФИО";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ФИО";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 280;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Электронная_почта";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Электронная почта";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 260;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Гос_номер";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Гос номер";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Тип";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Тип";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Автомобиль";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Автомобиль";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Телефон_владельца";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Телефон владельца";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Гос_номер";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Гос номер";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Время_заезда";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Время заезда";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Номер_места";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Номер места";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Автомобиль";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Автомобиль";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ФИО_клиента";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ФИО клиента";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 280;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Телефон_клиента";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Телефон клиента";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 180;
+            // 
+            // vw_PaymentReportBindingSource
+            // 
+            this.vw_PaymentReportBindingSource.DataMember = "vw_PaymentReport";
+            this.vw_PaymentReportBindingSource.DataSource = this.park_spotDataSet31;
+            // 
+            // vw_PaymentReportTableAdapter
+            // 
+            this.vw_PaymentReportTableAdapter.ClearBeforeFill = true;
+            // 
+            // v_PaymentHistoryBindingSource1
+            // 
+            this.v_PaymentHistoryBindingSource1.DataMember = "v_PaymentHistory";
+            this.v_PaymentHistoryBindingSource1.DataSource = this.park_spotDataSet31;
+            // 
+            // v_PaymentHistoryTableAdapter
+            // 
+            this.v_PaymentHistoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // v_PaymentHistoryDataGridView
+            // 
+            this.v_PaymentHistoryDataGridView.AutoGenerateColumns = false;
+            this.v_PaymentHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.v_PaymentHistoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28});
+            this.v_PaymentHistoryDataGridView.DataSource = this.v_PaymentHistoryBindingSource1;
+            this.v_PaymentHistoryDataGridView.Location = new System.Drawing.Point(44, 204);
+            this.v_PaymentHistoryDataGridView.Name = "v_PaymentHistoryDataGridView";
+            this.v_PaymentHistoryDataGridView.Size = new System.Drawing.Size(1122, 271);
+            this.v_PaymentHistoryDataGridView.TabIndex = 50;
+            this.v_PaymentHistoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.v_PaymentHistoryDataGridView_CellContentClick);
+            // 
+            // v_ParkingLotOverviewBindingSource1
+            // 
+            this.v_ParkingLotOverviewBindingSource1.DataMember = "v_ParkingLotOverview";
+            this.v_ParkingLotOverviewBindingSource1.DataSource = this.park_spotDataSet31;
+            // 
+            // v_ParkingLotOverviewTableAdapter
+            // 
+            this.v_ParkingLotOverviewTableAdapter.ClearBeforeFill = true;
+            // 
+            // v_ParkingLotOverviewDataGridView
+            // 
+            this.v_ParkingLotOverviewDataGridView.AutoGenerateColumns = false;
+            this.v_ParkingLotOverviewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.v_ParkingLotOverviewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.v_ParkingLotOverviewDataGridView.DataSource = this.v_ParkingLotOverviewBindingSource1;
+            this.v_ParkingLotOverviewDataGridView.Location = new System.Drawing.Point(44, 37);
+            this.v_ParkingLotOverviewDataGridView.Name = "v_ParkingLotOverviewDataGridView";
+            this.v_ParkingLotOverviewDataGridView.Size = new System.Drawing.Size(501, 116);
+            this.v_ParkingLotOverviewDataGridView.TabIndex = 50;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Этаж";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Этаж";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Мест_свободно";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Мест свободно";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Мест_занято";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Мест занято";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Всего_мест";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Всего мест";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Дата_платежа";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Дата платежа";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Сумма";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Тариф";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Тариф";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Время_заезда";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Время заезда";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Время_выезда";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Время выезда";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Длительность_минут";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Продолжительность";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "ФИО_клиента";
+            this.dataGridViewTextBoxColumn26.HeaderText = "ФИО клиента";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Width = 260;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Гос_номер";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Гос номер";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Автомобиль";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Автомобиль";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
             // 
             // operator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1836, 995);
+            this.ClientSize = new System.Drawing.Size(1820, 628);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NameEmpl);
             this.Controls.Add(this.pictureBox1);
@@ -1348,18 +1376,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.парковочное_местоBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.парковочное_местоDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.клиентDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.тСDataGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vActiveSessionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.парковочнаясессияBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -1367,6 +1401,23 @@
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwVehicleRegistryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_PaymentReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1384,18 +1435,11 @@
         private Park_spotDataSetTableAdapters.Парковочное_местоTableAdapter парковочное_местоTableAdapter;
         private System.Windows.Forms.BindingSource парковочное_местоBindingSource;
         private System.Windows.Forms.BindingSource v_PaymentHistoryBindingSource;
-        private Park_spotDataSetTableAdapters.v_PaymentHistoryTableAdapter v_PaymentHistoryTableAdapter;
         private System.Windows.Forms.BindingSource v_ParkingLotOverviewBindingSource;
-        private Park_spotDataSetTableAdapters.v_ParkingLotOverviewTableAdapter v_ParkingLotOverviewTableAdapter;
         private System.Windows.Forms.BindingSource v_ActiveSessionsBindingSource;
-        private Park_spotDataSetTableAdapters.v_ActiveSessionsTableAdapter v_ActiveSessionsTableAdapter;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView v_ParkingLotOverviewDataGridView;
-        private System.Windows.Forms.DataGridView парковочное_местоDataGridView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label CorrectLabel;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox ForAdd;
         private System.Windows.Forms.Button AddSessionButton;
         private System.Windows.Forms.Label INFO3;
@@ -1404,42 +1448,19 @@
         private System.Windows.Forms.Label INFO1;
         private System.Windows.Forms.Label INFO2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox VehicleType;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox GosText;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView клиентDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridView тСDataGridView;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label22;
@@ -1450,15 +1471,7 @@
         private Park_spotDataSetTableAdapters.КлиентTableAdapter клиентTableAdapter1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NameEmpl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.Button Updateclient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ExitButton;
         private Park_spotDataSet1 park_spotDataSet1;
@@ -1468,9 +1481,6 @@
         private System.Windows.Forms.BindingSource v_ActiveSessionsBindingSource1;
         private Park_spotDataSet1TableAdapters.v_ActiveSessionsTableAdapter v_ActiveSessionsTableAdapter1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxSurname;
@@ -1490,5 +1500,72 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonPassword;
         private System.Windows.Forms.Button button2;
+        private Park_spotDataSet2 park_spotDataSet2;
+        private System.Windows.Forms.BindingSource vw_SessionDetailsBindingSource;
+        private Park_spotDataSet2TableAdapters.vw_SessionDetailsTableAdapter vw_SessionDetailsTableAdapter;
+        private Park_spotDataSet2TableAdapters.TableAdapterManager tableAdapterManager2;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource;
+        private System.Windows.Forms.BindingSource vw_SessionDetailsBindingSource1;
+        private Park_spotDataSetTableAdapters.vw_SessionDetailsTableAdapter vw_SessionDetailsTableAdapter1;
+        private System.Windows.Forms.BindingSource vw_VehicleRegistryBindingSource;
+        private Park_spotDataSetTableAdapters.vw_VehicleRegistryTableAdapter vw_VehicleRegistryTableAdapter;
+        private System.Windows.Forms.BindingSource сотрудникBindingSource;
+        private Park_spotDataSetTableAdapters.СотрудникTableAdapter сотрудникTableAdapter;
+        private System.Windows.Forms.DataGridView клиентDataGridView;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource1;
+        private Park_spotDataSet park_spotDataSet3;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource2;
+        private Park_spotDataSet park_spotDataSet4;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource3;
+        private System.Windows.Forms.BindingSource v_ActiveSessionsBindingSource2;
+        private Park_spotDataSetTableAdapters.v_ActiveSessionsTableAdapter v_ActiveSessionsTableAdapter;
+        private System.Windows.Forms.DataGridView v_ActiveSessionsDataGridView;
+        private System.Windows.Forms.BindingSource парковочнаясессияBindingSource;
+        private System.Windows.Forms.BindingSource vwVehicleRegistryBindingSource;
+        private Park_spotDataSet2TableAdapters.vw_VehicleRegistryTableAdapter vw_VehicleRegistryTableAdapter1;
+        private System.Windows.Forms.BindingSource vActiveSessionsBindingSource;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource4;
+        private System.Windows.Forms.BindingSource parkspotDataSetBindingSource;
+        private System.Windows.Forms.BindingSource тСBindingSource1;
+        private System.Windows.Forms.BindingSource vwSessionDetailsBindingSource5;
+        private Park_spotDataSet3 park_spotDataSet31;
+        private System.Windows.Forms.BindingSource vw_VehicleRegistryBindingSource1;
+        private Park_spotDataSet3TableAdapters.vw_VehicleRegistryTableAdapter vw_VehicleRegistryTableAdapter2;
+        private Park_spotDataSet3TableAdapters.TableAdapterManager tableAdapterManager3;
+        private System.Windows.Forms.DataGridView vw_VehicleRegistryDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.BindingSource vw_PaymentReportBindingSource;
+        private Park_spotDataSet3TableAdapters.vw_PaymentReportTableAdapter vw_PaymentReportTableAdapter;
+        private System.Windows.Forms.BindingSource v_PaymentHistoryBindingSource1;
+        private Park_spotDataSet3TableAdapters.v_PaymentHistoryTableAdapter v_PaymentHistoryTableAdapter;
+        private System.Windows.Forms.DataGridView v_PaymentHistoryDataGridView;
+        private System.Windows.Forms.BindingSource v_ParkingLotOverviewBindingSource1;
+        private Park_spotDataSet3TableAdapters.v_ParkingLotOverviewTableAdapter v_ParkingLotOverviewTableAdapter;
+        private System.Windows.Forms.DataGridView v_ParkingLotOverviewDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
     }
 }

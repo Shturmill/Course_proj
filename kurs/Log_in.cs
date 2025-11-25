@@ -52,7 +52,7 @@ namespace kurs
                                 ID = (int)reader["ID_сотрудника"],
                                 ФИО = reader["ФИО"].ToString(),
                                 Должность = reader["Должность"].ToString(),
-                                Email = reader["Электронная_почта"]?.ToString(), // ?. для NULL полей
+                                Email = reader["Электронная_почта"]?.ToString(),
                                 Телефон = reader["Телефон"].ToString()
                             };
                         }

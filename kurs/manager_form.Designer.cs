@@ -41,6 +41,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Updateclient = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,18 +52,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.сотрудникDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.NameEmpl = new System.Windows.Forms.Label();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
@@ -72,6 +62,15 @@
             this.SurnameProfile = new System.Windows.Forms.Label();
             this.FamProfile = new System.Windows.Forms.Label();
             this.NameProfile = new System.Windows.Forms.Label();
+            this.UpdatePersonal = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.сотрудникDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonPassword = new System.Windows.Forms.Button();
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -90,8 +89,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.NameEmpl = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UpdateProfile = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -149,10 +152,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.тарифDataGridView.DataSource = this.тарифBindingSource;
-            this.тарифDataGridView.Location = new System.Drawing.Point(38, 362);
+            this.тарифDataGridView.Location = new System.Drawing.Point(522, 8);
             this.тарифDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.тарифDataGridView.Name = "тарифDataGridView";
-            this.тарифDataGridView.Size = new System.Drawing.Size(724, 335);
+            this.тарифDataGridView.Size = new System.Drawing.Size(724, 313);
             this.тарифDataGridView.TabIndex = 0;
             this.тарифDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.тарифDataGridView_CellContentClick);
             // 
@@ -186,7 +189,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1778, 926);
+            this.tabControl1.Size = new System.Drawing.Size(1778, 427);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -206,15 +209,33 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1770, 894);
+            this.tabPage1.Size = new System.Drawing.Size(1770, 395);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Тарифы";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(249, 289);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(181, 32);
+            this.button3.TabIndex = 52;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(38, 289);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(181, 32);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Updateclient
             // 
             this.Updateclient.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.Updateclient.Location = new System.Drawing.Point(1723, 847);
+            this.Updateclient.Location = new System.Drawing.Point(461, 281);
             this.Updateclient.Name = "Updateclient";
             this.Updateclient.Size = new System.Drawing.Size(40, 40);
             this.Updateclient.TabIndex = 50;
@@ -286,6 +307,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.textBoxMail);
             this.tabPage2.Controls.Add(this.textBoxPhone);
             this.tabPage2.Controls.Add(this.textBoxSurname);
@@ -296,143 +319,17 @@
             this.tabPage2.Controls.Add(this.SurnameProfile);
             this.tabPage2.Controls.Add(this.FamProfile);
             this.tabPage2.Controls.Add(this.NameProfile);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.UpdatePersonal);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.сотрудникDataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1770, 894);
+            this.tabPage2.Size = new System.Drawing.Size(1770, 395);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.button1.Location = new System.Drawing.Point(1723, 847);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 50;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 48);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 19);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Данные о сотрудниках";
-            // 
-            // сотрудникDataGridView
-            // 
-            this.сотрудникDataGridView.AutoGenerateColumns = false;
-            this.сотрудникDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.сотрудникDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
-            this.сотрудникDataGridView.Location = new System.Drawing.Point(33, 504);
-            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.сотрудникDataGridView.Name = "сотрудникDataGridView";
-            this.сотрудникDataGridView.Size = new System.Drawing.Size(1054, 322);
-            this.сотрудникDataGridView.TabIndex = 0;
-            this.сотрудникDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.сотрудникDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ФИО";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ФИО";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Должность";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Должность";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Электронная_почта";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Электронная_почта";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Телефон";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 120;
-            // 
-            // сотрудникBindingSource
-            // 
-            this.сотрудникBindingSource.DataMember = "Сотрудник";
-            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.buttonPassword);
-            this.tabPage3.Controls.Add(this.textBoxPassword1);
-            this.tabPage3.Controls.Add(this.label24);
-            this.tabPage3.Controls.Add(this.textBoxPassword0);
-            this.tabPage3.Controls.Add(this.textBoxLogin);
-            this.tabPage3.Controls.Add(this.label23);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.buttonProfile);
-            this.tabPage3.Controls.Add(this.textBoxMailProfile);
-            this.tabPage3.Controls.Add(this.textBoxPhoneProfile);
-            this.tabPage3.Controls.Add(this.textBoxSurProfile);
-            this.tabPage3.Controls.Add(this.textBoxFamProfile);
-            this.tabPage3.Controls.Add(this.textBoxNameProfile);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1770, 894);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Учётная запись";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // NameEmpl
-            // 
-            this.NameEmpl.AutoSize = true;
-            this.NameEmpl.Location = new System.Drawing.Point(136, 24);
-            this.NameEmpl.Name = "NameEmpl";
-            this.NameEmpl.Size = new System.Drawing.Size(96, 19);
-            this.NameEmpl.TabIndex = 5;
-            this.NameEmpl.Text = "manager_form";
-            this.NameEmpl.Click += new System.EventHandler(this.Name_Click);
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.Location = new System.Drawing.Point(140, 56);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(93, 25);
-            this.ExitButton.TabIndex = 52;
-            this.ExitButton.Text = "Выход";
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::kurs.Properties.Resources.admin_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBoxMail
             // 
@@ -514,9 +411,106 @@
             this.NameProfile.TabIndex = 51;
             this.NameProfile.Text = "Имя";
             // 
+            // UpdatePersonal
+            // 
+            this.UpdatePersonal.BackgroundImage = global::kurs.Properties.Resources.update_icon;
+            this.UpdatePersonal.Location = new System.Drawing.Point(428, 271);
+            this.UpdatePersonal.Name = "UpdatePersonal";
+            this.UpdatePersonal.Size = new System.Drawing.Size(40, 40);
+            this.UpdatePersonal.TabIndex = 50;
+            this.UpdatePersonal.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(56, 48);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(162, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Данные о сотрудниках";
+            // 
+            // сотрудникDataGridView
+            // 
+            this.сотрудникDataGridView.AutoGenerateColumns = false;
+            this.сотрудникDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.сотрудникDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
+            this.сотрудникDataGridView.Location = new System.Drawing.Point(509, 25);
+            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.сотрудникDataGridView.Name = "сотрудникDataGridView";
+            this.сотрудникDataGridView.Size = new System.Drawing.Size(1054, 322);
+            this.сотрудникDataGridView.TabIndex = 0;
+            this.сотрудникDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.сотрудникDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ФИО";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ФИО";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Должность";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Электронная_почта";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Электронная_почта";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 120;
+            // 
+            // сотрудникBindingSource
+            // 
+            this.сотрудникBindingSource.DataMember = "Сотрудник";
+            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.UpdateProfile);
+            this.tabPage3.Controls.Add(this.buttonPassword);
+            this.tabPage3.Controls.Add(this.textBoxPassword1);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.textBoxPassword0);
+            this.tabPage3.Controls.Add(this.textBoxLogin);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.buttonProfile);
+            this.tabPage3.Controls.Add(this.textBoxMailProfile);
+            this.tabPage3.Controls.Add(this.textBoxPhoneProfile);
+            this.tabPage3.Controls.Add(this.textBoxSurProfile);
+            this.tabPage3.Controls.Add(this.textBoxFamProfile);
+            this.tabPage3.Controls.Add(this.textBoxNameProfile);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1770, 395);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Учётная запись";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // buttonPassword
             // 
-            this.buttonPassword.Location = new System.Drawing.Point(85, 431);
+            this.buttonPassword.Location = new System.Drawing.Point(489, 254);
             this.buttonPassword.Name = "buttonPassword";
             this.buttonPassword.Size = new System.Drawing.Size(316, 28);
             this.buttonPassword.TabIndex = 35;
@@ -526,7 +520,7 @@
             // 
             // textBoxPassword1
             // 
-            this.textBoxPassword1.Location = new System.Drawing.Point(174, 380);
+            this.textBoxPassword1.Location = new System.Drawing.Point(578, 203);
             this.textBoxPassword1.Name = "textBoxPassword1";
             this.textBoxPassword1.Size = new System.Drawing.Size(227, 26);
             this.textBoxPassword1.TabIndex = 34;
@@ -534,7 +528,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(35, 383);
+            this.label24.Location = new System.Drawing.Point(439, 206);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(133, 19);
             this.label24.TabIndex = 33;
@@ -542,14 +536,14 @@
             // 
             // textBoxPassword0
             // 
-            this.textBoxPassword0.Location = new System.Drawing.Point(174, 339);
+            this.textBoxPassword0.Location = new System.Drawing.Point(578, 162);
             this.textBoxPassword0.Name = "textBoxPassword0";
             this.textBoxPassword0.Size = new System.Drawing.Size(227, 26);
             this.textBoxPassword0.TabIndex = 32;
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(174, 305);
+            this.textBoxLogin.Location = new System.Drawing.Point(578, 128);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(227, 26);
             this.textBoxLogin.TabIndex = 31;
@@ -557,7 +551,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(116, 308);
+            this.label23.Location = new System.Drawing.Point(520, 131);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(52, 19);
             this.label23.TabIndex = 30;
@@ -566,7 +560,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(110, 342);
+            this.label8.Location = new System.Drawing.Point(514, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 19);
             this.label8.TabIndex = 29;
@@ -662,29 +656,68 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "Имя";
             // 
-            // button2
+            // NameEmpl
             // 
-            this.button2.Location = new System.Drawing.Point(38, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 32);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.NameEmpl.AutoSize = true;
+            this.NameEmpl.Location = new System.Drawing.Point(136, 24);
+            this.NameEmpl.Name = "NameEmpl";
+            this.NameEmpl.Size = new System.Drawing.Size(96, 19);
+            this.NameEmpl.TabIndex = 5;
+            this.NameEmpl.Text = "manager_form";
+            this.NameEmpl.Click += new System.EventHandler(this.Name_Click);
             // 
-            // button3
+            // ExitButton
             // 
-            this.button3.Location = new System.Drawing.Point(249, 289);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 32);
-            this.button3.TabIndex = 52;
-            this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ExitButton.Location = new System.Drawing.Point(140, 56);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(93, 25);
+            this.ExitButton.TabIndex = 52;
+            this.ExitButton.Text = "Выход";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::kurs.Properties.Resources.admin_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // UpdateProfile
+            // 
+            this.UpdateProfile.BackgroundImage = global::kurs.Properties.Resources.update_icon;
+            this.UpdateProfile.Location = new System.Drawing.Point(830, 240);
+            this.UpdateProfile.Name = "UpdateProfile";
+            this.UpdateProfile.Size = new System.Drawing.Size(40, 40);
+            this.UpdateProfile.TabIndex = 51;
+            this.UpdateProfile.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(62, 271);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 28);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(224, 271);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 28);
+            this.button4.TabIndex = 62;
+            this.button4.Text = "Удалить";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // manager_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1860, 1052);
+            this.ClientSize = new System.Drawing.Size(1860, 546);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NameEmpl);
             this.Controls.Add(this.pictureBox1);
@@ -745,7 +778,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button UpdatePersonal;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox textBoxMail;
@@ -778,5 +811,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button UpdateProfile;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }

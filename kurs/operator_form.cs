@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -184,27 +185,23 @@ namespace kurs
             }
         }
 
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.тСTableAdapter.FillBy(this.park_spotDataSet.ТС);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-
-
         private void operator_form_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.v_ParkingLotOverview". При необходимости она может быть перемещена или удалена.
+            this.v_ParkingLotOverviewTableAdapter.Fill(this.park_spotDataSet31.v_ParkingLotOverview);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.v_PaymentHistory". При необходимости она может быть перемещена или удалена.
+            this.v_PaymentHistoryTableAdapter.Fill(this.park_spotDataSet31.v_PaymentHistory);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.vw_PaymentReport". При необходимости она может быть перемещена или удалена.
+            this.vw_PaymentReportTableAdapter.Fill(this.park_spotDataSet31.vw_PaymentReport);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.vw_VehicleRegistry". При необходимости она может быть перемещена или удалена.
+            this.vw_VehicleRegistryTableAdapter2.Fill(this.park_spotDataSet31.vw_VehicleRegistry);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet4.Парковочная_сессия". При необходимости она может быть перемещена или удалена.
+            this.парковочная_сессияTableAdapter.Fill(this.park_spotDataSet4.Парковочная_сессия);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.v_ActiveSessions". При необходимости она может быть перемещена или удалена.
             this.v_ActiveSessionsTableAdapter.Fill(this.park_spotDataSet.v_ActiveSessions);
-            this.v_ParkingLotOverviewTableAdapter.Fill(this.park_spotDataSet.v_ParkingLotOverview);            
-            this.v_PaymentHistoryTableAdapter.Fill(this.park_spotDataSet.v_PaymentHistory);            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
+            this.сотрудникTableAdapter.Fill(this.park_spotDataSet.Сотрудник);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet2.vw_SessionDetails". При необходимости она может быть перемещена или удалена.      
             this.парковочное_местоTableAdapter.Fill(this.park_spotDataSet.Парковочное_место);            
             this.тСTableAdapter.Fill(this.park_spotDataSet.ТС);            
             this.клиентTableAdapter.Fill(this.park_spotDataSet.Клиент);
@@ -269,6 +266,27 @@ namespace kurs
 
         }
 
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.парковочная_сессияTableAdapter.FillBy(this.park_spotDataSet.Парковочная_сессия);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
+        }
+
+        private void ForAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void v_PaymentHistoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
