@@ -76,7 +76,6 @@ namespace kurs
             string name = textBoxNameProfile.Text.Trim();
             string sur = textBoxSurProfile.Text.Trim();
 
-            // Собираем полное ФИО для базы данных
             string fullFio = $"{fam} {name} {sur}".Trim();
 
             string phone = textBoxPhone.Text.Trim();
@@ -118,7 +117,6 @@ namespace kurs
             string passwordConfirm = textBoxPassword1.Text;
             string login = textBoxLogin.Text.Trim();
 
-            // Валидация
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(passwordNew))
             {
                 MessageBox.Show("Логин и пароль не могут быть пустыми.");
@@ -205,6 +203,158 @@ namespace kurs
             Log_in Log_in = new Log_in();
             Log_in.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name = textBoxName.Text.Trim();
+            string fam = textBoxFam.Text.Trim();
+            string sur = textBoxSurname.Text.Trim();
+
+            string phone = textBoxPhone.Text.Trim();
+            string mail = textBoxMail.Text.Trim();
+            string position = emplVal.Text.Trim();
+
+            if (string.IsNullOrEmpty(fam) || string.IsNullOrEmpty(name) ||
+                string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(mail) ||
+                string.IsNullOrEmpty(position))
+            {
+                MessageBox.Show("Пожалуйста, заполните все обязательные поля:\nФамилия, Имя, Телефон, Почта, Должность.");
+                return;
+            }
+
+            string fullFio = $"{fam} {name} {sur}".Trim();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_AddEmployee", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@ФИО", fullFio);
+                    command.Parameters.AddWithValue("@Должность", position);
+                    command.Parameters.AddWithValue("@Телефон", phone);
+                    command.Parameters.AddWithValue("@Электронная_почта", mail);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show($"Сотрудник успешно добавлен!\n\nЛогин для входа: {mail}\nПароль по умолчанию: 12345");
+
+                    textBoxName.Clear(); textBoxFam.Clear(); textBoxSurname.Clear();
+                    textBoxPhone.Clear(); textBoxMail.Clear();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ошибка базы данных: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string phone = textBoxPhone.Text.Trim();
+
+            string inputFam = textBoxFam.Text.Trim();
+            string inputName = textBoxName.Text.Trim();
+            string inputSur = textBoxSurname.Text.Trim();
+
+            string inputFullFio = $"{inputFam} {inputName} {inputSur}".Trim();
+
+            if (string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Введите номер телефона сотрудника для поиска.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(inputFullFio))
+            {
+                MessageBox.Show("Для безопасности удаления необходимо ввести ФИО сотрудника.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string checkQuery = "SELECT ФИО, Должность FROM Сотрудник WHERE Телефон = @Phone";
+
+                    string dbFio = "";
+                    string dbPosition = "";
+                    bool employeeFound = false;
+
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Phone", phone);
+
+                        using (SqlDataReader reader = checkCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                dbFio = reader["ФИО"].ToString();
+                                dbPosition = reader["Должность"].ToString();
+                                employeeFound = true;
+                            }
+                        }
+                    }
+
+                    if (!employeeFound)
+                    {
+                        MessageBox.Show("Сотрудник с таким номером телефона не найден в базе данных.");
+                        return;
+                    }
+
+                    if (!string.Equals(inputFullFio, dbFio, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show(
+                            $"Ошибка проверки данных!\n\n" +
+                            $"Вы ввели: {inputFullFio}\n" +
+                            $"В базе данных (по этому телефону): {dbFio}\n\n" +
+                            $"Удаление отменено. Данные не совпадают.",
+                            "Ошибка безопасности", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    DialogResult dialogResult = MessageBox.Show(
+                        $"Вы действительно хотите удалить следующего сотрудника?\n\n" +
+                        $"ФИО: {dbFio}\n" +
+                        $"Должность: {dbPosition}\n" +
+                        $"Телефон: {phone}\n\n" +
+                        $"Это действие нельзя отменить.",
+                        "Подтверждение удаления",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        SqlCommand deleteCommand = new SqlCommand("sp_DeleteEmployee", connection);
+                        deleteCommand.CommandType = CommandType.StoredProcedure;
+                        deleteCommand.Parameters.AddWithValue("@Телефон", phone);
+
+                        deleteCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("Сотрудник успешно удален.");
+
+                        // Очистка полей
+                        textBoxName.Clear(); textBoxFam.Clear(); textBoxSurname.Clear();
+                        textBoxPhone.Clear(); textBoxMail.Clear();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ошибка базы данных: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message);
+                }
+            }
         }
     }
 }

@@ -52,6 +52,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.deleteEmpl = new System.Windows.Forms.Button();
+            this.addEmpl = new System.Windows.Forms.Button();
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
@@ -71,6 +73,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.UpdateProfile = new System.Windows.Forms.Button();
             this.buttonPassword = new System.Windows.Forms.Button();
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -92,9 +95,8 @@
             this.NameEmpl = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.UpdateProfile = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.emplVal = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -138,6 +140,7 @@
             this.tableAdapterManager.СотрудникTableAdapter = this.сотрудникTableAdapter;
             this.tableAdapterManager.ТарифTableAdapter = this.тарифTableAdapter;
             this.tableAdapterManager.ТСTableAdapter = null;
+            this.tableAdapterManager.УчетныеЗаписиTableAdapter = null;
             // 
             // сотрудникTableAdapter
             // 
@@ -307,8 +310,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.emplVal);
+            this.tabPage2.Controls.Add(this.deleteEmpl);
+            this.tabPage2.Controls.Add(this.addEmpl);
             this.tabPage2.Controls.Add(this.textBoxMail);
             this.tabPage2.Controls.Add(this.textBoxPhone);
             this.tabPage2.Controls.Add(this.textBoxSurname);
@@ -331,16 +336,36 @@
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // deleteEmpl
+            // 
+            this.deleteEmpl.Location = new System.Drawing.Point(224, 312);
+            this.deleteEmpl.Name = "deleteEmpl";
+            this.deleteEmpl.Size = new System.Drawing.Size(150, 28);
+            this.deleteEmpl.TabIndex = 62;
+            this.deleteEmpl.Text = "Удалить";
+            this.deleteEmpl.UseVisualStyleBackColor = true;
+            this.deleteEmpl.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // addEmpl
+            // 
+            this.addEmpl.Location = new System.Drawing.Point(62, 312);
+            this.addEmpl.Name = "addEmpl";
+            this.addEmpl.Size = new System.Drawing.Size(156, 28);
+            this.addEmpl.TabIndex = 61;
+            this.addEmpl.Text = "Добавить";
+            this.addEmpl.UseVisualStyleBackColor = true;
+            this.addEmpl.Click += new System.EventHandler(this.button1_Click);
+            // 
             // textBoxMail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(147, 228);
+            this.textBoxMail.Location = new System.Drawing.Point(147, 269);
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(227, 26);
             this.textBoxMail.TabIndex = 60;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(147, 192);
+            this.textBoxPhone.Location = new System.Drawing.Point(147, 233);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(227, 26);
             this.textBoxPhone.TabIndex = 59;
@@ -369,7 +394,7 @@
             // MailProfile
             // 
             this.MailProfile.AutoSize = true;
-            this.MailProfile.Location = new System.Drawing.Point(63, 234);
+            this.MailProfile.Location = new System.Drawing.Point(63, 275);
             this.MailProfile.Name = "MailProfile";
             this.MailProfile.Size = new System.Drawing.Size(48, 19);
             this.MailProfile.TabIndex = 55;
@@ -378,7 +403,7 @@
             // PhoneProfile
             // 
             this.PhoneProfile.AutoSize = true;
-            this.PhoneProfile.Location = new System.Drawing.Point(58, 192);
+            this.PhoneProfile.Location = new System.Drawing.Point(58, 233);
             this.PhoneProfile.Name = "PhoneProfile";
             this.PhoneProfile.Size = new System.Drawing.Size(65, 19);
             this.PhoneProfile.TabIndex = 54;
@@ -387,7 +412,7 @@
             // SurnameProfile
             // 
             this.SurnameProfile.AutoSize = true;
-            this.SurnameProfile.Location = new System.Drawing.Point(58, 155);
+            this.SurnameProfile.Location = new System.Drawing.Point(56, 158);
             this.SurnameProfile.Name = "SurnameProfile";
             this.SurnameProfile.Size = new System.Drawing.Size(73, 19);
             this.SurnameProfile.TabIndex = 53;
@@ -414,7 +439,7 @@
             // UpdatePersonal
             // 
             this.UpdatePersonal.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.UpdatePersonal.Location = new System.Drawing.Point(428, 271);
+            this.UpdatePersonal.Location = new System.Drawing.Point(428, 312);
             this.UpdatePersonal.Name = "UpdatePersonal";
             this.UpdatePersonal.Size = new System.Drawing.Size(40, 40);
             this.UpdatePersonal.TabIndex = 50;
@@ -440,10 +465,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
-            this.сотрудникDataGridView.Location = new System.Drawing.Point(509, 25);
+            this.сотрудникDataGridView.Location = new System.Drawing.Point(536, 26);
             this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.сотрудникDataGridView.Name = "сотрудникDataGridView";
-            this.сотрудникDataGridView.Size = new System.Drawing.Size(1054, 322);
+            this.сотрудникDataGridView.Size = new System.Drawing.Size(730, 322);
             this.сотрудникDataGridView.TabIndex = 0;
             this.сотрудникDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.сотрудникDataGridView_CellContentClick);
             // 
@@ -507,6 +532,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Учётная запись";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // UpdateProfile
+            // 
+            this.UpdateProfile.BackgroundImage = global::kurs.Properties.Resources.update_icon;
+            this.UpdateProfile.Location = new System.Drawing.Point(830, 240);
+            this.UpdateProfile.Name = "UpdateProfile";
+            this.UpdateProfile.Size = new System.Drawing.Size(40, 40);
+            this.UpdateProfile.TabIndex = 51;
+            this.UpdateProfile.UseVisualStyleBackColor = true;
             // 
             // buttonPassword
             // 
@@ -686,32 +720,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // UpdateProfile
+            // emplVal
             // 
-            this.UpdateProfile.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.UpdateProfile.Location = new System.Drawing.Point(830, 240);
-            this.UpdateProfile.Name = "UpdateProfile";
-            this.UpdateProfile.Size = new System.Drawing.Size(40, 40);
-            this.UpdateProfile.TabIndex = 51;
-            this.UpdateProfile.UseVisualStyleBackColor = true;
+            this.emplVal.FormattingEnabled = true;
+            this.emplVal.Items.AddRange(new object[] {
+            "Оператор парковки",
+            "Менеджер"});
+            this.emplVal.Location = new System.Drawing.Point(147, 196);
+            this.emplVal.Name = "emplVal";
+            this.emplVal.Size = new System.Drawing.Size(227, 27);
+            this.emplVal.TabIndex = 63;
             // 
-            // button1
+            // label12
             // 
-            this.button1.Location = new System.Drawing.Point(62, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 28);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(224, 271);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 28);
-            this.button4.TabIndex = 62;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(56, 199);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 19);
+            this.label12.TabIndex = 64;
+            this.label12.Text = "Должность";
             // 
             // manager_form
             // 
@@ -812,7 +839,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button UpdateProfile;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteEmpl;
+        private System.Windows.Forms.Button addEmpl;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox emplVal;
     }
 }

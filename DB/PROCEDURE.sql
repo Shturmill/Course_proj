@@ -73,7 +73,7 @@ GO
 
 CREATE OR ALTER PROCEDURE sp_UpdateEmployeeCredentials
     @ID_сотрудника INT,
-    @НовыйЛогин NVARCHAR(50),
+    @НовыйЛогин VARCHAR(50),
     @НовыйПароль VARCHAR(50)
 AS
 BEGIN
@@ -131,7 +131,6 @@ CREATE OR ALTER PROCEDURE sp_DeleteEmployee
     @Телефон VARCHAR(20)
 AS
 BEGIN
-    SET NOCOUNT ON;
 
     IF NOT EXISTS (SELECT 1 FROM Сотрудник WHERE Телефон = @Телефон)
     BEGIN
@@ -182,7 +181,7 @@ BEGIN
         
         IF @Номер_места IS NULL
         BEGIN
-            SELECT TOP 1 @Номер_места = Номер_места 
+            SELECT @Номер_места = Номер_места 
             FROM Парковочное_место 
             WHERE Статус = 'Свободно'
             ORDER BY Номер_места;
@@ -265,7 +264,7 @@ BEGIN
     DECLARE @ID_сессии INT;
 
     -- Ищем активную сессию
-    SELECT TOP 1 @ID_сессии = ID_сессии
+    SELECT @ID_сессии = ID_сессии
     FROM Парковочная_сессия
     WHERE Гос_номер = @Гос_номер AND Время_выезда IS NULL
     ORDER BY Время_заезда DESC;
