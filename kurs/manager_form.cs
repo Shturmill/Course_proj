@@ -18,7 +18,7 @@ namespace kurs
 
         private readonly string _connectionString = @"Server=SHTORKA\MSSQLSERVER01;Database=Park_spot;Integrated Security=True;";
 
-
+        private int _selectedTariffId = -1;
 
         public manager_form(string fioString, int ID)
         {
@@ -355,6 +355,194 @@ namespace kurs
                     MessageBox.Show("Ошибка: " + ex.Message);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string name = textBoxNameTarif.Text.Trim();
+
+            if (!int.TryParse(textBoxHours.Text, out int hours) || hours <= 0)
+            {
+                MessageBox.Show("Введите корректное количество часов (целое число > 0).");
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxCash.Text, out decimal cost) || cost <= 0)
+            {
+                MessageBox.Show("Введите корректную стоимость (число > 0).");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Введите название тарифа.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_AddTariff", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Наименование", name);
+                    command.Parameters.AddWithValue("@Часы", hours);
+                    command.Parameters.AddWithValue("@Стоимость", cost);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Тариф успешно добавлен!");
+                    ClearFields();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ошибка БД: " + ex.Message);
+                }
+            }
+        }
+
+
+        private void ClearFields()
+        {
+            textBoxNameTarif.Clear();
+            textBoxHours.Clear();
+            textBoxCash.Clear();
+        }
+
+        private void Updateclient_Click(object sender, EventArgs e)
+        {
+            тарифDataGridView.DataSource = тарифBindingSource;
+        }
+
+        private void buttonRedact_Click(object sender, EventArgs e)
+        {
+            string name = textBoxNameTarif.Text.Trim();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Введите название тарифа, который нужно изменить.");
+                return;
+            }
+
+            if (!int.TryParse(textBoxHours.Text, out int hours) || hours <= 0)
+            {
+                MessageBox.Show("Некорректные часы.");
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxCash.Text, out decimal cost) || cost <= 0)
+            {
+                MessageBox.Show("Некорректная стоимость.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_UpdateTariff", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Наименование", name); // теперь поиск по имени!
+                    command.Parameters.AddWithValue("@Часы", hours);
+                    command.Parameters.AddWithValue("@Стоимость", cost);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Тариф обновлен!");
+                    ClearFields();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ошибка БД: " + ex.Message);
+                }
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            string name = textBoxNameTarif.Text.Trim();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Введите название тарифа для удаления.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                $"Вы уверены, что хотите удалить тариф '{name}'?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand("sp_DeleteTariff", connection);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@Наименование", name);
+
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Тариф удален.");
+                        ClearFields();
+                    }
+                    catch (SqlException ex)
+                    {
+                        if (ex.Number == 547 || ex.Message.Contains("FK"))
+                            MessageBox.Show("Невозможно удалить тариф: он используется в платежах.");
+                        else
+                            MessageBox.Show("Ошибка БД: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

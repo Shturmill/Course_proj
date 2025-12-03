@@ -254,7 +254,6 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Проверяем, есть ли автомобиль
     IF NOT EXISTS (SELECT 1 FROM ТС WHERE Гос_номер = @Гос_номер)
     BEGIN
         SET @Результат = 'Ошибка: автомобиль с таким номером не зарегистрирован.';
@@ -263,7 +262,6 @@ BEGIN
 
     DECLARE @ID_сессии INT;
 
-    -- Ищем активную сессию
     SELECT @ID_сессии = ID_сессии
     FROM Парковочная_сессия
     WHERE Гос_номер = @Гос_номер AND Время_выезда IS NULL
@@ -275,12 +273,91 @@ BEGIN
         RETURN;
     END;
 
-    -- Завершаем сессию
     UPDATE Парковочная_сессия
     SET Время_выезда = GETDATE()
     WHERE ID_сессии = @ID_сессии;
 
     SET @Результат = 'Сессия успешно завершена. Платёж сформирован автоматически.';
 
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_UpdateTariff
+    @Наименование VARCHAR(50),
+    @Часы INT,
+    @Стоимость DECIMAL(10, 2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM Тариф WHERE Наименование = @Наименование)
+    BEGIN
+        RAISERROR('Тариф с таким названием не найден.', 16, 1);
+        RETURN;
+    END;
+
+    IF @Часы <= 0 OR @Стоимость <= 0
+    BEGIN
+        RAISERROR('Продолжительность и стоимость должны быть больше нуля.', 16, 1);
+        RETURN;
+    END;
+
+    UPDATE Тариф
+    SET Продолжительность_часов = @Часы,
+        Стоимость = @Стоимость
+    WHERE Наименование = @Наименование;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_AddTariff
+    @Наименование VARCHAR(50),
+    @Часы INT,
+    @Стоимость DECIMAL(10, 2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM Тариф WHERE Наименование = @Наименование)
+    BEGIN
+        RAISERROR('Тариф с таким названием уже существует.', 16, 1);
+        RETURN;
+    END;
+
+    IF @Часы <= 0 OR @Стоимость <= 0
+    BEGIN
+        RAISERROR('Продолжительность и стоимость должны быть больше нуля.', 16, 1);
+        RETURN;
+    END;
+
+    INSERT INTO Тариф (Наименование, Продолжительность_часов, Стоимость)
+    VALUES (@Наименование, @Часы, @Стоимость);
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_DeleteTariff
+    @Наименование VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @ID_тарифа INT;
+
+    SELECT @ID_тарифа = ID_тарифа
+    FROM Тариф
+    WHERE Наименование = @Наименование;
+
+    IF @ID_тарифа IS NULL
+    BEGIN
+        RAISERROR('Тариф с таким названием не найден.', 16, 1);
+        RETURN;
+    END;
+
+    IF EXISTS (SELECT 1 FROM Платёж WHERE ID_тарифа = @ID_тарифа)
+    BEGIN
+        RAISERROR('Нельзя удалить этот тариф: по нему существуют платежи.', 16, 1);
+        RETURN;
+    END;
+
+    DELETE FROM Тариф WHERE ID_тарифа = @ID_тарифа;
 END;
 GO

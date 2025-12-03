@@ -266,19 +266,6 @@ namespace kurs
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.парковочная_сессияTableAdapter.FillBy(this.park_spotDataSet.Парковочная_сессия);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void ForAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
 
