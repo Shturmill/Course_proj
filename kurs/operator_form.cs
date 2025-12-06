@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Contexts;
 
 namespace kurs
 {
@@ -27,7 +28,6 @@ namespace kurs
             _currentEmployeeId = ID;
             NameEmpl.Text = "Оператор: " + fioString;
 
-            // Загрузка данных из БД
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 try
@@ -80,17 +80,225 @@ namespace kurs
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            string carPlate = string.Empty;
 
-        }
+            if (ForAdd.SelectedItem != null)
+            {
+                if (ForAdd.SelectedValue != null)
+                {
+                    carPlate = ForAdd.SelectedValue.ToString().Trim();
+                }
+                else
+                {
+                    carPlate = ForAdd.SelectedItem.ToString().Trim();
+                }
+            }
 
-        private void Update_Click(object sender, EventArgs e)
-        {
+            if (string.IsNullOrEmpty(carPlate))
+            {
+                carPlate = ForAdd.Text.Trim();
+            }
 
+
+            if (string.IsNullOrEmpty(carPlate))
+            {
+                MessageBox.Show("Выберите или введите госномер автомобиля для въезда!");
+                return;
+            }
+
+            int? spotNumber = null;
+
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_CreateParkingSession", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Гос_номер", carPlate);
+                    command.Parameters.AddWithValue("@ID_сотрудника", _currentEmployeeId);
+
+                    if (spotNumber.HasValue)
+                        command.Parameters.AddWithValue("@Номер_места", spotNumber.Value);
+                    else
+                        command.Parameters.AddWithValue("@Номер_места", DBNull.Value);
+
+                    SqlParameter resultParam = new SqlParameter("@Результат", SqlDbType.NVarChar, 500);
+                    resultParam.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(resultParam);
+
+                    command.ExecuteNonQuery();
+
+                    string resultMessage = resultParam.Value.ToString();
+
+                    if (resultMessage.StartsWith("Ошибка"))
+                        MessageBox.Show(resultMessage, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show(resultMessage, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (!resultMessage.StartsWith("Ошибка"))
+                    {
+                        ForAdd.Text = "";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Системная ошибка: " + ex.Message);
+                }
+            }
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
+            string carPlate = EndForSession.Text.Trim();
 
+            if (string.IsNullOrEmpty(carPlate))
+            {
+                MessageBox.Show("Выберите автомобиль для выезда (завершения сессии)!");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_CloseParkingSession", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Гос_номер", carPlate);
+
+                    SqlParameter resultParam = new SqlParameter("@Результат", SqlDbType.VarChar, 500);
+                    resultParam.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(resultParam);
+
+                    command.ExecuteNonQuery();
+
+                    string resultMessage = resultParam.Value.ToString();
+
+                    if (resultMessage.StartsWith("Ошибка"))
+                    {
+                        MessageBox.Show(resultMessage, "Ошибка выезда", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(resultMessage, "Успешный выезд", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        EndForSession.Text = "";
+                        LoadActiveSessions();
+                        LoadAvailableCars();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Системная ошибка: " + ex.Message);
+                }
+            }
+        }
+
+        private void LoadAvailableCars()
+        {
+            ForAdd.Items.Clear(); 
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"SELECT Гос_номер FROM ТС 
+                             WHERE Гос_номер NOT IN (
+                                 SELECT Гос_номер 
+                                 FROM Парковочная_сессия 
+                                 WHERE Время_выезда IS NULL
+                             )";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ForAdd.Items.Add(reader["Гос_номер"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке списка доступных машин: " + ex.Message);
+                }
+            }
+        }
+
+        private void LoadActiveSessions()
+        {
+            EndForSession.Items.Clear();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"SELECT DISTINCT Гос_номер 
+                             FROM Парковочная_сессия 
+                             WHERE Время_выезда IS NULL";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EndForSession.Items.Add(reader["Гос_номер"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при загрузке списка припаркованных машин: " + ex.Message);
+                }
+            }
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            const string activeSessionsViewName = "v_ActiveSessions";
+
+            DataTable activeSessionsData = GetViewData(activeSessionsViewName);
+
+            if (activeSessionsData != null)
+            {
+                v_ActiveSessionsBindingSource2.DataSource = activeSessionsData;
+
+                MessageBox.Show($"Таблица активных сессий ({activeSessionsViewName}) обновлена. Найдено записей: {activeSessionsData.Rows.Count}",
+                                "Обновление завершено",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Не удалось получить данные для обновления.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private DataTable GetViewData(string viewName)
+        {
+            DataTable dt = new DataTable();
+            string query = $"SELECT * FROM {viewName}";
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при получении данных из представления: " + ex.Message, "Ошибка БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt;
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
@@ -100,7 +308,6 @@ namespace kurs
             string name = textBoxName.Text.Trim();  
             string sur = textBoxSurname.Text.Trim(); 
 
-            // Собираем полное ФИО для базы данных
             string fullFio = $"{fam} {name} {sur}".Trim();
 
             string phone = textBoxPhone.Text.Trim();
@@ -142,7 +349,6 @@ namespace kurs
             string passwordConfirm = textBoxPassword1.Text;
             string login = textBoxLogin.Text.Trim();
 
-            // Валидация
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(passwordNew))
             {
                 MessageBox.Show("Логин и пароль не могут быть пустыми.");
@@ -245,10 +451,7 @@ namespace kurs
 
         }
 
-        private void Updateclient_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
         private void label12_Click(object sender, EventArgs e)
@@ -256,10 +459,7 @@ namespace kurs
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void textBoxPassword1_TextChanged(object sender, EventArgs e)
         {
@@ -274,6 +474,214 @@ namespace kurs
         private void v_PaymentHistoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e) // Удаление ТС
+        {
+            string govNumber = GosText.Text.Trim().ToUpper();
+
+            if (string.IsNullOrEmpty(govNumber))
+            {
+                MessageBox.Show("Введите госномер автомобиля для удаления.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (false)
+            {
+                MessageBox.Show($"Невозможно удалить ТС {govNumber}. Сначала необходимо закрыть активную парковочную сессию.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show($"Вы уверены, что хотите удалить ТС с госномером {govNumber}?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        string deleteQuery = "DELETE FROM ТС WHERE Гос_номер = @GovNumber";
+
+                        SqlCommand command = new SqlCommand(deleteQuery, connection);
+                        command.Parameters.AddWithValue("@GovNumber", govNumber);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show($"ТС {govNumber} успешно удалено.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearVehicleAndClientFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"ТС с госномером {govNumber} не найдено.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Ошибка базы данных: " + ex.Message, "Ошибка БД", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e) 
+        {
+            string ownerFio = textBox2.Text.Trim();
+            string ownerPhone = textBox1.Text.Trim();
+            string ownerMail = textBox3.Text.Trim();
+
+            string govNumber = GosText.Text.Trim().ToUpper(); 
+            string vehicleType = VehicleType.SelectedItem?.ToString() ?? ""; 
+            string vehicleMark = MarkVeh.Text.Trim();
+            string vehicleModel = ModelVeh.Text.Trim();
+
+            if (string.IsNullOrEmpty(ownerFio) || string.IsNullOrEmpty(ownerPhone) || string.IsNullOrEmpty(govNumber))
+            {
+                MessageBox.Show("Пожалуйста, заполните ФИО владельца, телефон и госномер автомобиля.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(vehicleType))
+            {
+                MessageBox.Show("Пожалуйста, выберите тип транспортного средства.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_AddClientAndVehicle", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@ФИО_владельца", ownerFio);
+                    command.Parameters.AddWithValue("@Телефон", ownerPhone);
+                    command.Parameters.AddWithValue("@Почта_владельца", string.IsNullOrEmpty(ownerMail) ? (object)DBNull.Value : ownerMail); 
+
+                    command.Parameters.AddWithValue("@Гос_номер", govNumber);
+                    command.Parameters.AddWithValue("@Тип_ТС", vehicleType);
+                    command.Parameters.AddWithValue("@Марка_ТС", vehicleMark);
+                    command.Parameters.AddWithValue("@Модель_ТС", vehicleModel);
+
+                    SqlParameter resultParam = new SqlParameter("@Результат", SqlDbType.NVarChar, 500);
+                    resultParam.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(resultParam);
+
+                    command.ExecuteNonQuery();
+
+                    string resultMessage = resultParam.Value.ToString();
+
+                    if (resultMessage.StartsWith("Ошибка"))
+                    {
+                        MessageBox.Show(resultMessage, "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (resultMessage.StartsWith("Критическая ошибка"))
+                    {
+                        MessageBox.Show("Ошибка базы данных: " + resultMessage, "Критическая ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(resultMessage, "Успешно добавлено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearVehicleAndClientFields();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Системная ошибка: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool overviewSuccess = false;
+            bool paymentSuccess = false;
+
+            const string parkingOverviewViewName = "v_ParkingLotOverview"; 
+            DataTable parkingData = GetViewData(parkingOverviewViewName);
+
+            if (parkingData != null)
+            {
+                v_ParkingLotOverviewBindingSource1.DataSource = parkingData;
+                overviewSuccess = true;
+            }
+
+            const string paymentHistoryViewName = "v_PaymentHistory";
+            DataTable paymentData = GetViewData(paymentHistoryViewName);
+
+            if (paymentData != null)
+            {
+                v_PaymentHistoryBindingSource1.DataSource = paymentData;
+                paymentSuccess = true;
+            }
+
+            if (overviewSuccess && paymentSuccess)
+            {
+                MessageBox.Show("Обзор парковки и история платежей успешно обновлены.", "Обновление завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (overviewSuccess || paymentSuccess)
+            {
+                MessageBox.Show("Обновление завершено, но возникли проблемы с одним из представлений. Проверьте ошибки.",
+                                "Частичное обновление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Не удалось обновить ни одну из таблиц. Проверьте подключение к базе данных.",
+                                "Ошибка обновления", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearVehicleAndClientFields()
+        {
+            textBox2.Clear();
+            textBox1.Clear();
+            textBox3.Clear();
+            GosText.Clear();
+            VehicleType.SelectedIndex = -1; 
+            MarkVeh.Clear();
+            ModelVeh.Clear();
+        }
+
+        private void Updateclient_Click(object sender, EventArgs e)
+        {
+            bool clientUpdateSuccess = false;
+            bool vehicleUpdateSuccess = false;
+
+            const string clientDataSourceName = "Клиент"; 
+            DataTable clientData = GetViewData(clientDataSourceName);
+
+            if (clientData != null)
+            {
+                клиентBindingSource.DataSource = clientData;
+                clientUpdateSuccess = true;
+            }
+
+            const string vehicleDataSourceName = "vw_VehicleRegistry";
+            DataTable vehicleData = GetViewData(vehicleDataSourceName);
+
+            if (vehicleData != null)
+            {
+                vw_VehicleRegistryBindingSource1.DataSource = vehicleData;
+                vehicleUpdateSuccess = true;
+            }
+
+            if (clientUpdateSuccess && vehicleUpdateSuccess)
+            {
+                MessageBox.Show("Данные клиентов и реестра ТС успешно обновлены.", "Обновление завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (clientUpdateSuccess || vehicleUpdateSuccess)
+            {
+                MessageBox.Show("Обновление завершено, но возникли проблемы с одним из источников данных. Проверьте ошибки.",
+                                "Частичное обновление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Не удалось обновить ни одну из таблиц. Проверьте подключение к базе данных.",
+                                "Ошибка обновления", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -124,6 +124,7 @@ namespace kurs
             this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.buttonPassword = new System.Windows.Forms.Button();
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -295,7 +296,7 @@ namespace kurs
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1732, 489);
+            this.tabPage3.Size = new System.Drawing.Size(1495, 489);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Мониторинг оплаты и занятости мест";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -438,11 +439,12 @@ namespace kurs
             // button1
             // 
             this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.button1.Location = new System.Drawing.Point(1685, 446);
+            this.button1.Location = new System.Drawing.Point(1126, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 50;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label22
             // 
@@ -491,7 +493,7 @@ namespace kurs
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1114, 489);
+            this.tabPage2.Size = new System.Drawing.Size(1495, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Регистрация новых клиентов и ТС";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -508,7 +510,7 @@ namespace kurs
             this.vw_VehicleRegistryDataGridView.DataSource = this.vw_VehicleRegistryBindingSource1;
             this.vw_VehicleRegistryDataGridView.Location = new System.Drawing.Point(57, 276);
             this.vw_VehicleRegistryDataGridView.Name = "vw_VehicleRegistryDataGridView";
-            this.vw_VehicleRegistryDataGridView.Size = new System.Drawing.Size(578, 206);
+            this.vw_VehicleRegistryDataGridView.Size = new System.Drawing.Size(571, 206);
             this.vw_VehicleRegistryDataGridView.TabIndex = 51;
             // 
             // dataGridViewTextBoxColumn1
@@ -582,7 +584,7 @@ namespace kurs
             // Updateclient
             // 
             this.Updateclient.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.Updateclient.Location = new System.Drawing.Point(1498, 442);
+            this.Updateclient.Location = new System.Drawing.Point(1441, 229);
             this.Updateclient.Name = "Updateclient";
             this.Updateclient.Size = new System.Drawing.Size(40, 40);
             this.Updateclient.TabIndex = 49;
@@ -614,6 +616,7 @@ namespace kurs
             this.button4.TabIndex = 46;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -769,7 +772,7 @@ namespace kurs
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1732, 489);
+            this.tabPage1.Size = new System.Drawing.Size(1495, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Учёт заезда автомобилей";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -786,9 +789,9 @@ namespace kurs
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.v_ActiveSessionsDataGridView.DataSource = this.v_ActiveSessionsBindingSource2;
-            this.v_ActiveSessionsDataGridView.Location = new System.Drawing.Point(76, 175);
+            this.v_ActiveSessionsDataGridView.Location = new System.Drawing.Point(411, 49);
             this.v_ActiveSessionsDataGridView.Name = "v_ActiveSessionsDataGridView";
-            this.v_ActiveSessionsDataGridView.Size = new System.Drawing.Size(1023, 285);
+            this.v_ActiveSessionsDataGridView.Size = new System.Drawing.Size(1015, 423);
             this.v_ActiveSessionsDataGridView.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn6
@@ -842,7 +845,7 @@ namespace kurs
             // Update
             // 
             this.Update.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.Update.Location = new System.Drawing.Point(1660, 440);
+            this.Update.Location = new System.Drawing.Point(351, 422);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(40, 40);
             this.Update.TabIndex = 17;
@@ -869,19 +872,19 @@ namespace kurs
             // 
             // AddSessionButton
             // 
-            this.AddSessionButton.Location = new System.Drawing.Point(304, 95);
+            this.AddSessionButton.Location = new System.Drawing.Point(279, 93);
             this.AddSessionButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddSessionButton.Name = "AddSessionButton";
             this.AddSessionButton.Size = new System.Drawing.Size(112, 34);
             this.AddSessionButton.TabIndex = 7;
-            this.AddSessionButton.Text = "добавить";
+            this.AddSessionButton.Text = "Добавить";
             this.AddSessionButton.UseVisualStyleBackColor = true;
             this.AddSessionButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // INFO3
             // 
             this.INFO3.AutoSize = true;
-            this.INFO3.Location = new System.Drawing.Point(1130, 177);
+            this.INFO3.Location = new System.Drawing.Point(72, 264);
             this.INFO3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INFO3.Name = "INFO3";
             this.INFO3.Size = new System.Drawing.Size(164, 19);
@@ -894,10 +897,10 @@ namespace kurs
             this.EndForSession.DataSource = this.vActiveSessionsBindingSource;
             this.EndForSession.DisplayMember = "Гос_номер";
             this.EndForSession.FormattingEnabled = true;
-            this.EndForSession.Location = new System.Drawing.Point(1134, 215);
+            this.EndForSession.Location = new System.Drawing.Point(76, 302);
             this.EndForSession.Margin = new System.Windows.Forms.Padding(4);
             this.EndForSession.Name = "EndForSession";
-            this.EndForSession.Size = new System.Drawing.Size(141, 27);
+            this.EndForSession.Size = new System.Drawing.Size(183, 27);
             this.EndForSession.TabIndex = 5;
             this.EndForSession.ValueMember = "Гос_номер";
             this.EndForSession.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -909,7 +912,7 @@ namespace kurs
             // 
             // ApplySessionButton
             // 
-            this.ApplySessionButton.Location = new System.Drawing.Point(1301, 210);
+            this.ApplySessionButton.Location = new System.Drawing.Point(279, 297);
             this.ApplySessionButton.Margin = new System.Windows.Forms.Padding(4);
             this.ApplySessionButton.Name = "ApplySessionButton";
             this.ApplySessionButton.Size = new System.Drawing.Size(112, 34);
@@ -931,7 +934,7 @@ namespace kurs
             // INFO2
             // 
             this.INFO2.AutoSize = true;
-            this.INFO2.Location = new System.Drawing.Point(72, 153);
+            this.INFO2.Location = new System.Drawing.Point(407, 27);
             this.INFO2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INFO2.Name = "INFO2";
             this.INFO2.Size = new System.Drawing.Size(115, 19);
@@ -994,11 +997,12 @@ namespace kurs
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1740, 521);
+            this.tabControl1.Size = new System.Drawing.Size(1503, 521);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.buttonPassword);
             this.tabPage4.Controls.Add(this.textBoxPassword1);
             this.tabPage4.Controls.Add(this.label24);
@@ -1020,10 +1024,19 @@ namespace kurs
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1114, 489);
+            this.tabPage4.Size = new System.Drawing.Size(1495, 489);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Учётная запись оператора";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::kurs.Properties.Resources.update_icon;
+            this.button5.Location = new System.Drawing.Point(438, 428);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(40, 40);
+            this.button5.TabIndex = 18;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // buttonPassword
             // 
@@ -1355,7 +1368,7 @@ namespace kurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1820, 628);
+            this.ClientSize = new System.Drawing.Size(1572, 628);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NameEmpl);
             this.Controls.Add(this.pictureBox1);
@@ -1562,5 +1575,6 @@ namespace kurs
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.Button button5;
     }
 }

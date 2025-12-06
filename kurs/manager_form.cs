@@ -20,6 +20,8 @@ namespace kurs
 
         private int _selectedTariffId = -1;
 
+
+
         public manager_form(string fioString, int ID)
         {
             InitializeComponent();
@@ -161,6 +163,8 @@ namespace kurs
 
         private void manager_form_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.Платёж". При необходимости она может быть перемещена или удалена.
+            this.платёжTableAdapter.Fill(this.park_spotDataSet.Платёж);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.Сотрудник". При необходимости она может быть перемещена или удалена.
             this.сотрудникTableAdapter.Fill(this.park_spotDataSet.Сотрудник);
             // данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.Тариф"
@@ -178,22 +182,12 @@ namespace kurs
 
         }
 
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Name_Click(object sender, EventArgs e)
         {
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
@@ -283,10 +277,11 @@ namespace kurs
                 try
                 {
                     connection.Open();
-                    string checkQuery = "SELECT ФИО, Должность FROM Сотрудник WHERE Телефон = @Phone";
+                    string checkQuery = "SELECT ID_сотрудника, ФИО, Должность FROM Сотрудник WHERE Телефон = @Phone";
 
                     string dbFio = "";
                     string dbPosition = "";
+                    int dbId = 0; 
                     bool employeeFound = false;
 
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
@@ -299,6 +294,7 @@ namespace kurs
                             {
                                 dbFio = reader["ФИО"].ToString();
                                 dbPosition = reader["Должность"].ToString();
+                                dbId = Convert.ToInt32(reader["ID_сотрудника"]);
                                 employeeFound = true;
                             }
                         }
@@ -307,6 +303,13 @@ namespace kurs
                     if (!employeeFound)
                     {
                         MessageBox.Show("Сотрудник с таким номером телефона не найден в базе данных.");
+                        return;
+                    }
+
+                    if (dbId == _currentEmployeeId)
+                    {
+                        MessageBox.Show("Вы не можете удалить свою собственную учетную запись!",
+                                        "Ошибка доступа", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -341,7 +344,6 @@ namespace kurs
 
                         MessageBox.Show("Сотрудник успешно удален.");
 
-                        // Очистка полей
                         textBoxName.Clear(); textBoxFam.Clear(); textBoxSurname.Clear();
                         textBoxPhone.Clear(); textBoxMail.Clear();
                     }
@@ -395,6 +397,9 @@ namespace kurs
 
                     MessageBox.Show("Тариф успешно добавлен!");
                     ClearFields();
+
+                    this.тарифTableAdapter.Fill(this.park_spotDataSet.Тариф);
+                    тарифBindingSource.Sort = "Продолжительность_часов ASC";
                 }
                 catch (SqlException ex)
                 {
@@ -409,11 +414,6 @@ namespace kurs
             textBoxNameTarif.Clear();
             textBoxHours.Clear();
             textBoxCash.Clear();
-        }
-
-        private void Updateclient_Click(object sender, EventArgs e)
-        {
-            тарифDataGridView.DataSource = тарифBindingSource;
         }
 
         private void buttonRedact_Click(object sender, EventArgs e)
@@ -494,6 +494,8 @@ namespace kurs
 
                         MessageBox.Show("Тариф удален.");
                         ClearFields();
+
+
                     }
                     catch (SqlException ex)
                     {
@@ -506,43 +508,80 @@ namespace kurs
             }
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+
+        private void UpdateProfile_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+            SELECT 
+                s.ФИО, 
+                s.Телефон, 
+                s.Электронная_почта, 
+                u.Логин 
+            FROM Сотрудник s
+            JOIN УчетныеЗаписи u ON s.ID_сотрудника = u.ID_сотрудника
+            WHERE s.ID_сотрудника = @ID";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", _currentEmployeeId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            textBoxLogin.Text = reader["Логин"].ToString();
+                            textBoxPhoneProfile.Text = reader["Телефон"].ToString();
+                            textBoxMailProfile.Text = reader["Электронная_почта"].ToString();
+
+                            string fullFio = reader["ФИО"].ToString();
+                            string[] fioParts = fullFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                            textBoxFamProfile.Text = fioParts.Length > 0 ? fioParts[0] : "";
+                            textBoxNameProfile.Text = fioParts.Length > 1 ? fioParts[1] : "";
+                            textBoxSurProfile.Text = fioParts.Length > 2 ? fioParts[2] : "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Данные сотрудника не найдены.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при обновлении данных профиля: " + ex.Message);
+                }
+            }
+        }
+
+        private void UpdatePersonal_Click(object sender, EventArgs e)
         {
             try
             {
-                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
+                this.сотрудникTableAdapter.Fill(this.park_spotDataSet.Сотрудник);
+                сотрудникBindingSource.Sort = "Должность ASC";
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show("Ошибка при обновлении списка сотрудников: " + ex.Message);
             }
-
         }
 
-        private void fillByToolStripButton1_Click(object sender, EventArgs e)
+        private void Updateclient_Click(object sender, EventArgs e)
         {
             try
             {
-                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
+                this.тарифTableAdapter.Fill(this.park_spotDataSet.Тариф);
+                тарифBindingSource.Sort = "Продолжительность_часов ASC";
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show("Ошибка при обновлении тарифов: " + ex.Message);
             }
-
         }
 
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.тарифTableAdapter.FillBy(this.park_spotDataSet.Тариф);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
     }
 }

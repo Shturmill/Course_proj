@@ -213,11 +213,9 @@ BEGIN
             END
         END
         
-        -- Создание новой сессии
         INSERT INTO Парковочная_сессия (Гос_номер, Номер_места, ID_сотрудника, Время_заезда, Время_выезда)
         VALUES (@Гос_номер, @Номер_места, @ID_сотрудника, GETDATE(), NULL);
         
-        -- Формирование сообщения об успехе
         DECLARE @ФИО_клиента VARCHAR(100);
         DECLARE @ID_сессии INT;
         
@@ -359,5 +357,68 @@ BEGIN
     END;
 
     DELETE FROM Тариф WHERE ID_тарифа = @ID_тарифа;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_AddClientAndVehicle
+    @ФИО_владельца VARCHAR(100),
+    @Телефон VARCHAR(18),
+    @Почта_владельца VARCHAR(100),
+
+    @Гос_номер VARCHAR(12),
+    @Тип_ТС VARCHAR(50),
+    @Марка_ТС VARCHAR(50),
+    @Модель_ТС VARCHAR(50),
+    
+    @Результат NVARCHAR(500) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @ClientID INT;
+    
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        SELECT @ClientID = ID_клиента 
+        FROM Клиент 
+        WHERE Телефон = @Телефон;
+
+        IF @ClientID IS NULL
+        BEGIN
+            INSERT INTO Клиент (ФИО, Телефон, Электронная_почта)
+            VALUES (@ФИО_владельца, @Телефон, @Почта_владельца);
+            
+            SET @ClientID = SCOPE_IDENTITY();
+            
+            SET @Результат = 'Успех: Создан новый клиент (ID: ' + CAST(@ClientID AS VARCHAR) + ') и добавлено ТС.';
+        END
+        ELSE
+        BEGIN
+            UPDATE Клиент
+            SET ФИО = @ФИО_владельца, Электронная_почта = @Почта_владельца
+            WHERE ID_клиента = @ClientID;
+            
+            SET @Результат = 'Успех: Найден существующий клиент (ID: ' + CAST(@ClientID AS VARCHAR) + ') и добавлено ТС.';
+        END
+
+        IF EXISTS (SELECT 1 FROM ТС WHERE Гос_номер = @Гос_номер)
+        BEGIN
+            SET @Результат = 'Ошибка: Автомобиль с госномером ' + @Гос_номер + ' уже зарегистрирован.';
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+
+        INSERT INTO ТС (Гос_номер, ID_клиента, Тип, Марка, Модель)
+        VALUES (@Гос_номер, @ClientID, @Тип_ТС, @Марка_ТС, @Модель_ТС);
+        
+        COMMIT TRANSACTION;
+        
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SET @Результат = 'Критическая ошибка: ' + ERROR_MESSAGE();
+    END CATCH
 END;
 GO
