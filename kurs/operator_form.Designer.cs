@@ -894,8 +894,7 @@ namespace kurs
             // 
             // EndForSession
             // 
-            this.EndForSession.DataSource = this.vActiveSessionsBindingSource;
-            this.EndForSession.DisplayMember = "Гос_номер";
+            this.EndForSession.DataSource = this.сотрудникBindingSource;
             this.EndForSession.FormattingEnabled = true;
             this.EndForSession.Location = new System.Drawing.Point(76, 302);
             this.EndForSession.Margin = new System.Windows.Forms.Padding(4);
@@ -1037,6 +1036,7 @@ namespace kurs
             this.button5.Size = new System.Drawing.Size(40, 40);
             this.button5.TabIndex = 18;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // buttonPassword
             // 

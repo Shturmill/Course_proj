@@ -36,6 +36,9 @@
             this.tableAdapterManager = new kurs.Park_spotDataSetTableAdapters.TableAdapterManager();
             this.сотрудникTableAdapter = new kurs.Park_spotDataSetTableAdapters.СотрудникTableAdapter();
             this.тарифDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -97,9 +100,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fKПлатёжIDтариф4A23E96ABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.платёжTableAdapter = new kurs.Park_spotDataSetTableAdapters.ПлатёжTableAdapter();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
@@ -128,6 +128,7 @@
             // 
             this.тарифBindingSource.DataMember = "Тариф";
             this.тарифBindingSource.DataSource = this.park_spotDataSet;
+            this.тарифBindingSource.Sort = "Продолжительность_часов ASC";
             // 
             // тарифTableAdapter
             // 
@@ -162,13 +163,36 @@
             this.dataGridViewTextBoxColumn4});
             this.тарифDataGridView.DataSource = this.тарифBindingSource;
             this.тарифDataGridView.Location = new System.Drawing.Point(506, 8);
-            this.тарифDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.тарифDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.тарифDataGridView.Name = "тарифDataGridView";
             this.тарифDataGridView.ReadOnly = true;
             this.тарифDataGridView.Size = new System.Drawing.Size(499, 313);
             this.тарифDataGridView.TabIndex = 0;
             this.тарифDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.тарифDataGridView_CellContentClick);
-            this.тарифBindingSource.Sort = "Продолжительность_часов ASC";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Наименование";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Наименование";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Продолжительность_часов";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Продолжительность часов";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Стоимость";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Стоимость";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 120;
             // 
             // tabControl1
             // 
@@ -176,7 +200,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(36, 91);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1268, 427);
@@ -197,9 +221,9 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.тарифDataGridView);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Size = new System.Drawing.Size(1260, 395);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Тарифы";
@@ -278,7 +302,7 @@
             // textBoxCash
             // 
             this.textBoxCash.Location = new System.Drawing.Point(282, 182);
-            this.textBoxCash.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCash.Name = "textBoxCash";
             this.textBoxCash.Size = new System.Drawing.Size(148, 26);
             this.textBoxCash.TabIndex = 4;
@@ -286,7 +310,7 @@
             // textBoxHours
             // 
             this.textBoxHours.Location = new System.Drawing.Point(282, 135);
-            this.textBoxHours.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxHours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxHours.Name = "textBoxHours";
             this.textBoxHours.Size = new System.Drawing.Size(148, 26);
             this.textBoxHours.TabIndex = 3;
@@ -294,7 +318,7 @@
             // textBoxNameTarif
             // 
             this.textBoxNameTarif.Location = new System.Drawing.Point(282, 85);
-            this.textBoxNameTarif.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNameTarif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNameTarif.Name = "textBoxNameTarif";
             this.textBoxNameTarif.Size = new System.Drawing.Size(148, 26);
             this.textBoxNameTarif.TabIndex = 2;
@@ -328,11 +352,11 @@
             this.tabPage2.Controls.Add(this.UpdatePersonal);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.сотрудникDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1260, 395);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1260, 391);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -488,12 +512,11 @@
             this.dataGridViewTextBoxColumn8});
             this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
             this.сотрудникDataGridView.Location = new System.Drawing.Point(511, 8);
-            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.сотрудникDataGridView.Name = "сотрудникDataGridView";
             this.сотрудникDataGridView.Size = new System.Drawing.Size(730, 322);
             this.сотрудникDataGridView.TabIndex = 0;
             this.сотрудникDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.сотрудникDataGridView_CellContentClick);
-            this.сотрудникBindingSource.Sort = "Должность ASC";
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -526,6 +549,7 @@
             // 
             this.сотрудникBindingSource.DataMember = "Сотрудник";
             this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
+            this.сотрудникBindingSource.Sort = "Должность ASC";
             // 
             // tabPage3
             // 
@@ -548,10 +572,10 @@
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1260, 395);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(1260, 391);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Учётная запись";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -753,30 +777,6 @@
             // 
             this.платёжTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Стоимость";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Стоимость";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Продолжительность_часов";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Продолжительность часов";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Наименование";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Наименование";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
             // manager_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -787,7 +787,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "manager_form";
             this.Text = "Окно менеджера";
             this.Load += new System.EventHandler(this.manager_form_Load);

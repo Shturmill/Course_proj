@@ -189,6 +189,8 @@ namespace kurs
                         EndForSession.Text = "";
                         LoadActiveSessions();
                         LoadAvailableCars();
+
+                        RefreshActiveSessionsComboBox();
                     }
                 }
                 catch (Exception ex)
@@ -274,10 +276,7 @@ namespace kurs
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Не удалось получить данные для обновления.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            RefreshActiveSessionsComboBox();
         }
 
         private DataTable GetViewData(string viewName)
@@ -681,6 +680,82 @@ namespace kurs
             {
                 MessageBox.Show("Не удалось обновить ни одну из таблиц. Проверьте подключение к базе данных.",
                                 "Ошибка обновления", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+            SELECT 
+                s.ФИО, 
+                s.Телефон, 
+                s.Электронная_почта, 
+                u.Логин 
+            FROM Сотрудник s
+            JOIN УчетныеЗаписи u ON s.ID_сотрудника = u.ID_сотрудника
+            WHERE s.ID_сотрудника = @ID";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", _currentEmployeeId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            textBoxLogin.Text = reader["Логин"].ToString();
+                            textBoxPhone.Text = reader["Телефон"].ToString();
+                            textBoxMail.Text = reader["Электронная_почта"].ToString();
+
+                            string fullFio = reader["ФИО"].ToString();
+                            string[] fioParts = fullFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                            textBoxFam.Text = fioParts.Length > 0 ? fioParts[0] : "";
+                            textBoxName.Text = fioParts.Length > 1 ? fioParts[1] : "";
+                            textBoxSurname.Text = fioParts.Length > 2 ? fioParts[2] : "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Данные сотрудника не найдены.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при обновлении данных профиля: " + ex.Message);
+                }
+            }
+        }
+
+        private void RefreshActiveSessionsComboBox()
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT Гос_номер FROM Парковочная_сессия WHERE Время_выезда IS NULL";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    EndForSession.DataSource = null;
+
+                    EndForSession.DataSource = dt;
+                    EndForSession.DisplayMember = "Гос_номер";
+                    EndForSession.ValueMember = "Гос_номер"; 
+
+                    EndForSession.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка обновления списка машин: " + ex.Message);
+                }
             }
         }
     }
