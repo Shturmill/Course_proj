@@ -113,6 +113,7 @@ namespace kurs
             this.ApplySessionButton = new System.Windows.Forms.Button();
             this.INFO1 = new System.Windows.Forms.Label();
             this.INFO2 = new System.Windows.Forms.Label();
+            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.парковочнаясессияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.park_spotDataSet4 = new kurs.Park_spotDataSet();
             this.vw_SessionDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -157,7 +158,6 @@ namespace kurs
             this.vw_SessionDetailsTableAdapter1 = new kurs.Park_spotDataSetTableAdapters.vw_SessionDetailsTableAdapter();
             this.vw_VehicleRegistryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_VehicleRegistryTableAdapter = new kurs.Park_spotDataSetTableAdapters.vw_VehicleRegistryTableAdapter();
-            this.сотрудникBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.сотрудникTableAdapter = new kurs.Park_spotDataSetTableAdapters.СотрудникTableAdapter();
             this.vwSessionDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vwSessionDetailsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -195,6 +195,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vActiveSessionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.парковочнаясессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource1)).BeginInit();
@@ -210,7 +211,6 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwVehicleRegistryBindingSource)).BeginInit();
@@ -884,7 +884,7 @@ namespace kurs
             // INFO3
             // 
             this.INFO3.AutoSize = true;
-            this.INFO3.Location = new System.Drawing.Point(72, 264);
+            this.INFO3.Location = new System.Drawing.Point(72, 322);
             this.INFO3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INFO3.Name = "INFO3";
             this.INFO3.Size = new System.Drawing.Size(164, 19);
@@ -894,9 +894,10 @@ namespace kurs
             // 
             // EndForSession
             // 
-            this.EndForSession.DataSource = this.сотрудникBindingSource;
+            this.EndForSession.DataSource = this.vActiveSessionsBindingSource;
+            this.EndForSession.DisplayMember = "Гос_номер";
             this.EndForSession.FormattingEnabled = true;
-            this.EndForSession.Location = new System.Drawing.Point(76, 302);
+            this.EndForSession.Location = new System.Drawing.Point(76, 360);
             this.EndForSession.Margin = new System.Windows.Forms.Padding(4);
             this.EndForSession.Name = "EndForSession";
             this.EndForSession.Size = new System.Drawing.Size(183, 27);
@@ -911,7 +912,7 @@ namespace kurs
             // 
             // ApplySessionButton
             // 
-            this.ApplySessionButton.Location = new System.Drawing.Point(279, 297);
+            this.ApplySessionButton.Location = new System.Drawing.Point(279, 355);
             this.ApplySessionButton.Margin = new System.Windows.Forms.Padding(4);
             this.ApplySessionButton.Name = "ApplySessionButton";
             this.ApplySessionButton.Size = new System.Drawing.Size(112, 34);
@@ -940,6 +941,11 @@ namespace kurs
             this.INFO2.TabIndex = 2;
             this.INFO2.Text = "Текущие сессии";
             this.INFO2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // сотрудникBindingSource
+            // 
+            this.сотрудникBindingSource.DataMember = "Сотрудник";
+            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
             // 
             // парковочнаясессияBindingSource
             // 
@@ -1282,11 +1288,6 @@ namespace kurs
             // 
             this.vw_VehicleRegistryTableAdapter.ClearBeforeFill = true;
             // 
-            // сотрудникBindingSource
-            // 
-            this.сотрудникBindingSource.DataMember = "Сотрудник";
-            this.сотрудникBindingSource.DataSource = this.park_spotDataSet;
-            // 
             // сотрудникTableAdapter
             // 
             this.сотрудникTableAdapter.ClearBeforeFill = true;
@@ -1403,6 +1404,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.v_ActiveSessionsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vActiveSessionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.парковочнаясессияBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_SessionDetailsBindingSource1)).EndInit();
@@ -1419,7 +1421,6 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.v_StatusParkingMapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_VehicleRegistryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwVehicleRegistryBindingSource)).EndInit();

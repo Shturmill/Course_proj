@@ -163,7 +163,7 @@
             this.dataGridViewTextBoxColumn4});
             this.тарифDataGridView.DataSource = this.тарифBindingSource;
             this.тарифDataGridView.Location = new System.Drawing.Point(506, 8);
-            this.тарифDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.тарифDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.тарифDataGridView.Name = "тарифDataGridView";
             this.тарифDataGridView.ReadOnly = true;
             this.тарифDataGridView.Size = new System.Drawing.Size(499, 313);
@@ -200,10 +200,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(36, 91);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1268, 427);
+            this.tabControl1.Size = new System.Drawing.Size(1218, 400);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -221,10 +221,10 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.тарифDataGridView);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1260, 395);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 368);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Тарифы";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             // textBoxCash
             // 
             this.textBoxCash.Location = new System.Drawing.Point(282, 182);
-            this.textBoxCash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCash.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCash.Name = "textBoxCash";
             this.textBoxCash.Size = new System.Drawing.Size(148, 26);
             this.textBoxCash.TabIndex = 4;
@@ -310,7 +310,7 @@
             // textBoxHours
             // 
             this.textBoxHours.Location = new System.Drawing.Point(282, 135);
-            this.textBoxHours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxHours.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxHours.Name = "textBoxHours";
             this.textBoxHours.Size = new System.Drawing.Size(148, 26);
             this.textBoxHours.TabIndex = 3;
@@ -318,7 +318,7 @@
             // textBoxNameTarif
             // 
             this.textBoxNameTarif.Location = new System.Drawing.Point(282, 85);
-            this.textBoxNameTarif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNameTarif.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNameTarif.Name = "textBoxNameTarif";
             this.textBoxNameTarif.Size = new System.Drawing.Size(148, 26);
             this.textBoxNameTarif.TabIndex = 2;
@@ -352,11 +352,11 @@
             this.tabPage2.Controls.Add(this.UpdatePersonal);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.сотрудникDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1260, 391);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1210, 368);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Персонал";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -424,14 +424,14 @@
             // 
             // textBoxFam
             // 
-            this.textBoxFam.Location = new System.Drawing.Point(147, 115);
+            this.textBoxFam.Location = new System.Drawing.Point(147, 91);
             this.textBoxFam.Name = "textBoxFam";
             this.textBoxFam.Size = new System.Drawing.Size(227, 26);
             this.textBoxFam.TabIndex = 57;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(147, 79);
+            this.textBoxName.Location = new System.Drawing.Point(147, 123);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(227, 26);
             this.textBoxName.TabIndex = 56;
@@ -466,7 +466,7 @@
             // FamProfile
             // 
             this.FamProfile.AutoSize = true;
-            this.FamProfile.Location = new System.Drawing.Point(58, 117);
+            this.FamProfile.Location = new System.Drawing.Point(58, 93);
             this.FamProfile.Name = "FamProfile";
             this.FamProfile.Size = new System.Drawing.Size(72, 19);
             this.FamProfile.TabIndex = 52;
@@ -475,7 +475,7 @@
             // NameProfile
             // 
             this.NameProfile.AutoSize = true;
-            this.NameProfile.Location = new System.Drawing.Point(58, 82);
+            this.NameProfile.Location = new System.Drawing.Point(58, 126);
             this.NameProfile.Name = "NameProfile";
             this.NameProfile.Size = new System.Drawing.Size(37, 19);
             this.NameProfile.TabIndex = 51;
@@ -511,8 +511,8 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.сотрудникDataGridView.DataSource = this.сотрудникBindingSource;
-            this.сотрудникDataGridView.Location = new System.Drawing.Point(511, 8);
-            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.сотрудникDataGridView.Location = new System.Drawing.Point(458, 24);
+            this.сотрудникDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.сотрудникDataGridView.Name = "сотрудникDataGridView";
             this.сотрудникDataGridView.Size = new System.Drawing.Size(730, 322);
             this.сотрудникDataGridView.TabIndex = 0;
@@ -572,10 +572,10 @@
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(1260, 391);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1210, 368);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Учётная запись";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -781,13 +781,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1319, 546);
+            this.ClientSize = new System.Drawing.Size(1273, 507);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.NameEmpl);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "manager_form";
             this.Text = "Окно менеджера";
             this.Load += new System.EventHandler(this.manager_form_Load);

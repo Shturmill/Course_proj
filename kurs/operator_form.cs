@@ -33,18 +33,36 @@ namespace kurs
                 try
                 {
                     connection.Open();
-                    string query = @"
-                    SELECT 
-                        s.ФИО, 
-                        s.Телефон, 
-                        s.Электронная_почта, 
-                        u.Логин 
-                    FROM Сотрудник s
-                    JOIN УчетныеЗаписи u ON s.ID_сотрудника = u.ID_сотрудника
-                    WHERE s.ID_сотрудника = @ID";
 
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@ID", _currentEmployeeId);
+                    string queryUser = @"
+            SELECT 
+                s.ФИО, 
+                s.Телефон, 
+                s.Электронная_почта, 
+                u.Логин 
+            FROM Сотрудник s
+            JOIN УчетныеЗаписи u ON s.ID_сотрудника = u.ID_сотрудника
+            WHERE s.ID_сотрудника = @ID";
+
+                    string queryCars = @"
+            SELECT Гос_номер FROM ТС
+            WHERE Гос_номер NOT IN 
+            (SELECT Гос_номер FROM Парковочная_сессия 
+            WHERE Время_выезда IS NULL)";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(queryCars, connection);
+                    DataTable CarNumbersTable = new DataTable();
+                    adapter.Fill(CarNumbersTable);
+
+                    ForAdd.DataSource = CarNumbersTable;
+                    ForAdd.DisplayMember = "Гос_номер";
+                    ForAdd.ValueMember = "Гос_номер";
+
+                    ForAdd.SelectedIndex = -1;
+
+
+                    SqlCommand command = new SqlCommand(queryUser, connection);
+                    command.Parameters.Add("@ID", SqlDbType.Int).Value = _currentEmployeeId;
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -55,11 +73,14 @@ namespace kurs
                             textBoxMail.Text = reader["Электронная_почта"].ToString();
 
                             string fullFio = reader["ФИО"].ToString();
-                            string[] fioParts = fullFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                            if (!string.IsNullOrEmpty(fullFio))
+                            {
+                                string[] fioParts = fullFio.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                            if (fioParts.Length > 0) textBoxFam.Text = fioParts[0];
-                            if (fioParts.Length > 1) textBoxName.Text = fioParts[1];
-                            if (fioParts.Length > 2) textBoxSurname.Text = fioParts[2];
+                                if (fioParts.Length > 0) textBoxFam.Text = fioParts[0];
+                                if (fioParts.Length > 1) textBoxName.Text = fioParts[1];
+                                if (fioParts.Length > 2) textBoxSurname.Text = fioParts[2];
+                            }
                         }
                     }
                 }
@@ -138,6 +159,12 @@ namespace kurs
                     else
                         MessageBox.Show(resultMessage, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    RefreshCarNumbersComboBox();
+
+                    const string activeSessionsViewName = "v_ActiveSessions";
+
+                    DataTable activeSessionsData = GetViewData(activeSessionsViewName);
+
                     if (!resultMessage.StartsWith("Ошибка"))
                     {
                         ForAdd.Text = "";
@@ -178,6 +205,12 @@ namespace kurs
 
                     string resultMessage = resultParam.Value.ToString();
 
+                    RefreshActiveSessionsComboBox();
+
+                    const string activeSessionsViewName = "v_ActiveSessions";
+
+                    DataTable activeSessionsData = GetViewData(activeSessionsViewName);
+
                     if (resultMessage.StartsWith("Ошибка"))
                     {
                         MessageBox.Show(resultMessage, "Ошибка выезда", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -189,8 +222,6 @@ namespace kurs
                         EndForSession.Text = "";
                         LoadActiveSessions();
                         LoadAvailableCars();
-
-                        RefreshActiveSessionsComboBox();
                     }
                 }
                 catch (Exception ex)
@@ -267,16 +298,9 @@ namespace kurs
 
             DataTable activeSessionsData = GetViewData(activeSessionsViewName);
 
-            if (activeSessionsData != null)
-            {
-                v_ActiveSessionsBindingSource2.DataSource = activeSessionsData;
-
-                MessageBox.Show($"Таблица активных сессий ({activeSessionsViewName}) обновлена. Найдено записей: {activeSessionsData.Rows.Count}",
-                                "Обновление завершено",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
             RefreshActiveSessionsComboBox();
+
+            RefreshCarNumbersComboBox();
         }
 
         private DataTable GetViewData(string viewName)
@@ -411,67 +435,6 @@ namespace kurs
             this.тСTableAdapter.Fill(this.park_spotDataSet.ТС);            
             this.клиентTableAdapter.Fill(this.park_spotDataSet.Клиент);
             this.парковочная_сессияTableAdapter.Fill(this.park_spotDataSet.Парковочная_сессия);
-
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void textBoxPassword1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ForAdd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void v_PaymentHistoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -758,5 +721,44 @@ namespace kurs
                 }
             }
         }
+
+        private void RefreshCarNumbersComboBox()
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT Гос_номер FROM ТС WHERE Гос_номер NOT IN (SELECT Гос_номер FROM Парковочная_сессия WHERE Время_выезда IS NULL)";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    ForAdd.DataSource = null;
+
+                    ForAdd.DataSource = dt;
+                    ForAdd.DisplayMember = "Гос_номер";
+                    ForAdd.ValueMember = "Гос_номер";
+
+                    ForAdd.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка обновления списка машин: " + ex.Message);
+                }
+            }
+        }
+
+
+        private void label1_Click(object sender, EventArgs e){}
+        private void label3_Click(object sender, EventArgs e){}
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){}
+        private void label4_Click(object sender, EventArgs e){}
+        private void textBox3_TextChanged(object sender, EventArgs e){}
+        private void label9_Click(object sender, EventArgs e){}
+        private void textBoxPassword1_TextChanged(object sender, EventArgs e){}
+        private void ForAdd_SelectedIndexChanged(object sender, EventArgs e){}
+        private void v_PaymentHistoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e){}
     }
 }
