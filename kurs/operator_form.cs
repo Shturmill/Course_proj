@@ -165,6 +165,8 @@ namespace kurs
 
                     DataTable activeSessionsData = GetViewData(activeSessionsViewName);
 
+                    v_ActiveSessionsBindingSource2.DataSource = activeSessionsData;
+
                     if (!resultMessage.StartsWith("Ошибка"))
                     {
                         ForAdd.Text = "";
@@ -210,6 +212,8 @@ namespace kurs
                     const string activeSessionsViewName = "v_ActiveSessions";
 
                     DataTable activeSessionsData = GetViewData(activeSessionsViewName);
+
+                    v_ActiveSessionsBindingSource2.DataSource = activeSessionsData;
 
                     if (resultMessage.StartsWith("Ошибка"))
                     {
@@ -298,9 +302,7 @@ namespace kurs
 
             DataTable activeSessionsData = GetViewData(activeSessionsViewName);
 
-            RefreshActiveSessionsComboBox();
-
-            RefreshCarNumbersComboBox();
+            v_ActiveSessionsBindingSource2.DataSource = activeSessionsData;
         }
 
         private DataTable GetViewData(string viewName)
@@ -326,19 +328,39 @@ namespace kurs
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-
-            string fam = textBoxFam.Text.Trim();    
-            string name = textBoxName.Text.Trim();  
-            string sur = textBoxSurname.Text.Trim(); 
-
+            string fam = textBoxFam.Text.Trim();
+            string name = textBoxName.Text.Trim();
+            string sur = textBoxSurname.Text.Trim();
             string fullFio = $"{fam} {name} {sur}".Trim();
-
             string phone = textBoxPhone.Text.Trim();
             string mail = textBoxMail.Text.Trim();
 
-            if (string.IsNullOrEmpty(fullFio) || string.IsNullOrEmpty(phone))
+            if (string.IsNullOrEmpty(fam) || string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("ФИО и Телефон обязательны для заполнения!");
+                MessageBox.Show("Фамилия и Имя обязательны для заполнения!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Телефон обязателен для заполнения!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^\+?[\d\s\-\(\)]+$"))
+            {
+                MessageBox.Show("Неверный формат телефона!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(mail) &&
+                !System.Text.RegularExpressions.Regex.IsMatch(mail, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Неверный формат электронной почты!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -347,21 +369,40 @@ namespace kurs
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("sp_UpdateEmployeeProfile", connection);
-                    command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@ID_сотрудника", _currentEmployeeId);
-                    command.Parameters.AddWithValue("@ФИО", fullFio);
-                    command.Parameters.AddWithValue("@Телефон", phone);
+                    using (SqlCommand command = new SqlCommand("sp_UpdateEmployeeProfile", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_сотрудника", _currentEmployeeId);
+                        command.Parameters.AddWithValue("@ФИО", fullFio);
+                        command.Parameters.AddWithValue("@Телефон", phone);
 
-                    command.Parameters.AddWithValue("@Электронная_почта", mail);
+                        command.Parameters.AddWithValue("@Электронная_почта",
+                            string.IsNullOrEmpty(mail) ? (object)DBNull.Value : mail);
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Данные профиля успешно обновлены!");
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Данные профиля успешно обновлены!", "Успех",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 50000)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка базы данных: " + ex.Message, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка при обновлении профиля: " + ex.Message);
+                    MessageBox.Show("Ошибка при обновлении профиля: " + ex.Message, "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -416,6 +457,8 @@ namespace kurs
 
         private void operator_form_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet.Тариф". При необходимости она может быть перемещена или удалена.
+            this.тарифTableAdapter.Fill(this.park_spotDataSet.Тариф);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.v_ParkingLotOverview". При необходимости она может быть перемещена или удалена.
             this.v_ParkingLotOverviewTableAdapter.Fill(this.park_spotDataSet31.v_ParkingLotOverview);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "park_spotDataSet31.v_PaymentHistory". При необходимости она может быть перемещена или удалена.
@@ -579,21 +622,6 @@ namespace kurs
                 v_PaymentHistoryBindingSource1.DataSource = paymentData;
                 paymentSuccess = true;
             }
-
-            if (overviewSuccess && paymentSuccess)
-            {
-                MessageBox.Show("Обзор парковки и история платежей успешно обновлены.", "Обновление завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (overviewSuccess || paymentSuccess)
-            {
-                MessageBox.Show("Обновление завершено, но возникли проблемы с одним из представлений. Проверьте ошибки.",
-                                "Частичное обновление", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Не удалось обновить ни одну из таблиц. Проверьте подключение к базе данных.",
-                                "Ошибка обновления", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void ClearVehicleAndClientFields()
@@ -750,6 +778,33 @@ namespace kurs
             }
         }
 
+        private void sortByDatePayment_Click(object sender, EventArgs e)
+        {
+            DateTime start = dateTimePickerBegin.Value.Date;
+            DateTime end = dateTimePickerEnd.Value.Date.AddDays(1).AddSeconds(-1);
+            string tarif = comboBoxTariff.Text;
+
+            try
+            {
+                string filterExpression = string.Format(
+                    "Дата_платежа >= '{0:yyyy-MM-dd HH:mm:ss}' AND Дата_платежа <= '{1:yyyy-MM-dd HH:mm:ss}'",
+                    start, end);
+
+                if (!string.IsNullOrEmpty(tarif))
+                {
+                    filterExpression += string.Format(" AND Тариф = '{0}'", tarif.Replace("'", "''"));
+                }
+
+                v_PaymentHistoryBindingSource1.Filter = filterExpression;
+                v_PaymentHistoryBindingSource1.Sort = "Дата_платежа DESC";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка фильтрации: " + ex.Message, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void label1_Click(object sender, EventArgs e){}
         private void label3_Click(object sender, EventArgs e){}
@@ -760,5 +815,6 @@ namespace kurs
         private void textBoxPassword1_TextChanged(object sender, EventArgs e){}
         private void ForAdd_SelectedIndexChanged(object sender, EventArgs e){}
         private void v_PaymentHistoryDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e){}
+        private void label1_Click_1(object sender, EventArgs e){}
     }
 }

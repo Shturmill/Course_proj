@@ -77,15 +77,47 @@ namespace kurs
             string fam = textBoxFamProfile.Text.Trim();
             string name = textBoxNameProfile.Text.Trim();
             string sur = textBoxSurProfile.Text.Trim();
-
             string fullFio = $"{fam} {name} {sur}".Trim();
-
-            string phone = textBoxPhone.Text.Trim();
+            string phone = textBoxPhoneProfile.Text.Trim();
             string mail = textBoxMail.Text.Trim();
 
-            if (string.IsNullOrEmpty(fullFio) || string.IsNullOrEmpty(phone))
+            if (string.IsNullOrEmpty(fam) || string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("ФИО и Телефон обязательны для заполнения!");
+                MessageBox.Show("Фамилия и Имя обязательны для заполнения!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Телефон обязателен для заполнения!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^\+?[\d\s\-\(\)]+$"))
+            {
+                MessageBox.Show("Неверный формат телефона! Используйте только цифры, пробелы, + и -",
+                    "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(mail) &&
+                !System.Text.RegularExpressions.Regex.IsMatch(mail, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Неверный формат электронной почты!", "Ошибка валидации",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите обновить данные профиля?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+            {
                 return;
             }
 
@@ -94,25 +126,50 @@ namespace kurs
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("sp_UpdateEmployeeProfile", connection);
-                    command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@ID_сотрудника", _currentEmployeeId);
-                    command.Parameters.AddWithValue("@ФИО", fullFio);
-                    command.Parameters.AddWithValue("@Телефон", phone);
+                    using (SqlCommand command = new SqlCommand("sp_UpdateEmployeeProfile", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_сотрудника", _currentEmployeeId);
+                        command.Parameters.AddWithValue("@ФИО", fullFio);
+                        command.Parameters.AddWithValue("@Телефон", phone);
 
-                    command.Parameters.AddWithValue("@Электронная_почта", mail);
+                        if (string.IsNullOrEmpty(mail))
+                        {
+                            command.Parameters.AddWithValue("@Электронная_почта", DBNull.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@Электронная_почта", mail);
+                        }
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Данные профиля успешно обновлены!");
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Данные профиля успешно обновлены!", "Успех",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Message.Contains("телефон") || ex.Message.Contains("почта"))
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Ошибка базы данных: {ex.Message}\nКод ошибки: {ex.Number}",
+                            "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка при обновлении профиля: " + ex.Message);
+                    MessageBox.Show($"Ошибка при обновлении профиля: {ex.Message}", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
         private void buttonPassword_Click(object sender, EventArgs e)
         {
             string passwordNew = textBoxPassword0.Text;

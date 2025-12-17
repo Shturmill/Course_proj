@@ -61,3 +61,54 @@ BEGIN
     END
 END;
 GO
+
+USE [Park_spot]
+GO
+
+CREATE TRIGGER [dbo].[trg_CheckClientPhone]
+ON [dbo].[Клиент]
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+
+    IF UPDATE(Телефон) OR EXISTS(SELECT 1 FROM inserted)
+    BEGIN
+        IF EXISTS (
+            SELECT 1
+            FROM inserted i
+            INNER JOIN Сотрудник s ON i.Телефон = s.Телефон
+        )
+        BEGIN
+            RAISERROR('Ошибка: Номер телефона клиента совпадает с номером телефона сотрудника. Операция отменена.', 16, 1);
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+    END
+END;
+GO
+
+CREATE TRIGGER [dbo].[trg_CheckEmployeePhone]
+ON [dbo].[Сотрудник]
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    IF UPDATE(Телефон) OR EXISTS(SELECT 1 FROM inserted)
+    BEGIN
+
+        IF EXISTS (
+            SELECT 1
+            FROM inserted i
+            INNER JOIN Клиент k ON i.Телефон = k.Телефон
+        )
+        BEGIN
+            RAISERROR('Ошибка: Номер телефона сотрудника совпадает с номером телефона клиента. Операция отменена.', 16, 1);
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+    END
+END;
+GO

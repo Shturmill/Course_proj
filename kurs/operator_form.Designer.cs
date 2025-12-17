@@ -45,6 +45,15 @@ namespace kurs
             this.парковочное_местоTableAdapter = new kurs.Park_spotDataSetTableAdapters.Парковочное_местоTableAdapter();
             this.тСTableAdapter = new kurs.Park_spotDataSetTableAdapters.ТСTableAdapter();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxTariff = new System.Windows.Forms.ComboBox();
+            this.тарифBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sortByDatePayment = new System.Windows.Forms.Button();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBegin = new System.Windows.Forms.DateTimePicker();
             this.v_ParkingLotOverviewDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,14 +62,6 @@ namespace kurs
             this.v_ParkingLotOverviewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.park_spotDataSet31 = new kurs.Park_spotDataSet3();
             this.v_PaymentHistoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.v_PaymentHistoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -125,6 +126,7 @@ namespace kurs
             this.park_spotDataSet1 = new kurs.Park_spotDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonPassword = new System.Windows.Forms.Button();
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
@@ -173,6 +175,16 @@ namespace kurs
             this.vw_PaymentReportTableAdapter = new kurs.Park_spotDataSet3TableAdapters.vw_PaymentReportTableAdapter();
             this.v_PaymentHistoryTableAdapter = new kurs.Park_spotDataSet3TableAdapters.v_PaymentHistoryTableAdapter();
             this.v_ParkingLotOverviewTableAdapter = new kurs.Park_spotDataSet3TableAdapters.v_ParkingLotOverviewTableAdapter();
+            this.park_spotDataSet5 = new kurs.Park_spotDataSet();
+            this.тарифTableAdapter = new kurs.Park_spotDataSetTableAdapters.ТарифTableAdapter();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.парковочная_сессияBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тСBindingSource)).BeginInit();
@@ -181,6 +193,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.парковочное_местоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet31)).BeginInit();
@@ -218,6 +231,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_PaymentReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // парковочная_сессияBindingSource
@@ -287,6 +301,14 @@ namespace kurs
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.comboBoxTariff);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.sortByDatePayment);
+            this.tabPage3.Controls.Add(this.dateTimePickerEnd);
+            this.tabPage3.Controls.Add(this.dateTimePickerBegin);
             this.tabPage3.Controls.Add(this.v_ParkingLotOverviewDataGridView);
             this.tabPage3.Controls.Add(this.v_PaymentHistoryDataGridView);
             this.tabPage3.Controls.Add(this.button1);
@@ -301,8 +323,95 @@ namespace kurs
             this.tabPage3.Text = "Мониторинг оплаты и занятости мест";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(998, 94);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 19);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "Тариф:";
+            // 
+            // comboBoxTariff
+            // 
+            this.comboBoxTariff.DataSource = this.тарифBindingSource;
+            this.comboBoxTariff.DisplayMember = "Наименование";
+            this.comboBoxTariff.FormattingEnabled = true;
+            this.comboBoxTariff.Location = new System.Drawing.Point(1002, 120);
+            this.comboBoxTariff.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTariff.Name = "comboBoxTariff";
+            this.comboBoxTariff.Size = new System.Drawing.Size(180, 27);
+            this.comboBoxTariff.TabIndex = 57;
+            this.comboBoxTariff.ValueMember = "Наименование";
+            // 
+            // тарифBindingSource
+            // 
+            this.тарифBindingSource.DataMember = "Тариф";
+            this.тарифBindingSource.DataSource = this.park_spotDataSet;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(788, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 19);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "До:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(580, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 19);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "От:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(580, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 19);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Сортировка по дате и тарифу";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // sortByDatePayment
+            // 
+            this.sortByDatePayment.Location = new System.Drawing.Point(1197, 115);
+            this.sortByDatePayment.Margin = new System.Windows.Forms.Padding(4);
+            this.sortByDatePayment.Name = "sortByDatePayment";
+            this.sortByDatePayment.Size = new System.Drawing.Size(112, 34);
+            this.sortByDatePayment.TabIndex = 53;
+            this.sortByDatePayment.Text = "сортировать";
+            this.sortByDatePayment.UseVisualStyleBackColor = true;
+            this.sortByDatePayment.Click += new System.EventHandler(this.sortByDatePayment_Click);
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(792, 121);
+            this.dateTimePickerEnd.MaxDate = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(180, 26);
+            this.dateTimePickerEnd.TabIndex = 52;
+            this.dateTimePickerEnd.Value = new System.DateTime(2025, 12, 12, 0, 0, 0, 0);
+            // 
+            // dateTimePickerBegin
+            // 
+            this.dateTimePickerBegin.Location = new System.Drawing.Point(584, 121);
+            this.dateTimePickerBegin.MaxDate = new System.DateTime(2025, 12, 11, 0, 0, 0, 0);
+            this.dateTimePickerBegin.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerBegin.Name = "dateTimePickerBegin";
+            this.dateTimePickerBegin.Size = new System.Drawing.Size(180, 26);
+            this.dateTimePickerBegin.TabIndex = 51;
+            this.dateTimePickerBegin.Value = new System.DateTime(2025, 12, 11, 0, 0, 0, 0);
+            // 
             // v_ParkingLotOverviewDataGridView
             // 
+            this.v_ParkingLotOverviewDataGridView.AllowUserToAddRows = false;
+            this.v_ParkingLotOverviewDataGridView.AllowUserToDeleteRows = false;
             this.v_ParkingLotOverviewDataGridView.AutoGenerateColumns = false;
             this.v_ParkingLotOverviewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.v_ParkingLotOverviewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -313,6 +422,7 @@ namespace kurs
             this.v_ParkingLotOverviewDataGridView.DataSource = this.v_ParkingLotOverviewBindingSource1;
             this.v_ParkingLotOverviewDataGridView.Location = new System.Drawing.Point(44, 37);
             this.v_ParkingLotOverviewDataGridView.Name = "v_ParkingLotOverviewDataGridView";
+            this.v_ParkingLotOverviewDataGridView.ReadOnly = true;
             this.v_ParkingLotOverviewDataGridView.Size = new System.Drawing.Size(501, 116);
             this.v_ParkingLotOverviewDataGridView.TabIndex = 50;
             // 
@@ -321,6 +431,7 @@ namespace kurs
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Этаж";
             this.dataGridViewTextBoxColumn11.HeaderText = "Этаж";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 70;
             // 
             // dataGridViewTextBoxColumn15
@@ -328,6 +439,7 @@ namespace kurs
             this.dataGridViewTextBoxColumn15.DataPropertyName = "Мест_свободно";
             this.dataGridViewTextBoxColumn15.HeaderText = "Мест свободно";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Width = 140;
             // 
             // dataGridViewTextBoxColumn16
@@ -335,6 +447,7 @@ namespace kurs
             this.dataGridViewTextBoxColumn16.DataPropertyName = "Мест_занято";
             this.dataGridViewTextBoxColumn16.HeaderText = "Мест занято";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Width = 120;
             // 
             // dataGridViewTextBoxColumn17
@@ -342,6 +455,7 @@ namespace kurs
             this.dataGridViewTextBoxColumn17.DataPropertyName = "Всего_мест";
             this.dataGridViewTextBoxColumn17.HeaderText = "Всего мест";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Width = 120;
             // 
             // v_ParkingLotOverviewBindingSource1
@@ -356,6 +470,8 @@ namespace kurs
             // 
             // v_PaymentHistoryDataGridView
             // 
+            this.v_PaymentHistoryDataGridView.AllowUserToAddRows = false;
+            this.v_PaymentHistoryDataGridView.AllowUserToDeleteRows = false;
             this.v_PaymentHistoryDataGridView.AutoGenerateColumns = false;
             this.v_PaymentHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.v_PaymentHistoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -370,66 +486,10 @@ namespace kurs
             this.v_PaymentHistoryDataGridView.DataSource = this.v_PaymentHistoryBindingSource1;
             this.v_PaymentHistoryDataGridView.Location = new System.Drawing.Point(44, 204);
             this.v_PaymentHistoryDataGridView.Name = "v_PaymentHistoryDataGridView";
-            this.v_PaymentHistoryDataGridView.Size = new System.Drawing.Size(1122, 271);
+            this.v_PaymentHistoryDataGridView.ReadOnly = true;
+            this.v_PaymentHistoryDataGridView.Size = new System.Drawing.Size(1182, 271);
             this.v_PaymentHistoryDataGridView.TabIndex = 50;
             this.v_PaymentHistoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.v_PaymentHistoryDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Время_заезда";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Время заезда";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Дата_платежа";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Дата платежа";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Длительность_минут";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Продолжительность";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Сумма";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Тариф";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Тариф";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "ФИО_клиента";
-            this.dataGridViewTextBoxColumn26.HeaderText = "ФИО клиента";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Width = 260;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Гос_номер";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Гос номер";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Автомобиль";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Автомобиль";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 140;
             // 
             // v_PaymentHistoryBindingSource1
             // 
@@ -439,7 +499,7 @@ namespace kurs
             // button1
             // 
             this.button1.BackgroundImage = global::kurs.Properties.Resources.update_icon;
-            this.button1.Location = new System.Drawing.Point(1126, 158);
+            this.button1.Location = new System.Drawing.Point(1232, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 50;
@@ -688,6 +748,7 @@ namespace kurs
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(55, 21);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -1007,6 +1068,7 @@ namespace kurs
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.buttonPassword);
             this.tabPage4.Controls.Add(this.textBoxPassword1);
@@ -1033,6 +1095,17 @@ namespace kurs
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Учётная запись оператора";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label6.Location = new System.Drawing.Point(96, 26);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(337, 19);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Заполнение данных для регистрации нового ТС";
             // 
             // button5
             // 
@@ -1365,6 +1438,78 @@ namespace kurs
             // 
             this.v_ParkingLotOverviewTableAdapter.ClearBeforeFill = true;
             // 
+            // park_spotDataSet5
+            // 
+            this.park_spotDataSet5.DataSetName = "Park_spotDataSet";
+            this.park_spotDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // тарифTableAdapter
+            // 
+            this.тарифTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Время_заезда";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Время заезда";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Дата_платежа";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Дата платежа";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Длительность_минут";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Продолжительность";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Сумма";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Тариф";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Тариф";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "ФИО_клиента";
+            this.dataGridViewTextBoxColumn26.HeaderText = "ФИО клиента";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 260;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Гос_номер";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Гос номер";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Автомобиль";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Автомобиль";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Width = 140;
+            // 
             // operator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1388,6 +1533,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.v_PaymentHistoryBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.тарифBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_ParkingLotOverviewBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet31)).EndInit();
@@ -1428,6 +1574,7 @@ namespace kurs
             ((System.ComponentModel.ISupportInitialize)(this.parkspotDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwSessionDetailsBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_PaymentReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.park_spotDataSet5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1568,6 +1715,19 @@ namespace kurs
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.Button button5;
+        private Park_spotDataSet park_spotDataSet5;
+        private System.Windows.Forms.Button sortByDatePayment;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBegin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxTariff;
+        private System.Windows.Forms.BindingSource тарифBindingSource;
+        private Park_spotDataSetTableAdapters.ТарифTableAdapter тарифTableAdapter;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
@@ -1576,6 +1736,5 @@ namespace kurs
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.Button button5;
     }
 }

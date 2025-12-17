@@ -91,7 +91,7 @@ BEGIN
 END;
 GO
 
-CREATE   PROCEDURE sp_AddEmployee
+CREATE OR ALTER PROCEDURE sp_AddEmployee
     @ФИО VARCHAR(100),
     @Должность VARCHAR(18),
     @Телефон VARCHAR(20),
@@ -106,14 +106,17 @@ BEGIN
         RETURN;
     END
 
-    BEGIN TRY
-        BEGIN TRANSACTION; 
+    BEGIN TRANSACTION;
 
+    BEGIN TRY
         INSERT INTO Сотрудник (ФИО, Должность, Телефон, Электронная_почта)
         VALUES (@ФИО, @Должность, @Телефон, @Электронная_почта);
 
-        INSERT INTO УчетныеЗаписи (Логин, Хеш_пароля)
-        VALUES (@Электронная_почта, HASHBYTES('SHA2_256', 'password123'));
+        DECLARE @NewID INT;
+        SET @NewID = SCOPE_IDENTITY();
+
+        INSERT INTO УчетныеЗаписи (ID_сотрудника, Логин, Хеш_пароля)
+        VALUES (@NewID, @Электронная_почта, HASHBYTES('SHA2_256', 'password123'));
 
         COMMIT TRANSACTION;
     END TRY
@@ -126,7 +129,6 @@ BEGIN
     END CATCH
 END;
 GO
-
 CREATE OR ALTER PROCEDURE sp_DeleteEmployee
     @Телефон VARCHAR(20)
 AS
