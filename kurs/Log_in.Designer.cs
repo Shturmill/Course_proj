@@ -74,10 +74,11 @@ namespace kurs
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(160, 25);
-            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Text = "Введите пароль";
             // 
             // label1
             // 
