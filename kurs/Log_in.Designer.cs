@@ -78,7 +78,6 @@ namespace kurs
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Text = "Введите пароль";
             // 
             // label1
             // 

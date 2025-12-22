@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Remoting.Contexts;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace kurs
 {
@@ -89,6 +91,63 @@ namespace kurs
                     MessageBox.Show("Ошибка при загрузке данных профиля: " + ex.Message);
                 }
             }
+
+            GosText.MaxLength = 9;
+
+            GosText.KeyPress += GosText_KeyPress;
+            GosText.Leave += GosText_Leave;
+
+        }
+
+        private void GosText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Разрешить управляющие символы (Backspace, Delete и т.д.)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            string text = GosText.Text;
+            int selectionStart = GosText.SelectionStart;
+
+            if (selectionStart == 0 || (selectionStart == 5 || selectionStart == 6))
+            {
+                // Первая позиция и позиции 5-6: только разрешенные буквы
+                if (!"АВЕКМНОРСТУХАВЕКМНОРСТУХ".Contains(char.ToUpper(e.KeyChar)))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (selectionStart >= 1 && selectionStart <= 3 || selectionStart >= 7)
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void GosText_Leave(object sender, EventArgs e)
+        {
+            string govNumber = GosText.Text.Trim().ToUpper();
+
+            if (!string.IsNullOrEmpty(govNumber) && !ValidateRussianLicensePlate(govNumber))
+            {
+                GosText.BackColor = Color.LightPink;
+                MessageBox.Show("Неверный формат номера");
+            }
+            else
+            {
+                GosText.BackColor = Color.White;
+            }
+        }
+
+        private bool ValidateRussianLicensePlate(string licensePlate)
+        {
+            string pattern = @"^[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}$";
+            return Regex.IsMatch(licensePlate, pattern);
         }
 
 
